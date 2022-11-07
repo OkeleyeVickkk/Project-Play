@@ -4,6 +4,7 @@
 // 2. Powerlyrics
 // 3. spotify * 2
 // 4. Genius lyrics
+// 5. Billboard
 
 
 // Must have a player session
@@ -21,6 +22,9 @@ Comfortaa
 // colors
 primary skin color - #23263D
 primary darker color - #161728
+shade of dark - #111827
+tailwind's default blue color = #1C64F2
+
 white - #ffffff
 
 
