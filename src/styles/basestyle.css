@@ -1,0 +1,16 @@
+@font-face {
+	font-family: Comfortaa;
+	src: url("../font/Comfortaa-VariableFont_wght.ttf");
+}
+:root {
+	--font-family: Comfortaa;
+}
+*,
+*::before,
+*::after {
+	font-family: var(--font-family);
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}

@@ -1,0 +1,26 @@
+
+// from rapid api 
+// 1. Shazam 
+// 2. Powerlyrics
+// 3. spotify * 2
+// 4. Genius lyrics
+
+
+// Must have a player session
+// Skeleton loader
+// responsiveness
+
+//top 50 songs
+//latest songs
+//songs on chart boards
+
+
+//font
+Comfortaa
+
+// colors
+primary skin color - #23263D
+primary darker color - #161728
+white - #ffffff
+
+
