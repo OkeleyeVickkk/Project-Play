@@ -5,9 +5,9 @@
 .card {
 	@apply w-full shadow-md rounded overflow-hidden;
 }
-.menu-icon {
-	@apply text-4xl text-gray-600 hover:text-gray-800;
+.nav-link {
+	@apply text-xs flex items-center text-white p-3 rounded-lg;
 }
-._tTxPRdO3x {
-	@apply transition duration-300 ease-in-out;
+.nav-links-wrapper {
+	@apply flex flex-col mt-5;
 }
