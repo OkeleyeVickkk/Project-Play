@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title>Music2k - Dashboard</title>
 		<link rel="shortcut icon" href="./src/images/sound-wave logo.svg" type="image/x-icon" />
+		<!-- add og -->
 		<meta name="description" content="" />
 		<link rel="shortcut icon" href="" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,6 +16,7 @@
 	<body>
 		<div class="body-inner min-h-screen">
 			<div class="wrapper grid grid-cols-12">
+				<!-- lg navigation starts -->
 				<div class="navigation col-span-2 p-4 min-h-screen flex flex-col gap-8 bg-primarySkin">
 					<div class="flex flex-col gap-y-8">
 						<div class="logo text-center">
@@ -30,7 +32,7 @@
 					</div>
 					<div class="home flex flex-col mt-5">
 						<div class="title p-2 px-4">
-							<small><h6 class="font-bold text-white">Menu</h6></small>
+							<small><h6 class="font-bold text-white">// Menu</h6></small>
 						</div>
 						<ul class="nav-links-wrapper">
 							<li>
@@ -151,68 +153,78 @@
 						</ul>
 					</div>
 				</div>
-				<div class="content col-span-7 min-h-screen bg-secondarySkin"></div>
+				<!-- lg view navigation ends -->
+				<!-- middle -->
+				<div class="content col-span-7 min-h-screen bg-secondarySkin">
+					<div class="section-wrapper">
+						<section class="trending-songs"></section>
+						<section class="recently-played"></section>
+					</div>
+				</div>
+				<!-- middle ends -->
 				<div class="content col-span-3 min-h-screen bg-primarySkin">
-					<div class="wrapper w-3/4 mx-auto flex flex-col gap-y-6">
-						<div class="title text-center text-white text-lg font-bold">Now Playing</div>
-						<div class="song-info flex flex-col gap-y-2 items-center">
-							<div class="song-cover-photo overflow-hidden rounded-xl">
-								<img src="./src/images/image.jpg" alt="" />
+					<div class="wrapper p-5">
+						<div class="inner-wrapper">
+							<div class="title text-center text-white text-base font-bold">Now Playing</div>
+							<div class="song-info flex flex-col gap-y-2 items-center">
+								<div class="song-cover-photo overflow-hidden rounded-xl w-3/4 mx-auto">
+									<img src="./src/images/image.jpg" alt="" />
+								</div>
+								<div class="song-title mt-3">
+									<h3 class="text-lg font-bold text-white">Wrecked</h3>
+								</div>
+								<div class="song-artist">
+									<h5 class="text-sm text-gray-400">Imagine Dragon</h5>
+								</div>
 							</div>
-							<div class="song-title mt-3">
-								<h3 class="text-lg font-bold text-white">Wrecked</h3>
+							<div class="time-tracker">
+								<div class="track relative bg-slate-500 w-full h-0.5 rounded-full">
+									<div class="track-time-counter absolute top-0 left-0 w-1/2 bg-white h-full"></div>
+								</div>
 							</div>
-							<div class="song-artist">
-								<h5 class="text-sm text-gray-400">Imagine Dragon</h5>
+							<div class="track-controls flex items-center justify-center gap-x-4">
+								<button
+									id="prev"
+									class="hover:bg-slate-300 p-2 rounded-full hover:text-[#23263D] transition ease-linear duration-200 text-white">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1.5rem"
+										height="1.5rem"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M6.5 18q-.425 0-.713-.288Q5.5 17.425 5.5 17V7q0-.425.287-.713Q6.075 6 6.5 6t.713.287Q7.5 6.575 7.5 7v10q0 .425-.287.712Q6.925 18 6.5 18Zm10.45-1.025l-6.2-4.15q-.45-.3-.45-.825q0-.525.45-.825l6.2-4.15q.5-.325 1.025-.038q.525.288.525.888v8.25q0 .6-.525.9q-.525.3-1.025-.05Z" />
+									</svg>
+								</button>
+								<button id="play-pause" class="bg-white rounded-xl p-3">
+									<svg
+										class="text-[#23263D]"
+										xmlns="http://www.w3.org/2000/svg"
+										width="1.5rem"
+										height="1.5rem"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M5 5.274c0-1.707 1.826-2.792 3.325-1.977l12.362 6.726c1.566.853 1.566 3.101 0 3.953L8.325 20.702C6.826 21.518 5 20.432 5 18.726V5.274Z" />
+									</svg>
+								</button>
+								<button
+									id="next"
+									class="hover:bg-slate-300 p-2 hover:text-[#23263D] rounded-full transition ease-linear duration-200 text-white">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1.5rem"
+										height="1.5rem"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M17.5 18q-.425 0-.712-.288q-.288-.287-.288-.712V7q0-.425.288-.713Q17.075 6 17.5 6t.712.287q.288.288.288.713v10q0 .425-.288.712q-.287.288-.712.288ZM7.05 16.975q-.5.35-1.025.05q-.525-.3-.525-.9v-8.25q0-.6.525-.888q.525-.287 1.025.038l6.2 4.15q.45.3.45.825q0 .525-.45.825Z" />
+									</svg>
+								</button>
 							</div>
-						</div>
-						<div class="time-tracker">
-							<div class="track relative bg-slate-500 w-full h-0.5 rounded-full">
-								<div class="track-time-counter absolute top-0 left-0 w-1/2 bg-white h-full"></div>
-							</div>
-						</div>
-						<div class="track-controls flex items-center justify-center gap-x-4">
-							<button
-								id="prev"
-								class="hover:bg-slate-300 p-2 rounded-full hover:text-[#23263D] transition ease-linear duration-200 text-white">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="1.5rem"
-									height="1.5rem"
-									preserveAspectRatio="xMidYMid meet"
-									viewBox="0 0 24 24">
-									<path
-										fill="currentColor"
-										d="M6.5 18q-.425 0-.713-.288Q5.5 17.425 5.5 17V7q0-.425.287-.713Q6.075 6 6.5 6t.713.287Q7.5 6.575 7.5 7v10q0 .425-.287.712Q6.925 18 6.5 18Zm10.45-1.025l-6.2-4.15q-.45-.3-.45-.825q0-.525.45-.825l6.2-4.15q.5-.325 1.025-.038q.525.288.525.888v8.25q0 .6-.525.9q-.525.3-1.025-.05Z" />
-								</svg>
-							</button>
-							<button id="play-pause" class="bg-white rounded-xl p-3">
-								<svg
-									class="text-[#23263D]"
-									xmlns="http://www.w3.org/2000/svg"
-									width="1.5rem"
-									height="1.5rem"
-									preserveAspectRatio="xMidYMid meet"
-									viewBox="0 0 24 24">
-									<path
-										fill="currentColor"
-										d="M5 5.274c0-1.707 1.826-2.792 3.325-1.977l12.362 6.726c1.566.853 1.566 3.101 0 3.953L8.325 20.702C6.826 21.518 5 20.432 5 18.726V5.274Z" />
-								</svg>
-							</button>
-							<button
-								id="next"
-								class="hover:bg-slate-300 p-2 hover:text-[#23263D] rounded-full transition ease-linear duration-200 text-white">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="1.5rem"
-									height="1.5rem"
-									preserveAspectRatio="xMidYMid meet"
-									viewBox="0 0 24 24">
-									<path
-										fill="currentColor"
-										d="M17.5 18q-.425 0-.712-.288q-.288-.287-.288-.712V7q0-.425.288-.713Q17.075 6 17.5 6t.712.287q.288.288.288.713v10q0 .425-.288.712q-.287.288-.712.288ZM7.05 16.975q-.5.35-1.025.05q-.525-.3-.525-.9v-8.25q0-.6.525-.888q.525-.287 1.025.038l6.2 4.15q.45.3.45.825q0 .525-.45.825Z" />
-								</svg>
-							</button>
 						</div>
 					</div>
 				</div>

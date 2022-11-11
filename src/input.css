@@ -11,6 +11,7 @@
 .nav-links-wrapper {
 	@apply flex flex-col mt-2;
 }
-.content .wrapper {
-	@apply px-4 py-8;
+
+.content .inner-wrapper {
+	@apply px-5 py-8 bg-gray-700 mx-auto flex flex-col gap-y-6 rounded-xl;
 }
