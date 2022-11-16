@@ -11,7 +11,18 @@
 .nav-links-wrapper {
 	@apply flex flex-col mt-2;
 }
+.recent-tracks .tracks-wrapper {
+	@apply flex flex-col gap-y-4;
+}
 
 .content .inner-wrapper {
-	@apply px-5 py-8 bg-gray-700 mx-auto flex flex-col gap-y-6 rounded-xl;
+	@apply px-5 py-8 bg-slate-700 mx-auto flex flex-col gap-y-6 rounded-xl;
+}
+
+.each-track {
+	@apply flex items-center justify-between;
+}
+
+.section-wrapper {
+	@apply flex flex-col justify-between h-full;
 }
