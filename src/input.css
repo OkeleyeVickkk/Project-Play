@@ -26,3 +26,38 @@
 .section-wrapper {
 	@apply flex flex-col justify-between h-full;
 }
+
+.form-control {
+	@apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-12;
+}
+.submit-btn {
+	@apply transition duration-200 ease-linear inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-12;
+}
+.track-item {
+	@apply flex items-center gap-x-6;
+}
+._xTcRkP3L {
+	@apply overflow-hidden rounded-lg;
+}
+._fOBsU46Lz {
+	@apply leading-3;
+}
+.artiste-name,
+.track-title {
+	@apply text-gray-400 hover:text-white transition duration-200 ease-linear;
+}
+.tracks-wrapper {
+	@apply flex flex-col gap-y-4;
+}
+.track-item .skeleton {
+	@apply bg-gray-400 rounded-lg;
+}
+.track-item .skeleton-counter {
+	@apply bg-gray-400 rounded-sm;
+}
+.track-item :is(.skeleton-track-title, .skeleton-artiste-name) {
+	@apply rounded-sm bg-gray-400;
+}
+.track-item .skeleton-artiste-name {
+	/* @apply; */
+}
