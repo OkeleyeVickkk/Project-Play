@@ -16,96 +16,207 @@
 	<body>
 		<div class="body-inner min-h-screen">
 			<div class="wrapper grid grid-cols-12">
-				<!-- lg navigation starts -->
-				<div class="navigation hidden md:flex col-span-2 p-4 min-h-screen flex-col gap-6 bg-primarySkin">
-					<div class="flex flex-col gap-y-8">
+				<!-- navigation starts -->
+				<header class="navigation col-span-2">
+					<!-- lg nav starts -->
+					<div class="hidden md:flex p-4 min-h-screen flex-col gap-6 bg-primarySkin">
 						<div class="logo text-center">
 							<a href="" class="flex items-center">
 								<img class="max-w-full w-36" src="./src/images/logo-lg-variant-3.png" alt="" />
 							</a>
 						</div>
-					</div>
-					<div class="home flex flex-col mt-5">
-						<div class="title p-2 px-4">
-							<small><h6 class="font-bold text-white text-xs">// Menu</h6></small>
+						<div class="home flex flex-col mt-5">
+							<div class="title p-2 px-4">
+								<small><h6 class="font-bold text-white text-xs">// Menu</h6></small>
+							</div>
+							<ul class="nav-links-wrapper">
+								<li>
+									<a href="" class="nav-link">
+										<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+											<path
+												fill="currentColor"
+												fill-rule="evenodd"
+												d="m8.36 1.37l6.36 5.8l-.71.71L13 6.964v6.526l-.5.5h-3l-.5-.5v-3.5H7v3.5l-.5.5h-3l-.5-.5V6.972L2 7.88l-.71-.71l6.35-5.8h.72zM4 6.063v6.927h2v-3.5l.5-.5h3l.5.5v3.5h2V6.057L8 2.43L4 6.063z"
+												clip-rule="evenodd" /></svg
+										>Home
+									</a>
+								</li>
+								<li>
+									<a href="" class="nav-link">
+										<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-miterlimit="10"
+												stroke-width="32"
+												d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-miterlimit="10"
+												stroke-width="32"
+												d="M338.29 338.29L448 448" />
+										</svg>
+										Search
+									</a>
+								</li>
+								<li>
+									<a href="" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+											<path
+												fill="currentColor"
+												d="M14.702 2.226A1 1 0 0 1 16 3.18v6.027a5.479 5.479 0 0 0-1-.184V6.18L8 8.368V15.5a2.5 2.5 0 1 1-1-2V5.368a1 1 0 0 1 .702-.955l7-2.187ZM8 7.32l7-2.187V3.18L8 5.368V7.32ZM5.5 14a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm13.5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.265-.436l-2.994-1.65a.5.5 0 0 0-.741.438v3.3a.5.5 0 0 0 .741.438l2.994-1.65a.5.5 0 0 0 0-.876Z" />
+										</svg>
+										Play Music
+									</a>
+								</li>
+								<li>
+									<a href="" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+										</svg>
+										Artist
+									</a>
+								</li>
+								<li>
+									<a href="" class="nav-link">
+										<!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+											<path
+												fill="currentColor"
+												d="m11.17 6l3.42 3.41l.58.59H28v16H4V6h7.17m0-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H16l-3.41-3.41A2 2 0 0 0 11.17 4Z" />
+										</svg> -->
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+											<path
+												fill="currentColor"
+												d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
+										</svg>
+										Albums
+									</a>
+								</li>
+							</ul>
 						</div>
-						<ul class="nav-links-wrapper">
-							<li>
-								<a href="" class="nav-link">
-									<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
-										<path
-											fill="currentColor"
-											fill-rule="evenodd"
-											d="m8.36 1.37l6.36 5.8l-.71.71L13 6.964v6.526l-.5.5h-3l-.5-.5v-3.5H7v3.5l-.5.5h-3l-.5-.5V6.972L2 7.88l-.71-.71l6.35-5.8h.72zM4 6.063v6.927h2v-3.5l.5-.5h3l.5.5v3.5h2V6.057L8 2.43L4 6.063z"
-											clip-rule="evenodd" /></svg
-									>Home
-								</a>
-							</li>
-							<li>
-								<a href="" class="nav-link">
-									<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-miterlimit="10"
-											stroke-width="32"
-											d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-linecap="round"
-											stroke-miterlimit="10"
-											stroke-width="32"
-											d="M338.29 338.29L448 448" />
-									</svg>
-									Search
-								</a>
-							</li>
-							<li>
-								<a href="" class="nav-link">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
-										<path
-											fill="currentColor"
-											d="M14.702 2.226A1 1 0 0 1 16 3.18v6.027a5.479 5.479 0 0 0-1-.184V6.18L8 8.368V15.5a2.5 2.5 0 1 1-1-2V5.368a1 1 0 0 1 .702-.955l7-2.187ZM8 7.32l7-2.187V3.18L8 5.368V7.32ZM5.5 14a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm13.5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.265-.436l-2.994-1.65a.5.5 0 0 0-.741.438v3.3a.5.5 0 0 0 .741.438l2.994-1.65a.5.5 0 0 0 0-.876Z" />
-									</svg>
-									Play Music
-								</a>
-							</li>
-							<li>
-								<a href="" class="nav-link">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-									</svg>
-									Artist
-								</a>
-							</li>
-							<li>
-								<a href="" class="nav-link">
-									<!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
-										<path
-											fill="currentColor"
-											d="m11.17 6l3.42 3.41l.58.59H28v16H4V6h7.17m0-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H16l-3.41-3.41A2 2 0 0 0 11.17 4Z" />
-									</svg> -->
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-										<path
-											fill="currentColor"
-											d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
-									</svg>
-									Albums
-								</a>
-							</li>
-						</ul>
 					</div>
-				</div>
-				<!-- lg view navigation ends -->
+					<!-- lg nav ends -->
+					<!-- mobile nav  starts -->
+					<div
+						id="drawer-navigation"
+						class="fixed z-40 min-h-screen p-4 overflow-y-auto bg-primarySkin w-80 dark:bg-gray-800"
+						tabindex="-1"
+						aria-labelledby="drawer-navigation-label">
+						<h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
+						<button
+							type="button"
+							data-drawer-dismiss="drawer-navigation"
+							aria-controls="drawer-navigation"
+							class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+							<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+								<path
+									fill-rule="evenodd"
+									d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+									clip-rule="evenodd"></path>
+							</svg>
+							<span class="sr-only">Close menu</span>
+						</button>
+						<div class="py-4 overflow-y-auto">
+							<ul class="nav-links-wrapper">
+								<li>
+									<a href="" class="nav-link">
+										<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+											<path
+												fill="currentColor"
+												fill-rule="evenodd"
+												d="m8.36 1.37l6.36 5.8l-.71.71L13 6.964v6.526l-.5.5h-3l-.5-.5v-3.5H7v3.5l-.5.5h-3l-.5-.5V6.972L2 7.88l-.71-.71l6.35-5.8h.72zM4 6.063v6.927h2v-3.5l.5-.5h3l.5.5v3.5h2V6.057L8 2.43L4 6.063z"
+												clip-rule="evenodd" /></svg
+										>Home
+									</a>
+								</li>
+								<li>
+									<a href="" class="nav-link">
+										<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-miterlimit="10"
+												stroke-width="32"
+												d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-miterlimit="10"
+												stroke-width="32"
+												d="M338.29 338.29L448 448" />
+										</svg>
+										Search
+									</a>
+								</li>
+								<li>
+									<a href="" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+											<path
+												fill="currentColor"
+												d="M14.702 2.226A1 1 0 0 1 16 3.18v6.027a5.479 5.479 0 0 0-1-.184V6.18L8 8.368V15.5a2.5 2.5 0 1 1-1-2V5.368a1 1 0 0 1 .702-.955l7-2.187ZM8 7.32l7-2.187V3.18L8 5.368V7.32ZM5.5 14a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm13.5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.265-.436l-2.994-1.65a.5.5 0 0 0-.741.438v3.3a.5.5 0 0 0 .741.438l2.994-1.65a.5.5 0 0 0 0-.876Z" />
+										</svg>
+										Play Music
+									</a>
+								</li>
+								<li>
+									<a href="" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+										</svg>
+										Artist
+									</a>
+								</li>
+								<li>
+									<a href="" class="nav-link">
+										<!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+											<path
+												fill="currentColor"
+												d="m11.17 6l3.42 3.41l.58.59H28v16H4V6h7.17m0-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H16l-3.41-3.41A2 2 0 0 0 11.17 4Z" />
+										</svg> -->
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+											<path
+												fill="currentColor"
+												d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
+										</svg>
+										Albums
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- mobile nav  ends -->
+				</header>
+				<!-- navigation ends -->
 				<div class="col-span-full md:col-span-10 min-h-screen bg-secondarySkin py-3">
-					<div class="flex flex-col items-center gap-y-3 mt-4">
-						<!-- <img class="w-1/5" src="./src/images/logo-lg-variant-2.png" alt="" /> -->
+					<nav class="flex items-center justify-between md:hidden px-4">
+						<a href="">
+							<img src="./src/images/logo-lg-variant-2.png" class="h-auto w-32" alt="" />
+						</a>
+						<div class="text-center">
+							<button
+								class="text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+								type="button"
+								data-drawer-target="drawer-navigation"
+								data-drawer-show="drawer-navigation"
+								aria-controls="drawer-navigation">
+								Menu
+							</button>
+						</div>
+					</nav>
+					<div class="flex-col items-center gap-y-3 mt-4 hidden md:flex">
 						<img src="/src/images/logo-lg-variant-icon-white.png" alt="" class="w-1/12" />
 						<p class="text-white text-sm">Find lyrics for any song - search by track or artist</p>
 					</div>
@@ -219,16 +330,16 @@
 								<ul class="tracks-wrapper mt-8">
 									<!-- each track start -->
 									<li class="track-item">
-										<span class="h-6 w-6 skeleton-counter"></span>
+										<span class="h-6 w-6 skeleton-counter skeleton"></span>
 										<div class="skeleton h-16 w-16 rounded-lg">
 											<img src="" class="skeleton" alt="" />
 										</div>
 										<div class="flex flex-col gap-y-3">
 											<a href="" class="">
-												<h5 class="skeleton-track-title w-60 h-3"></h5>
+												<h5 class="skeleton skeleton-track-title w-60 h-3"></h5>
 											</a>
 											<a href="" class="">
-												<h6 class="skeleton-artiste-name w-24 h-3"></h6>
+												<h6 class="skeleton skeleton-artiste-name w-24 h-3"></h6>
 											</a>
 										</div>
 									</li>
