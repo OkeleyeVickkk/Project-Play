@@ -37,27 +37,19 @@
 	@apply flex items-center gap-x-6;
 }
 ._xTcRkP3L {
-	@apply overflow-hidden rounded-lg;
+	@apply overflow-hidden rounded-lg h-auto w-16;
 }
+._xTcRkP3L img {
+	@apply max-w-full object-cover;
+}
+
 ._fOBsU46Lz {
-	@apply leading-3;
+	@apply flex flex-col gap-y-1;
 }
-.artiste-name,
-.track-title {
-	@apply text-gray-400 hover:text-white transition duration-200 ease-linear;
-}
+
 .tracks-wrapper {
-	@apply flex flex-col gap-y-4;
+	@apply flex flex-col gap-y-6;
 }
-.track-item .skeleton {
-	@apply bg-gray-400 rounded-lg;
-}
-.track-item .skeleton-counter {
-	@apply bg-gray-400 rounded-sm;
-}
-.track-item :is(.skeleton-track-title, .skeleton-artiste-name) {
-	@apply rounded-sm bg-gray-400;
-}
-.track-item .skeleton-artiste-name {
-	/* @apply; */
+.has-text {
+	@apply text-white;
 }
