@@ -19,7 +19,7 @@
 				<!-- navigation starts -->
 				<header class="navigation hidden md:block col-span-2 min-h-screen bg-primarySkin">
 					<!-- lg nav starts -->
-					<div class="hidden md:flex p-4 fixed min-h-screen flex-col gap-6 bg-primarySkin">
+					<div class="hidden md:flex p-4 fixed flex-col gap-6 bg-primarySkin h-full">
 						<div class="logo text-center">
 							<a href="" class="flex items-center">
 								<img class="max-w-full w-36" src="./src/images/logo-lg-variant-3.png" alt="" />
@@ -311,17 +311,21 @@
 							<section class="col-span-6 p-4 bg-primarySkin rounded-lg flex flex-col gap-y-4">
 								<div class="flex items-center justify-between">
 									<h3 class="section-title text-white text-lg font-bold">World Entertainment News</h3>
-									<a href="./blog-news.html" class="text-white text-xs hover:underline">See More Post</a>
+									<a href="./blog-news.html" class="text-white text-xs hover:underline">See More </a>
 								</div>
 								<div class="blogs-wrapper mt-14">
 									<template id="news-template">
-										<a class="blog-news mt-8 w-full">
-											<div class="flex items-center gap-x-5 mb-4 h-20">
+										<a class="blog-news w-full">
+											<div class="flex items-center gap-x-5 h-20">
 												<div class="blog-image skeleton skeleton-image"></div>
 												<div class="flex-grow blog-details">
 													<div class="top flex items-center gap-x-4 w-full">
-														<div class="source skeleton skeleton-xs-comp"></div>
-														<div class="date skeleton skeleton-xs-comp"></div>
+														<div class="source text-xs text-white">
+															<div class="skeleton skeleton-xs-comp"></div>
+														</div>
+														<div class="date text-xs text-white">
+															<div class="skeleton skeleton-xs-comp"></div>
+														</div>
 													</div>
 													<div class="w-full h-auto">
 														<h6 class="text-sm text-white" blog-title>
@@ -337,7 +341,7 @@
 								</div>
 							</section>
 							<section class="col-span-6 p-4 bg-primarySkin rounded-lg flex flex-col gap-y-4">
-								<h3 class="section-title text-white text-xl font-bold">Top 10 Nigerian Tracks</h3>
+								<h3 class="section-title text-white text-lg font-bold">Top 10 Nigerian Tracks</h3>
 								<ul class="tracks-wrapper mt-14" id="by-country">
 									<!-- each track start -->
 									<li class="track-item">

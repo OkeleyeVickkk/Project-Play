@@ -31,12 +31,9 @@
 }
 
 .blog-news .skeleton {
-	background-color: hsl(0, 9%, 90%);
-	top: 0;
-	left: 0;
-	content: "";
+	background-color: hsl(0, 2%, 77%);
 	opacity: 0.72;
-	animation: transit 1.3s infinite alternate;
+	animation: transit 1.1s infinite alternate;
 }
 
 @keyframes transit {

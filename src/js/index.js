@@ -34,11 +34,11 @@ function callCountryTracks() {
 										</div>
 										<div class="_fOBsU46Lz">
 											<div class="text-sm has-text">
-													<h5 class="track-title">${title}</h5>
-												</div>
+												<h5 class="track-title">${title}</h5>
+											</div>
 											<div class="w-80 has-text">
-													<h6 class="text-xs track-artistes">${subtitle}</h6>
-												</div>
+												<h6 class="text-xs track-artistes">${subtitle}</h6>
+											</div>
 										</div>
 									</li>	`;
 				tracksWrapper.innerHTML += trackItem;
@@ -69,23 +69,36 @@ fetch("https://current-news.p.rapidapi.com/news/entertainment", options)
 	.then((response) => {
 		blogsWrapper.innerHTML = "";
 		const newsItems = response.news;
-		newsItems.forEach((newsItem) => {
+		newsItems.splice(0, 10).forEach((newsItem) => {
 			const {
+				url,
 				title,
 				urlToImage,
 				publishedAt,
 				source: { name: sourceName },
 			} = newsItem;
-			console.log(newsItem);
+
 			const image = `<img src="${urlToImage}"/>`;
 			const blogItem = newsTemplate.content.cloneNode(true);
-			const blogImageWrapper = blogItem.querySelector(".blog-image");
-			blogImageWrapper.innerHTML = image;
-			blogItem.querySelector("[blog-title]").textContent = title;
-			blogItem.querySelector(".blog-details .source").textContent = sourceName;
-			blogItem.querySelector(".blog-details .date").textContent = publishedAt;
 
+			const blogImageWrapper = blogItem.querySelector(".blog-image");
+			const blogItemLink = blogItem.querySelector(".blog-news");
+			const blogItemTitle = blogItem.querySelector("[blog-title]");
+			const blogItemSource = blogItem.querySelector(".blog-details .source");
+			const blogReleaseDate = blogItem.querySelector(".blog-details .date");
+
+			blogImageWrapper.innerHTML = image;
+			blogItemTitle.textContent = title;
+			blogItemLink.href = url;
+			blogItemSource.textContent = `Source: ${sourceName}`;
+			const [date, time] = filterDate(publishedAt);
+			blogReleaseDate.textContent = `Date: ${date} | Time: ${time}`;
 			blogsWrapper.append(blogItem);
 		});
 	})
 	.catch((err) => console.error(err));
+
+function filterDate(date) {
+	const removeZAlphabet = date.slice(0, -1).split("T");
+	return removeZAlphabet;
+}
