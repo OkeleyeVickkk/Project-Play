@@ -1272,16 +1272,24 @@ input:checked + .toggle-bg {
   margin-top: 4rem;
 }
 
+.mt-14 {
+  margin-top: 3.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
 }
 
 .box-border {
@@ -1412,6 +1420,10 @@ input:checked + .toggle-bg {
   height: 2rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -1490,6 +1502,10 @@ input:checked + .toggle-bg {
 
 .w-1\/12 {
   width: 8.333333%;
+}
+
+.w-2\/5 {
+  width: 40%;
 }
 
 .w-64 {
@@ -3613,6 +3629,39 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+/* blog on lyrics page */
+
+.blog-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 0.75rem;
+}
+
+.blog-news .skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
+.blog-news .skeleton-image {
+  height: 4rem;
+  width: 4rem;
+}
+
+.blog-news .skeleton-xs-comp {
+  height: 0.25rem;
+  width: 20%;
+  border-radius: 0.5rem;
+}
+
+.blog-news .skeleton-lg-comp {
+  height: 0.5rem;
+  border-radius: 0.5rem;
+}
+
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -3670,6 +3719,10 @@ input:checked + .toggle-bg {
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .before\:hover\:text-center:hover::before {

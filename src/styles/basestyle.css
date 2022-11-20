@@ -19,16 +19,6 @@
 	box-sizing: border-box;
 }
 
-.loading {
-	animation: loading 1s ease infinite alternate;
-	background-size: 500%;
-}
-@keyframes loading {
-	100% {
-		background-color: hsl(0, 0%, 100%);
-		background-position: left;
-	}
-}
 .tracks-wrapper {
 	counter-reset: track-item;
 }
@@ -38,4 +28,20 @@
 .tracks-wrapper .track-item > span::before {
 	content: counter(track-item);
 	font-size: 1.5rem;
+}
+
+.blog-news .skeleton {
+	background-color: hsl(0, 9%, 90%);
+	top: 0;
+	left: 0;
+	content: "";
+	opacity: 0.72;
+	animation: transit 1.3s infinite alternate;
+}
+
+@keyframes transit {
+	100% {
+		opacity: 0.9;
+		background-color: hsl(0, 9%, 100%);
+	}
 }

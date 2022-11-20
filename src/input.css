@@ -53,3 +53,22 @@
 .has-text {
 	@apply text-white;
 }
+
+/* blog on lyrics page */
+
+.blog-details {
+	@apply flex flex-col items-start gap-y-3;
+}
+
+.blog-news .skeleton {
+	@apply rounded relative bg-gray-400 overflow-hidden;
+}
+.blog-news .skeleton-image {
+	@apply h-16 w-16;
+}
+.blog-news .skeleton-xs-comp {
+	@apply w-1/5 h-1 rounded-lg;
+}
+.blog-news .skeleton-lg-comp {
+	@apply h-2 rounded-lg;
+}
