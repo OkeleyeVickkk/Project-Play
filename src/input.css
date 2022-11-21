@@ -79,3 +79,8 @@
 .blog-news .skeleton-lg-comp {
 	@apply h-2 rounded-lg;
 }
+
+/* artist */
+.artist-content-inner {
+	@apply flex items-center;
+}
