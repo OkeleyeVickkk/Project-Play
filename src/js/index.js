@@ -56,49 +56,76 @@ for (let i = 0; i < 6; i++) {
 	blogsWrapper.append(clonedTemplate);
 }
 
+// const options = {
+// 	method: "GET",
+// 	headers: {
+// 		// "X-RapidAPI-Key": `${API_KEY}`,
+// 		"X-RapidAPI-Host": "current-news.p.rapidapi.com",
+// 	},
+// };
+
+// fetch("https://current-news.p.rapidapi.com/news/entertainment", options)
+// 	.then((response) => response.json())
+// 	.then((response) => {
+// 		blogsWrapper.innerHTML = "";
+// 		const newsItems = response.news;
+// 		newsItems.splice(0, 10).forEach((newsItem) => {
+// 			const {
+// 				url,
+// 				title,
+// 				urlToImage,
+// 				publishedAt,
+// 				source: { name: sourceName },
+// 			} = newsItem;
+// 			const defaultNewsImage = `https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VbimIjk9epElk6OUBCwM5AHaEK%26pid%3DApi&f=1&ipt=97a96898c8ee0dbeabd90b4490cbb834c040dfa2b4d6d706bb49d39c19f22429&ipo=images`;
+// 			const image = `<img src="${urlToImage ?? defaultNewsImage}"/>`;
+// 			const blogItem = newsTemplate.content.cloneNode(true);
+
+// 			const blogImageWrapper = blogItem.querySelector(".blog-image");
+// 			const blogItemLink = blogItem.querySelector(".blog-news");
+// 			const blogItemTitle = blogItem.querySelector("[blog-title]");
+// 			const blogItemSource = blogItem.querySelector(".blog-details .source");
+// 			const blogReleaseDate = blogItem.querySelector(".blog-details .date");
+
+// 			blogImageWrapper.innerHTML = image;
+// 			blogItemTitle.textContent = title;
+// 			blogItemLink.href = url;
+// 			blogItemSource.textContent = `Source: ${sourceName}`;
+// 			const [date] = filterDate(publishedAt);
+// 			blogReleaseDate.textContent = `Date: ${date}`;
+// 			blogsWrapper.append(blogItem);
+// 		});
+// 	})
+// 	.catch((err) => console.error(err));
+
+// function filterDate(date) {
+// 	const removeZAlphabet = date.slice(0, -1).split("T");
+// 	return removeZAlphabet;
+// }
+
+function DisplaySearchResult() {}
+// const options = {
+// 	method: "GET",
+// 	headers: {
+// 		"X-RapidAPI-Key": "6473c3ce7dmsh28c8afd093343dep1d0f1fjsn02e8bc02b53a",
+// 		"X-RapidAPI-Host": "musiclinkssapi.p.rapidapi.com",
+// 	},
+// };
+
+// fetch("https://musiclinkssapi.p.rapidapi.com/apiSearch/track?query=Blow%20my%20mind", options)
+// 	.then((response) => response.json())
+// 	.then((response) => console.log(response))
+// 	.catch((err) => console.error(err));
+
 const options = {
 	method: "GET",
 	headers: {
-		"X-RapidAPI-Key": `${API_KEY}`,
-		"X-RapidAPI-Host": "current-news.p.rapidapi.com",
+		"X-RapidAPI-Key": "6473c3ce7dmsh28c8afd093343dep1d0f1fjsn02e8bc02b53a",
+		"X-RapidAPI-Host": "spotify81.p.rapidapi.com",
 	},
 };
 
-fetch("https://current-news.p.rapidapi.com/news/entertainment", options)
+fetch("https://spotify81.p.rapidapi.com/top_200_tracks", options)
 	.then((response) => response.json())
-	.then((response) => {
-		blogsWrapper.innerHTML = "";
-		const newsItems = response.news;
-		newsItems.splice(0, 10).forEach((newsItem) => {
-			const {
-				url,
-				title,
-				urlToImage,
-				publishedAt,
-				source: { name: sourceName },
-			} = newsItem;
-
-			const image = `<img src="${urlToImage}"/>`;
-			const blogItem = newsTemplate.content.cloneNode(true);
-
-			const blogImageWrapper = blogItem.querySelector(".blog-image");
-			const blogItemLink = blogItem.querySelector(".blog-news");
-			const blogItemTitle = blogItem.querySelector("[blog-title]");
-			const blogItemSource = blogItem.querySelector(".blog-details .source");
-			const blogReleaseDate = blogItem.querySelector(".blog-details .date");
-
-			blogImageWrapper.innerHTML = image;
-			blogItemTitle.textContent = title;
-			blogItemLink.href = url;
-			blogItemSource.textContent = `Source: ${sourceName}`;
-			const [date, time] = filterDate(publishedAt);
-			blogReleaseDate.textContent = `Date: ${date} | Time: ${time}`;
-			blogsWrapper.append(blogItem);
-		});
-	})
+	.then((response) => console.log(response))
 	.catch((err) => console.error(err));
-
-function filterDate(date) {
-	const removeZAlphabet = date.slice(0, -1).split("T");
-	return removeZAlphabet;
-}
