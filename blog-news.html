@@ -231,16 +231,13 @@
 				<!-- offcanvas ends -->
 				<!-- navigation ends -->
 				<div class="col-span-full md:col-span-10 min-h-screen bg-secondarySkin p-3">
-					<nav class="flex items-center justify-between md:hidden px-4">
-						<a href="">
+					<nav class="flex items-center justify-between md:hidden">
+						<a href="./home.html">
 							<img src="./src/images/logo-lg-variant-icon-white.png" class="h-auto w-10" alt="" />
 						</a>
-						<div class="right md:hidden items-center flex">
+						<div class="right md:hidden items-center flex gap-x-1">
 							<!-- Modal toggle -->
-							<button
-								class="block text-white rounded-full hover:bg-opacity-5 hover:bg-gray-300 focus:ring-4 focus:outline-none font-medium text-sm p-3 text-center transition duration-100 ease-linear"
-								type="button"
-								data-modal-toggle="staticModal">
+							<button class="search-btn" type="button" data-modal-toggle="staticModal">
 								<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
 									<path
 										fill="none"
@@ -318,7 +315,7 @@
 													d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
 													clip-rule="evenodd"></path>
 											</svg>
-											<span class="ml-1 text-sm font-medium text-gray-200 md:ml-2 dark:text-gray-400">Artist</span>
+											<span class="ml-1 text-sm font-medium text-gray-200 md:ml-2 dark:text-gray-400">News</span>
 										</div>
 									</li>
 								</ol>
@@ -326,10 +323,7 @@
 						</div>
 						<div class="right md:flex items-center hidden">
 							<!-- Modal toggle -->
-							<button
-								class="block text-white rounded-full hover:bg-opacity-5 hover:bg-gray-300 focus:ring-4 focus:outline-none font-medium text-sm p-3 text-center transition duration-100 ease-linear"
-								type="button"
-								data-modal-toggle="staticModal">
+							<button class="search-btn" type="button" data-modal-toggle="staticModal">
 								<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
 									<path
 										fill="none"
@@ -368,10 +362,7 @@
 								<!-- Modal header -->
 								<div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
 									<h3 class="text-lg text-gray-900 dark:text-white">Enter Search</h3>
-									<button
-										type="button"
-										class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-full transition ease-linear duration-200 text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-										data-modal-toggle="staticModal">
+									<button type="button" class="search-btn" data-modal-toggle="staticModal">
 										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 											<path
 												fill-rule="evenodd"
@@ -427,17 +418,156 @@
 							</div>
 						</div>
 					</div>
-					<div class="artist-content">
-						<div class="artist-content-inner">
-							<div class="artist-image">
-								<img src="./src/images/image.jpg" alt="" />
+					<!-- Main modal ends -->
+					<main>
+						<div class="main-inner">
+							<div class="my-5">
+								<h2 class="page-title">Entertainment News</h2>
+							</div>
+							<div class="news-sections">
+								<section class="first">
+									<div class="grid grid-cols-12 gap-y-8 gap-x-4">
+										<!-- main news -->
+										<div class="main-news col-span-12 md:col-span-8">
+											<div class="image-wrapper">
+												<img
+													src="https://ichef.bbci.co.uk/news/976/cpsprodpb/3555/production/_127735631_workbuilding.png.webp"
+													alt=""
+													class="img-fluid" />
+											</div>
+											<div class="main-news-content news-content">
+												<div class="top flex items-center justify-between">
+													<div class="date">
+														<small class="text-gray-400">Feb 11</small>
+													</div>
+													<div class="author">
+														<small class="text-gray-400"> - Author</small>
+													</div>
+												</div>
+												<div class="middle">
+													<h2 class="news-title">
+														Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, hic?
+													</h2>
+												</div>
+												<div class="bottom">
+													<p class="news-content">
+														Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum facilis qui alias optio
+														sunt sequi, modi ratione laboriosam, sit nam harum. Obcaecati dolorum voluptas itaque
+														excepturi modi sit facilis.
+													</p>
+												</div>
+											</div>
+										</div>
+										<!-- main news end -->
+										<!-- sub news -->
+										<div class="sub-news col-span-12 md:col-span-4">
+											<div class="sub-news-inner">
+												<div>
+													<div class="image-wrapper">
+														<img src="./src/images/woman.jpg" alt="" class="img-fluid" />
+													</div>
+													<div class="sub-news-content news-content">
+														<div class="flex items-center justify-between">
+															<div class="date">
+																<small class="text-white text-xs">Feb 11</small>
+															</div>
+															<div class="author">
+																<small class="text-white text-xs"> - Author</small>
+															</div>
+														</div>
+														<div class="middle">
+															<h2 class="news-title">
+																Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, hic?
+															</h2>
+														</div>
+														<div class="bottom">
+															<p class="news-content">
+																Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum facilis qui alias
+																optio sunt sequi, modi ratione laboriosam, sit nam harum. Obcaecati dolorum voluptas
+																itaque excepturi modi sit facilis.
+															</p>
+														</div>
+													</div>
+												</div>
+												<div>
+													<div class="image-wrapper">
+														<img src="./src/images/woman.jpg" alt="" class="img-fluid" />
+													</div>
+													<div class="sub-news-content news-content">
+														<div class="flex items-center justify-between">
+															<div class="date">
+																<small class="text-white text-xs">Feb 11</small>
+															</div>
+															<div class="author">
+																<small class="text-white text-xs"> - Author</small>
+															</div>
+														</div>
+														<div class="middle">
+															<h2 class="news-title">
+																Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, hic?
+															</h2>
+														</div>
+														<div class="bottom">
+															<p class="news-content">
+																Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum facilis qui alias
+																optio sunt sequi, modi ratione laboriosam, sit nam harum. Obcaecati dolorum voluptas
+																itaque excepturi modi sit facilis.
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- sub news ends -->
+									</div>
+								</section>
+								<section class="second mt-12">
+									<div class="my-5 py-3 border-y border-gray-400">
+										<h2 class="page-title">Other related articles</h2>
+									</div>
+									<div class="articles">
+										<ul class="articles-wrapper">
+											<li class="article-item">
+												<a href="" class="article-link">
+													<div class="article-image-wrapper">
+														<img
+															src="https://media.cnn.com/api/v1/images/stellar/prod/221122121147-07-saudi-arabia-argentina-112222.jpg?c=16x9&q=h_720,w_1280,c_fill"
+															alt=""
+															class="img-fluid" />
+													</div>
+													<div class="article-content-wrapper">
+														<div class="top">
+															<small class="article-author"> - By Author </small>
+														</div>
+														<div class="middle">
+															<h3 class="article-title">
+																Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quam mollitia quasi optio
+																cum perspiciatis.
+															</h3>
+														</div>
+														<div class="bottom">
+															<small class="article-writeup"
+																>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, beatae! Aspernatur
+																saepe suscipit atque eligendi. Laboriosam beatae laborum nisi facilis, reiciendis
+																ipsam excepturi reprehenderit omnis fugiat maiores illo quas quos.</small
+															>
+															<div class="date mt-4">
+																<small class="text-sm text-gray-400"> - Feb 11</small>
+															</div>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</section>
 							</div>
 						</div>
-					</div>
+					</main>
 				</div>
 			</div>
 		</div>
-		<script src="./src/js/artist.js" type="text/javascript"></script>
+		<script src="./src/js/news.js" type="text/javascript"></script>
 		<script src="./node_modules/flowbite/dist/flowbite.js"></script>
 	</body>
 </html>

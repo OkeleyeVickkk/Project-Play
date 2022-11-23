@@ -46,3 +46,6 @@
 [modal-backdrop] {
 	backdrop-filter: blur(1px);
 }
+
+.img-fluid {
+}
