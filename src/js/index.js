@@ -1,4 +1,4 @@
-// SHAZAM API -> 16 November, 2022  {subscribed and started using}
+// ? SHAZAM API -> 22 December, 2022  {subscribed and started using}
 
 // clone the track item
 const container = document.querySelectorAll(".tracks-wrapper")[1];
@@ -8,26 +8,27 @@ const tracksWrapper = document.querySelector(".tracks-wrapper#by-country");
 const API_KEY = "6473c3ce7dmsh28c8afd093343dep1d0f1fjsn02e8bc02b53a";
 
 //fetch latest trends
-function callCountryTracks() {
-	const URL = "https://shazam-song-recognizer.p.rapidapi.com/top_country_tracks?country_code=NG&limit=10&start_from=0";
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": `${API_KEY}`,
-			"X-RapidAPI-Host": "shazam-song-recognizer.p.rapidapi.com",
-		},
-	};
+// function callCountryTracks() {
+const URL = "https://shazam-song-recognizer.p.rapidapi.com/top_country_tracks?country_code=NG&limit=10&start_from=0";
+const options = {
+	method: "GET",
+	headers: {
+		"X-RapidAPI-Key": `${API_KEY}`,
+		"X-RapidAPI-Host": "shazam-song-recognizer.p.rapidapi.com",
+	},
+};
 
-	// fetch latest songs in nigeria
-	fetch(URL, options)
-		.then((response) => response.json())
-		.then((response) => {
-			tracksWrapper.innerHTML = "";
-			const responseResults = response.result.tracks;
-			responseResults.forEach((responseResult) => {
-				const image = responseResult?.images?.coverarthq ?? responseResult.hub.image;
-				const { subtitle, title } = responseResult;
-				let trackItem = `<li class="track-item">
+// fetch latest songs in nigeria
+fetch(URL, options)
+	.then((response) => response.json())
+	.then((response) => {
+		console.log(response);
+		tracksWrapper.innerHTML = "";
+		const responseResults = response.result.tracks;
+		responseResults.forEach((responseResult) => {
+			const image = responseResult?.images?.coverarthq ?? responseResult?.hub?.image;
+			const { subtitle, title } = responseResult;
+			let trackItem = `<li class="track-item">
 										<span class="text-gray-400"></span>
 										<div class="_xTcRkP3L">
 											<img src="${image}" class="" alt="" />
@@ -41,25 +42,28 @@ function callCountryTracks() {
 											</div>
 										</div>
 									</li>	`;
-				tracksWrapper.innerHTML += trackItem;
-			});
-		})
-		.catch((err) => console.error(err));
-}
-// current news api -> 19th November, 2022
-const blogsWrapper = document.querySelector(".blogs-wrapper");
-const newsTemplate = document.querySelector("#news-template");
-let clonedTemplate;
+			tracksWrapper.innerHTML += trackItem;
+		});
+	})
+	.catch((err) => console.error(err));
+// }
 
-for (let i = 0; i < 6; i++) {
-	clonedTemplate = newsTemplate.content.cloneNode(true);
-	blogsWrapper.append(clonedTemplate);
-}
+// callCountryTracks();
+
+// ? current news api -> 22nd December, 2022
+// const blogsWrapper = document.querySelector(".blogs-wrapper");
+// const newsTemplate = document.querySelector("#news-template");
+// let clonedTemplate;
+
+// for (let i = 0; i < 6; i++) {
+// 	clonedTemplate = newsTemplate.content.cloneNode(true);
+// 	blogsWrapper.append(clonedTemplate);
+// }
 
 // const options = {
 // 	method: "GET",
 // 	headers: {
-// 		// "X-RapidAPI-Key": `${API_KEY}`,
+// 		"X-RapidAPI-Key": `${API_KEY}`,
 // 		"X-RapidAPI-Host": "current-news.p.rapidapi.com",
 // 	},
 // };
@@ -69,6 +73,7 @@ for (let i = 0; i < 6; i++) {
 // 	.then((response) => {
 // 		blogsWrapper.innerHTML = "";
 // 		const newsItems = response.news;
+// 		console.log(newsItems);
 // 		newsItems.splice(0, 10).forEach((newsItem) => {
 // 			const {
 // 				url,
