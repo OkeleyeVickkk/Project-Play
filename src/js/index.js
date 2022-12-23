@@ -13,7 +13,7 @@ const URL = "https://shazam-song-recognizer.p.rapidapi.com/top_country_tracks?co
 const options = {
 	method: "GET",
 	headers: {
-		"X-RapidAPI-Key": `${API_KEY}`,
+		// "X-RapidAPI-Key": `${API_KEY}`,
 		"X-RapidAPI-Host": "shazam-song-recognizer.p.rapidapi.com",
 	},
 };

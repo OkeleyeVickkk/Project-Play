@@ -3,60 +3,135 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Music2k - Home</title>
+		<title>Music2k - Dashboard</title>
+		<link rel="shortcut icon" href="./src/images/headphones-sound-wave-48-filled.svg" type="image/x-icon" />
+		<!-- add og -->
 		<meta name="description" content="" />
+		<link rel="shortcut icon" href="" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="./dist/output.css" />
 		<link rel="stylesheet" href="./src/styles/basestyle.css" />
-		<link rel="stylesheet" href="./src/styles/nav.css" />
+		<!-- <link rel="stylesheet" href="./src/styles/nav.css" /> -->
 	</head>
 	<body>
 		<div class="body-inner min-h-screen">
-			<header class="p-5 shadow md:px-10">
-				<nav class="flex justify-between items-center">
-					<a href=""><h2 class="logo text-2xl">Music2k</h2></a>
-					<ul class="nav-links hidden lg:inline-flex">
-						<li class="inline-block mr-5"><a href="" class="nav-item">Home</a></li>
-						<li class="inline-block mr-5"><a href="./dashboard.html" class="nav-item">Songs</a></li>
-						<li class="inline-block mr-5"><a href="" class="nav-item">Podcasts</a></li>
-						<li class="inline-block mr-5"><a href="" class="nav-item">Lyrics</a></li>
-						<li class="inline-block mr-5"><a href="" class="nav-item">Charts</a></li>
-					</ul>
-					<!-- drawer init and show -->
-					<div class="text-center flex lg:hidden">
-						<button
-							class="focus:outline-none"
-							type="button"
-							data-drawer-target="drawer-navigation"
-							data-drawer-show="drawer-navigation"
-							aria-controls="drawer-navigation">
-							<svg xmlns="http://www.w3.org/2000/svg" class="w-9" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-								<path
-									fill="none"
-									stroke="currentColor"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M4 8h16M4 16h16" />
-							</svg>
-						</button>
+			<div class="wrapper grid grid-cols-12">
+				<!-- navigation starts -->
+				<header class="navigation hidden md:block col-span-2 min-h-screen bg-primarySkin">
+					<!-- lg nav starts -->
+					<div class="hidden md:flex p-4 fixed flex-col gap-6 bg-primarySkin h-full">
+						<div class="logo text-center">
+							<a href="./index.html" class="flex items-center">
+								<img class="max-w-full w-36" src="./src/images/logo-lg-variant-3.png" alt="" />
+							</a>
+						</div>
+						<div class="home flex flex-col mt-5">
+							<div class="title p-2 px-4">
+								<small><h6 class="font-bold text-white text-xs">// Menu</h6></small>
+							</div>
+							<ul class="nav-links-wrapper">
+								<li>
+									<a href="./index.html" class="nav-link">
+										<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+											<path
+												fill="currentColor"
+												fill-rule="evenodd"
+												d="m8.36 1.37l6.36 5.8l-.71.71L13 6.964v6.526l-.5.5h-3l-.5-.5v-3.5H7v3.5l-.5.5h-3l-.5-.5V6.972L2 7.88l-.71-.71l6.35-5.8h.72zM4 6.063v6.927h2v-3.5l.5-.5h3l.5.5v3.5h2V6.057L8 2.43L4 6.063z"
+												clip-rule="evenodd" /></svg
+										>Home
+									</a>
+								</li>
+								<li>
+									<a href="./lyrics-search.html" class="nav-link">
+										<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-miterlimit="10"
+												stroke-width="32"
+												d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-miterlimit="10"
+												stroke-width="32"
+												d="M338.29 338.29L448 448" />
+										</svg>
+										Search
+									</a>
+								</li>
+								<li>
+									<a href="./blog-news.html" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 28 28">
+											<path
+												fill="currentColor"
+												d="M22.75 24H5.25a3.25 3.25 0 0 1-3.245-3.066L2 20.75V6.25a2.25 2.25 0 0 1 2.096-2.245L4.25 4h15.5a2.25 2.25 0 0 1 2.245 2.096L22 6.25V7h1.75a2.25 2.25 0 0 1 2.245 2.096L26 9.25v11.5a3.25 3.25 0 0 1-3.066 3.245L22.75 24H5.25h17.5Zm-17.5-1.5h17.5a1.75 1.75 0 0 0 1.744-1.607l.006-.143V9.25a.75.75 0 0 0-.648-.743L23.75 8.5H22v10.75a.75.75 0 0 1-.648.743L21.25 20a.75.75 0 0 1-.743-.648l-.007-.102v-13a.75.75 0 0 0-.648-.743L19.75 5.5H4.25a.75.75 0 0 0-.743.648L3.5 6.25v14.5a1.75 1.75 0 0 0 1.606 1.744l.144.006h17.5h-17.5Zm4.996-9.496c.69 0 1.25.56 1.25 1.25v3.496c0 .69-.56 1.25-1.25 1.25H6.75c-.69 0-1.25-.56-1.25-1.25v-3.496c0-.69.56-1.25 1.25-1.25h3.496ZM14.25 17.5h3.496a.75.75 0 0 1 .102 1.493l-.102.007H14.25a.75.75 0 0 1-.102-1.493l.102-.007h3.496h-3.496Zm-4.253-2.996H7V17.5h2.997v-2.996Zm4.253-1.5h3.496a.75.75 0 0 1 .102 1.493l-.102.007H14.25a.75.75 0 0 1-.102-1.494l.102-.006h3.496h-3.496ZM6.246 8.497h11.5a.75.75 0 0 1 .102 1.493l-.102.007h-11.5a.75.75 0 0 1-.101-1.493l.101-.007h11.5h-11.5Z" />
+										</svg>
+										News
+									</a>
+								</li>
+								<li>
+									<a href="./playMusic.html" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+											<path
+												fill="currentColor"
+												d="M14.702 2.226A1 1 0 0 1 16 3.18v6.027a5.479 5.479 0 0 0-1-.184V6.18L8 8.368V15.5a2.5 2.5 0 1 1-1-2V5.368a1 1 0 0 1 .702-.955l7-2.187ZM8 7.32l7-2.187V3.18L8 5.368V7.32ZM5.5 14a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm13.5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.265-.436l-2.994-1.65a.5.5 0 0 0-.741.438v3.3a.5.5 0 0 0 .741.438l2.994-1.65a.5.5 0 0 0 0-.876Z" />
+										</svg>
+										Play Music
+									</a>
+								</li>
+								<li>
+									<a href="./artist.html" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+										</svg>
+										Artist
+									</a>
+								</li>
+								<li>
+									<a href="./albums.html" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+											<path
+												fill="currentColor"
+												d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
+										</svg>
+										Albums
+									</a>
+								</li>
+								<li>
+									<a href="./top-tracks.html" class="nav-link">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+											<path
+												fill="currentColor"
+												d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.7l50.3-50.4a8.1 8.1 0 0 1 11.4 0l26.3 26.4L188.7 72H168a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V83.3l-66.3 66.4a8.1 8.1 0 0 1-11.4 0L96 123.3l-56 56V200h184a8 8 0 0 1 8 8Z" />
+										</svg>
+										Top Tracks
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<!-- drawer component -->
-				</nav>
-
-				<!-- mobile offcanvas start-->
+					<!-- lg nav ends -->
+				</header>
+				<!-- offcanvas starts -->
 				<div
 					id="drawer-navigation"
-					class="fixed z-40 h-screen p-4 overflow-y-auto bg-white w-10/12 sm:w-7/12"
+					class="fixed h-full z-40 min-h-screen p-4 overflow-y-auto bg-primarySkin w-80 dark:bg-gray-800"
 					tabindex="-1"
 					aria-labelledby="drawer-navigation-label">
-					<h2 id="drawer-navigation-label" class="text-2xl font-semibold text-gray-800 dark:text-gray-400">Music2k</h2>
+					<h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
 					<button
 						type="button"
 						data-drawer-dismiss="drawer-navigation"
 						aria-controls="drawer-navigation"
-						class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
-						<svg aria-hidden="true" class="w-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+						<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 							<path
 								fill-rule="evenodd"
 								d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -65,119 +140,338 @@
 						<span class="sr-only">Close menu</span>
 					</button>
 					<div class="py-4 overflow-y-auto">
-						<ul class="space-y-2">
+						<ul class="nav-links-wrapper">
 							<li>
-								<a
-									href="#"
-									class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="1em"
-										height="1em"
-										preserveAspectRatio="xMidYMid meet"
-										viewBox="0 0 32 32">
+								<a href="./index.html" class="nav-link">
+									<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
 										<path
 											fill="currentColor"
-											d="M16.612 2.214a1.01 1.01 0 0 0-1.242 0L1 13.419l1.243 1.572L4 13.621V26a2.004 2.004 0 0 0 2 2h20a2.004 2.004 0 0 0 2-2V13.63L29.757 15L31 13.428ZM18 26h-4v-8h4Zm2 0v-8a2.002 2.002 0 0 0-2-2h-4a2.002 2.002 0 0 0-2 2v8H6V12.062l10-7.79l10 7.8V26Z" />
-									</svg>
-									<span class="ml-3">Home</span>
+											fill-rule="evenodd"
+											d="m8.36 1.37l6.36 5.8l-.71.71L13 6.964v6.526l-.5.5h-3l-.5-.5v-3.5H7v3.5l-.5.5h-3l-.5-.5V6.972L2 7.88l-.71-.71l6.35-5.8h.72zM4 6.063v6.927h2v-3.5l.5-.5h3l.5.5v3.5h2V6.057L8 2.43L4 6.063z"
+											clip-rule="evenodd" /></svg
+									>Home
 								</a>
 							</li>
 							<li>
-								<a
-									href="#"
-									class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="1em"
-										height="1em"
-										preserveAspectRatio="xMidYMid meet"
-										viewBox="0 0 32 32">
+								<a href="./lyrics-search.html" class="nav-link">
+									<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
 										<path
-											fill="currentColor"
-											d="M16.612 2.214a1.01 1.01 0 0 0-1.242 0L1 13.419l1.243 1.572L4 13.621V26a2.004 2.004 0 0 0 2 2h20a2.004 2.004 0 0 0 2-2V13.63L29.757 15L31 13.428ZM18 26h-4v-8h4Zm2 0v-8a2.002 2.002 0 0 0-2-2h-4a2.002 2.002 0 0 0-2 2v8H6V12.062l10-7.79l10 7.8V26Z" />
+											fill="none"
+											stroke="currentColor"
+											stroke-miterlimit="10"
+											stroke-width="32"
+											d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
+										<path
+											fill="none"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-miterlimit="10"
+											stroke-width="32"
+											d="M338.29 338.29L448 448" />
 									</svg>
-									<span class="ml-3">Songs</span>
+									Search
 								</a>
 							</li>
-
 							<li>
-								<a
-									href="#"
-									class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="1em"
-										height="1em"
-										preserveAspectRatio="xMidYMid meet"
-										viewBox="0 0 32 32">
+								<a href="./blog-news.html" class="nav-link">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 28 28">
 										<path
 											fill="currentColor"
-											d="M25 4H10a2.002 2.002 0 0 0-2 2v14.556A3.955 3.955 0 0 0 6 20a4 4 0 1 0 4 4V12h15v8.556A3.954 3.954 0 0 0 23 20a4 4 0 1 0 4 4V6a2.002 2.002 0 0 0-2-2ZM6 26a2 2 0 1 1 2-2a2.002 2.002 0 0 1-2 2Zm17 0a2 2 0 1 1 2-2a2.003 2.003 0 0 1-2 2ZM10 6h15v4H10Z" />
+											d="M22.75 24H5.25a3.25 3.25 0 0 1-3.245-3.066L2 20.75V6.25a2.25 2.25 0 0 1 2.096-2.245L4.25 4h15.5a2.25 2.25 0 0 1 2.245 2.096L22 6.25V7h1.75a2.25 2.25 0 0 1 2.245 2.096L26 9.25v11.5a3.25 3.25 0 0 1-3.066 3.245L22.75 24H5.25h17.5Zm-17.5-1.5h17.5a1.75 1.75 0 0 0 1.744-1.607l.006-.143V9.25a.75.75 0 0 0-.648-.743L23.75 8.5H22v10.75a.75.75 0 0 1-.648.743L21.25 20a.75.75 0 0 1-.743-.648l-.007-.102v-13a.75.75 0 0 0-.648-.743L19.75 5.5H4.25a.75.75 0 0 0-.743.648L3.5 6.25v14.5a1.75 1.75 0 0 0 1.606 1.744l.144.006h17.5h-17.5Zm4.996-9.496c.69 0 1.25.56 1.25 1.25v3.496c0 .69-.56 1.25-1.25 1.25H6.75c-.69 0-1.25-.56-1.25-1.25v-3.496c0-.69.56-1.25 1.25-1.25h3.496ZM14.25 17.5h3.496a.75.75 0 0 1 .102 1.493l-.102.007H14.25a.75.75 0 0 1-.102-1.493l.102-.007h3.496h-3.496Zm-4.253-2.996H7V17.5h2.997v-2.996Zm4.253-1.5h3.496a.75.75 0 0 1 .102 1.493l-.102.007H14.25a.75.75 0 0 1-.102-1.494l.102-.006h3.496h-3.496ZM6.246 8.497h11.5a.75.75 0 0 1 .102 1.493l-.102.007h-11.5a.75.75 0 0 1-.101-1.493l.101-.007h11.5h-11.5Z" />
 									</svg>
-									<span class="ml-3">Songs</span>
+									News
 								</a>
 							</li>
-
 							<li>
-								<a
-									href="#"
-									class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="1em"
-										height="1em"
-										preserveAspectRatio="xMidYMid meet"
-										viewBox="0 0 20 20">
+								<a href="./playMusic.html" class="nav-link">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
 										<path
 											fill="currentColor"
-											d="M2.5 5a.5.5 0 0 0 0 1H8a.5.5 0 0 0 0-1H2.5Zm3 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5ZM4 11.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1h-10a.5.5 0 0 1-.5-.5ZM2.5 14a.5.5 0 0 0 0 1H11a.5.5 0 0 0 0-1H2.5Zm10-5.5A.5.5 0 0 1 13 8h3.5a.5.5 0 0 1 0 1H13a.5.5 0 0 1-.5-.5Zm-2-3.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7Z" />
+											d="M14.702 2.226A1 1 0 0 1 16 3.18v6.027a5.479 5.479 0 0 0-1-.184V6.18L8 8.368V15.5a2.5 2.5 0 1 1-1-2V5.368a1 1 0 0 1 .702-.955l7-2.187ZM8 7.32l7-2.187V3.18L8 5.368V7.32ZM5.5 14a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm13.5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.265-.436l-2.994-1.65a.5.5 0 0 0-.741.438v3.3a.5.5 0 0 0 .741.438l2.994-1.65a.5.5 0 0 0 0-.876Z" />
 									</svg>
-									<span class="ml-3">Lyrics</span>
+									Play Music
 								</a>
 							</li>
-
 							<li>
-								<a
-									href="#"
-									class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="1em"
-										height="1em"
-										preserveAspectRatio="xMidYMid meet"
-										viewBox="0 0 32 32">
+								<a href="./artist.html" class="nav-link">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
+										<path
+											fill="none"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+									</svg>
+									Artist
+								</a>
+							</li>
+							<li>
+								<a href="./albums.html" class="nav-link">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
 										<path
 											fill="currentColor"
-											d="M16.612 2.214a1.01 1.01 0 0 0-1.242 0L1 13.419l1.243 1.572L4 13.621V26a2.004 2.004 0 0 0 2 2h20a2.004 2.004 0 0 0 2-2V13.63L29.757 15L31 13.428ZM18 26h-4v-8h4Zm2 0v-8a2.002 2.002 0 0 0-2-2h-4a2.002 2.002 0 0 0-2 2v8H6V12.062l10-7.79l10 7.8V26Z" />
+											d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
 									</svg>
-									<span class="ml-3">Chart</span>
+									Albums
+								</a>
+							</li>
+							<li>
+								<a href="./top-tracks.html" class="nav-link">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
+										<path
+											fill="currentColor"
+											d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.7l50.3-50.4a8.1 8.1 0 0 1 11.4 0l26.3 26.4L188.7 72H168a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V83.3l-66.3 66.4a8.1 8.1 0 0 1-11.4 0L96 123.3l-56 56V200h184a8 8 0 0 1 8 8Z" />
+									</svg>
+									Top Tracks
 								</a>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<!-- mobile offcanvas end-->
-			</header>
+				<!-- offcanvas ends -->
+				<!-- navigation ends --
+				<!-- middle -->
+				<div class="col-span-7 min-h-screen bg-secondarySkin">
+					<div class="section-wrapper p-4">
+						<section class="trending-songs">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quae cupiditate minima illo reiciendis, nobis iste in,
+							sapiente odio vel corrupti saepe dignissimos! Aliquid voluptates animi culpa repellat accusamus totam?
+						</section>
+						<section class="recently-played rounded-md bg-slate-700 p-4">
+							<div class="title font-extrabold text-white">
+								<h4>Recently played</h4>
+							</div>
+							<div class="recent-tracks">
+								<ul class="tracks-wrapper mt-8">
+									<li class="each-track w-full">
+										<div class="track-wrapper-left flex items-center gap-x-3">
+											<div class="track-cover-image h-14 w-14">
+												<img src="./src/images/image.jpg" alt="" class="max-w-full h-auto align-middle rounded-xl" />
+											</div>
+											<div class="track-info text-white flex flex-col gap-y-1 justify-center items-start">
+												<div class="track-artist text-sm">
+													<h4>Johnny Drille Ft Cavemen</h4>
+												</div>
+												<div class="track-name text-sm text-slate-400"><h5>Home</h5></div>
+											</div>
+										</div>
+										<div class="track-wrapper-right flex items-center gap-x-5 text-white">
+											<div class="track-duration text-xs">
+												<h4>4:03</h4>
+											</div>
+											<button class="play-track-btn p-2 rounded-full bg-white">
+												<svg
+													class="text-[#336699]"
+													xmlns="http://www.w3.org/2000/svg"
+													width="1.2rem"
+													height="1.2rem"
+													preserveAspectRatio="xMidYMid meet"
+													viewBox="0 0 24 24">
+													<path
+														fill="currentColor"
+														d="M5 5.274c0-1.707 1.826-2.792 3.325-1.977l12.362 6.726c1.566.853 1.566 3.101 0 3.953L8.325 20.702C6.826 21.518 5 20.432 5 18.726V5.274Z" />
+												</svg>
+											</button>
+											<button
+												id="dropdownMenuIconHorizontalButton"
+												data-dropdown-toggle="dropdownDotsHorizontal"
+												class=""
+												type="button">
+												<svg
+													class="transform rotate-90 w-4 h-4"
+													aria-hidden="true"
+													fill="currentColor"
+													viewBox="0 0 20 20"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
+												</svg>
+											</button>
 
-			<main>
-				<div class="main-inner py-5 px-4">
-					<section class="grid gap-8 grid-cols-5">
-						<div class="text-content col-span-2">
-							<div class="flex flex-row">
-								<div class="content-title"></div>
-								<div class="content-subtitle">
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil fugit odio impedit sint laudantium iste,
-										distinctio facere architecto at deserunt.
-									</p>
+											<!-- Dropdown menu -->
+											<div
+												id="dropdownDotsHorizontal"
+												class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+												<ul
+													class="py-1 text-sm text-gray-700 dark:text-gray-200"
+													aria-labelledby="dropdownMenuIconHorizontalButton">
+													<li>
+														<a
+															href="#"
+															role="button"
+															class="block py-2 px-4 text-xs hover:bg-gray-100 transition duration-150 ease-in-out dark:hover:bg-gray-600 dark:hover:text-white"
+															>Earnings</a
+														>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li class="each-track w-full">
+										<div class="track-wrapper-left flex items-center gap-x-3">
+											<div class="track-cover-image h-14 w-14">
+												<img src="./src/images/image.jpg" alt="" class="max-w-full h-auto align-middle rounded-xl" />
+											</div>
+											<div class="track-info text-white flex flex-col gap-y-1 justify-center items-start">
+												<div class="track-artist text-sm">
+													<h4>Johnny Drille Ft Cavemen</h4>
+												</div>
+												<div class="track-name text-sm text-slate-400"><h5>Home</h5></div>
+											</div>
+										</div>
+										<div class="track-wrapper-right flex items-center gap-x-5 text-white">
+											<div class="track-duration text-xs">
+												<h4>4:03</h4>
+											</div>
+											<button class="play-track-btn p-2 rounded-full bg-white">
+												<svg
+													class="text-[#336699]"
+													xmlns="http://www.w3.org/2000/svg"
+													width="1.2rem"
+													height="1.2rem"
+													preserveAspectRatio="xMidYMid meet"
+													viewBox="0 0 24 24">
+													<path
+														fill="currentColor"
+														d="M5 5.274c0-1.707 1.826-2.792 3.325-1.977l12.362 6.726c1.566.853 1.566 3.101 0 3.953L8.325 20.702C6.826 21.518 5 20.432 5 18.726V5.274Z" />
+												</svg>
+											</button>
+											<button
+												id="dropdownMenuIconHorizontalButton"
+												data-dropdown-toggle="dropdownDotsHorizontal"
+												class=""
+												type="button">
+												<svg
+													class="transform rotate-90 w-4 h-4"
+													aria-hidden="true"
+													fill="currentColor"
+													viewBox="0 0 20 20"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
+												</svg>
+											</button>
+
+											<!-- Dropdown menu -->
+											<div
+												id="dropdownDotsHorizontal"
+												class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+												<ul
+													class="py-1 text-sm text-gray-700 dark:text-gray-200"
+													aria-labelledby="dropdownMenuIconHorizontalButton">
+													<li>
+														<a
+															href="#"
+															role="button"
+															class="block py-2 px-4 text-xs hover:bg-gray-100 transition duration-150 ease-in-out dark:hover:bg-gray-600 dark:hover:text-white"
+															>Earnings</a
+														>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</section>
+					</div>
+				</div>
+				<!-- middle ends -->
+				<div class="content col-span-3 min-h-screen bg-primarySkin">
+					<div class="wrapper p-5">
+						<div class="inner-wrapper">
+							<div class="title text-center text-white text-base font-bold">Now Playing</div>
+							<div class="song-info flex flex-col gap-y-2 items-center">
+								<div class="song-cover-photo overflow-hidden rounded-xl w-3/4 mx-auto">
+									<img src="./src/images/image.jpg" alt="" />
+								</div>
+								<div class="song-title mt-3">
+									<h3 class="text-lg font-bold text-white">Wrecked</h3>
+								</div>
+								<div class="song-artist">
+									<h5 class="text-sm text-gray-400">Imagine Dragon</h5>
 								</div>
 							</div>
+							<div class="time-tracker">
+								<div class="track relative bg-slate-500 w-full h-0.5 rounded-full">
+									<div class="track-time-counter absolute top-0 left-0 w-1/2 bg-white h-full"></div>
+								</div>
+							</div>
+							<div class="track-controls flex items-center justify-center gap-x-4">
+								<button
+									id="repeat"
+									class="hover:bg-slate-300 p-2 rounded-full hover:text-[#23263D] transition ease-linear duration-200 text-white">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1.5rem"
+										height="1.5rem"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 256 256">
+										<path
+											fill="currentColor"
+											d="M24 128a72.1 72.1 0 0 1 72-72h108.7l-10.4-10.3a8.1 8.1 0 0 1 11.4-11.4l24 24a8.1 8.1 0 0 1 0 11.4l-24 24a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4L204.7 72H96a56 56 0 0 0-56 56a8 8 0 0 1-16 0Zm200-8a8 8 0 0 0-8 8a56 56 0 0 1-56 56H51.3l10.4-10.3a8.1 8.1 0 0 0-11.4-11.4l-24 24a8.1 8.1 0 0 0 0 11.4l24 24a8.2 8.2 0 0 0 11.4 0a8.1 8.1 0 0 0 0-11.4L51.3 200H160a72.1 72.1 0 0 0 72-72a8 8 0 0 0-8-8Zm-92 40a8 8 0 0 0 8-8v-48a7.9 7.9 0 0 0-3.8-6.8a8 8 0 0 0-7.8-.4l-16 8a8.2 8.2 0 0 0-3.6 10.8a8.1 8.1 0 0 0 10.8 3.5l4.4-2.2V152a8 8 0 0 0 8 8Z" />
+									</svg>
+								</button>
+								<button
+									id="prev"
+									class="hover:bg-slate-300 p-2 rounded-full hover:text-[#23263D] transition ease-linear duration-200 text-white">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1.5rem"
+										height="1.5rem"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M6.5 18q-.425 0-.713-.288Q5.5 17.425 5.5 17V7q0-.425.287-.713Q6.075 6 6.5 6t.713.287Q7.5 6.575 7.5 7v10q0 .425-.287.712Q6.925 18 6.5 18Zm10.45-1.025l-6.2-4.15q-.45-.3-.45-.825q0-.525.45-.825l6.2-4.15q.5-.325 1.025-.038q.525.288.525.888v8.25q0 .6-.525.9q-.525.3-1.025-.05Z" />
+									</svg>
+								</button>
+								<button id="play-pause" class="bg-white rounded-xl p-3 hover:bg-slate-200 transition duration-150 ease-linear">
+									<svg
+										class="text-[#23263D]"
+										xmlns="http://www.w3.org/2000/svg"
+										width="1.5rem"
+										height="1.5rem"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M5 5.274c0-1.707 1.826-2.792 3.325-1.977l12.362 6.726c1.566.853 1.566 3.101 0 3.953L8.325 20.702C6.826 21.518 5 20.432 5 18.726V5.274Z" />
+									</svg>
+								</button>
+								<button
+									id="next"
+									class="hover:bg-slate-300 p-2 hover:text-[#23263D] rounded-full transition ease-linear duration-200 text-white">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1.5rem"
+										height="1.5rem"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M17.5 18q-.425 0-.712-.288q-.288-.287-.288-.712V7q0-.425.288-.713Q17.075 6 17.5 6t.712.287q.288.288.288.713v10q0 .425-.288.712q-.287.288-.712.288ZM7.05 16.975q-.5.35-1.025.05q-.525-.3-.525-.9v-8.25q0-.6.525-.888q.525-.287 1.025.038l6.2 4.15q.45.3.45.825q0 .525-.45.825Z" />
+									</svg>
+								</button>
+								<button
+									id="stop"
+									class="hover:bg-slate-300 p-2 hover:text-[#23263D] rounded-full transition ease-linear duration-200 text-white">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="1.5rem"
+										height="1.5rem"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M8 18q-.825 0-1.412-.587Q6 16.825 6 16V8q0-.825.588-1.412Q7.175 6 8 6h8q.825 0 1.413.588Q18 7.175 18 8v8q0 .825-.587 1.413Q16.825 18 16 18Z" />
+									</svg>
+								</button>
+							</div>
 						</div>
-						<div class="image-section col-span-3"></div>
-					</section>
+					</div>
 				</div>
-			</main>
+			</div>
 		</div>
 		<script src="./src/js/index.js" type="text/javascript"></script>
 		<script src="./node_modules/flowbite/dist/flowbite.js"></script>

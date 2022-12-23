@@ -27,7 +27,7 @@
 }
 .tracks-wrapper .track-item > span::before {
 	content: counter(track-item);
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 .blog-news .skeleton {
@@ -45,7 +45,4 @@
 
 [modal-backdrop] {
 	backdrop-filter: blur(1px);
-}
-
-.img-fluid {
 }
