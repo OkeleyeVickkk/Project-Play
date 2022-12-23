@@ -8,27 +8,27 @@ const tracksWrapper = document.querySelector(".tracks-wrapper#by-country");
 const API_KEY = "6473c3ce7dmsh28c8afd093343dep1d0f1fjsn02e8bc02b53a";
 
 //fetch latest trends
-// function callCountryTracks() {
-const URL = "https://shazam-song-recognizer.p.rapidapi.com/top_country_tracks?country_code=NG&limit=10&start_from=0";
-const options = {
-	method: "GET",
-	headers: {
-		// "X-RapidAPI-Key": `${API_KEY}`,
-		"X-RapidAPI-Host": "shazam-song-recognizer.p.rapidapi.com",
-	},
-};
+function callCountryTracks() {
+	const URL = "https://shazam-song-recognizer.p.rapidapi.com/top_country_tracks?country_code=NG&limit=10&start_from=0";
+	const options = {
+		method: "GET",
+		headers: {
+			// "X-RapidAPI-Key": `${API_KEY}`,
+			"X-RapidAPI-Host": "shazam-song-recognizer.p.rapidapi.com",
+		},
+	};
 
-// fetch latest songs in nigeria
-fetch(URL, options)
-	.then((response) => response.json())
-	.then((response) => {
-		console.log(response);
-		tracksWrapper.innerHTML = "";
-		const responseResults = response.result.tracks;
-		responseResults.forEach((responseResult) => {
-			const image = responseResult?.images?.coverarthq ?? responseResult?.hub?.image;
-			const { subtitle, title } = responseResult;
-			let trackItem = `<li class="track-item">
+	// fetch latest songs in nigeria
+	fetch(URL, options)
+		.then((response) => response.json())
+		.then((response) => {
+			console.log(response);
+			tracksWrapper.innerHTML = "";
+			const responseResults = response.result.tracks;
+			responseResults.forEach((responseResult) => {
+				const image = responseResult?.images?.coverarthq ?? responseResult?.hub?.image;
+				const { subtitle, title } = responseResult;
+				let trackItem = `<li class="track-item">
 										<span class="text-gray-400"></span>
 										<div class="_xTcRkP3L">
 											<img src="${image}" class="" alt="" />
@@ -42,23 +42,23 @@ fetch(URL, options)
 											</div>
 										</div>
 									</li>	`;
-			tracksWrapper.innerHTML += trackItem;
-		});
-	})
-	.catch((err) => console.error(err));
-// }
+				tracksWrapper.innerHTML += trackItem;
+			});
+		})
+		.catch((err) => console.error(err));
+}
 
 // callCountryTracks();
 
 // ? current news api -> 22nd December, 2022
-// const blogsWrapper = document.querySelector(".blogs-wrapper");
-// const newsTemplate = document.querySelector("#news-template");
-// let clonedTemplate;
+const blogsWrapper = document.querySelector(".blogs-wrapper");
+const newsTemplate = document.querySelector("#news-template");
+let clonedTemplate;
 
-// for (let i = 0; i < 6; i++) {
-// 	clonedTemplate = newsTemplate.content.cloneNode(true);
-// 	blogsWrapper.append(clonedTemplate);
-// }
+for (let i = 0; i < 6; i++) {
+	clonedTemplate = newsTemplate.content.cloneNode(true);
+	blogsWrapper.append(clonedTemplate);
+}
 
 // const options = {
 // 	method: "GET",
@@ -73,7 +73,6 @@ fetch(URL, options)
 // 	.then((response) => {
 // 		blogsWrapper.innerHTML = "";
 // 		const newsItems = response.news;
-// 		console.log(newsItems);
 // 		newsItems.splice(0, 10).forEach((newsItem) => {
 // 			const {
 // 				url,
@@ -87,7 +86,7 @@ fetch(URL, options)
 // 			const blogItem = newsTemplate.content.cloneNode(true);
 
 // 			const blogImageWrapper = blogItem.querySelector(".blog-image");
-// 			const blogItemLink = blogItem.querySelector(".blog-news");
+// 			const blogItemLink = blognItem.querySelector(".blog-news");
 // 			const blogItemTitle = blogItem.querySelector("[blog-title]");
 // 			const blogItemSource = blogItem.querySelector(".blog-details .source");
 // 			const blogReleaseDate = blogItem.querySelector(".blog-details .date");
@@ -121,3 +120,29 @@ function DisplaySearchResult() {}
 // 	.then((response) => response.json())
 // 	.then((response) => console.log(response))
 // 	.catch((err) => console.error(err));
+
+// ? Display Search results
+
+const searchBar = document.querySelector(".search-bar-control");
+searchBar.addEventListener("submit", function (e) {
+	e.preventDefault();
+	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
+	const searchString = inputValue.split("by");
+	const songTitle = searchString[0];
+	const songArtists = searchString[1].split("ft")[0];
+	const options = {
+		method: "GET",
+		headers: {
+			mode: "no-cors",
+			"X-RapidAPI-Key": `${API_KEY}`,
+			"X-RapidAPI-Host": "powerlyrics.p.rapidapi.com",
+		},
+	};
+
+	fetch(`https://powerlyrics.p.rapidapi.com/getlyricsfromtitleandartist?title=${songTitle}&artist=${songArtists}`, options)
+		.then((response) => response.json())
+		.then((response) => console.log(response))
+		.catch((err) => console.error(err));
+});
+
+// ! api to search for lyrics
