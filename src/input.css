@@ -188,3 +188,21 @@
 .article-link .article-writeup {
 	@apply text-xs text-gray-400;
 }
+
+/* searched results on lyrics page */
+.searched-track {
+	@apply flex flex-col gap-x-4 border-b border-gray-300 pb-4;
+}
+.searched-tracked:last-child {
+	@apply border-b-0;
+}
+
+.searched-track .bottom {
+	@apply flex items-center gap-x-4 mt-3;
+}
+.searched-track .bottom .track-element {
+	@apply border border-gray-300 p-2 text-sm rounded-md bg-gray-600 bg-opacity-5 hover:bg-gray-500 hover:text-gray-300 transition ease-in-out duration-150 text-gray-300;
+}
+.searched-track .bottom .track-element svg {
+	@apply mr-2;
+}
