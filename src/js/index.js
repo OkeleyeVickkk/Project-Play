@@ -192,59 +192,53 @@ for (let i = 0; i < 6; i++) {
 // 		.then((response) => response.response.lyrics.lyrics.body.html);
 // }
 
-// power lyrics
+// const searchBar = document.querySelector(".search-bar-control");
+// searchBar.addEventListener("submit", function (e) {
+// 	e.preventDefault();
+// 	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
 
-const searchBar = document.querySelector(".search-bar-control");
-searchBar.addEventListener("submit", function (e) {
-	e.preventDefault();
-	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
+// 	const searchSplit = inputValue.split("by");
+// 	const song_name = searchSplit[0];
+// 	const artist_name = searchSplit[1];
 
-	const searchSplit = inputValue.split("by");
-	const song_name = searchSplit[0];
-	const artist_name = searchSplit[1];
+// 	const options = {
+// 		method: "GET",
+// 		headers: {
+// 			"X-RapidAPI-Key": `${API_KEY}`,
+// 			"X-RapidAPI-Host": "powerlyrics.p.rapidapi.com",
+// 		},
+// 	};
+// 	const trackTemplate = document.getElementById("track-template");
+// 	const resultBoard = document.getElementById("search-result");
+// 	const otherContent = document.getElementById("sub-content");
 
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": `${API_KEY}`,
-			"X-RapidAPI-Host": "powerlyrics.p.rapidapi.com",
-		},
-	};
-	const trackTemplate = document.getElementById("track-template");
-	const resultBoard = document.getElementById("search-result");
-	const otherContent = document.getElementById("sub-content");
+// 	fetch(`https://powerlyrics.p.rapidapi.com/getlyricsfromtitleandartist?title=${song_name}&artist=${artist_name}`, options)
+// 		.then((response) => {
+// 			if (!response.ok) {
+// 				throw "Victor's API Limit has been reached for today";
+// 			}
+// 			return response.json();
+// 		})
+// 		.then((response) => {
+// 			otherContent.innerHTML = "";
+// 			resultBoard.innerHTML = "";
+// 			const lyrics = response.lyrics;
+// 			resultBoard.textContent = lyrics;
+// 		})
+// 		.catch((err) => {
+// 			otherContent.innerHTML = "";
+// 			resultBoard.innerHTML = "";
+// 			const errorImage = `<img src="${image[0].src}" class="w-1/2 mx-auto"/>`;
+// 			const h2 = document.createElement("h2");
+// 			h2.className = "text-white text-lg text-center font-bold";
+// 			h2.innerText = err;
+// 			resultBoard.innerHTML = errorImage;
+// 			resultBoard.append(h2);
+// 		});
+// });
 
-	fetch(`https://powerlyrics.p.rapidapi.com/getlyricsfromtitleandartist?title=${song_name}&artist=${artist_name}`, options)
-		.then((response) => {
-			if (!response.ok) {
-				throw "Victor's API Limit has been reached for today";
-			}
-			return response.json();
-		})
-		.then((response) => {
-			otherContent.innerHTML = "";
-			resultBoard.innerHTML = "";
-			const lyrics = response.lyrics;
-
-			console.log(lyrics);
-			resultBoard.textContent = lyrics;
-		})
-		.catch((err) => {
-			otherContent.innerHTML = "";
-			resultBoard.innerHTML = "";
-			const errorImage = `<img src="${image[0].src}" class="w-1/2 mx-auto"/>`;
-			const h2 = document.createElement("h2");
-			h2.className = "text-white text-lg text-center font-bold";
-			h2.innerText = err;
-			resultBoard.innerHTML = errorImage;
-			resultBoard.append(h2);
-		});
-});
-
-const image = [
-	{
-		src: "src/images/logo-lg-variant-2.png",
-	},
-];
-
-console.log(image[0].src);
+// const image = [
+// 	{
+// 		src: "src/images/logo-lg-variant-2.png",
+// 	},
+// ];

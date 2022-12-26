@@ -17,7 +17,7 @@
 		<div class="body-inner min-h-screen">
 			<div class="wrapper md:grid md:grid-cols-12">
 				<!-- navigation starts -->
-				<header class="navigation hidden md:block col-span-2 min-h-screen bg-primarySkin">
+				<header class="navigation hidden lg:block col-span-2 min-h-screen bg-primarySkin">
 					<!-- lg nav starts -->
 					<div class="hidden md:flex p-4 fixed flex-col gap-6 bg-primarySkin h-full">
 						<div class="logo text-center">
@@ -230,12 +230,12 @@
 				</div>
 				<!-- offcanvas ends -->
 				<!-- navigation ends -->
-				<div class="col-span-full md:col-span-10 min-h-screen bg-secondarySkin p-3">
+				<div class="col-span-full lg:col-span-10 min-h-screen bg-secondarySkin p-3">
 					<nav class="flex items-center justify-between md:hidden">
 						<a href="./home.html">
 							<img src="./src/images/logo-lg-variant-icon-white.png" class="h-auto w-10" alt="" />
 						</a>
-						<div class="right md:hidden items-center flex gap-x-1">
+						<div class="right lg:hidden items-center flex gap-x-1">
 							<a href="" class="text-white hover:bg-opacity-5 p-2 hover:bg-gray-300 rounded-full">
 								<svg xmlns="http://www.w3.org/2000/svg" class="w-7" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
 									<path
@@ -313,6 +313,7 @@
 							</a>
 						</div>
 					</header>
+					<!-- main start -->
 					<main>
 						<div class="main-inner">
 							<div class="my-5">
@@ -323,40 +324,42 @@
 									<div class="grid grid-cols-12 gap-y-8 gap-x-4">
 										<!-- main news -->
 										<div class="main-news col-span-12 md:col-span-8">
-											<div class="image-wrapper">
-												<img
-													src="https://ichef.bbci.co.uk/news/976/cpsprodpb/3555/production/_127735631_workbuilding.png.webp"
-													alt=""
-													class="img-fluid" />
-											</div>
-											<div class="main-news-content news-content">
-												<div class="top flex items-center justify-between">
-													<div class="date">
-														<small class="text-gray-400">Feb 11</small>
+											<a href="">
+												<div class="image-wrapper">
+													<img
+														src="https://ichef.bbci.co.uk/news/976/cpsprodpb/3555/production/_127735631_workbuilding.png.webp"
+														alt=""
+														class="img-fluid" />
+												</div>
+												<div class="main-news-content news-content">
+													<div class="top flex items-center justify-between">
+														<div class="date">
+															<small class="text-gray-400">Feb 11</small>
+														</div>
+														<div class="author">
+															<small class="text-gray-400"> - Author</small>
+														</div>
 													</div>
-													<div class="author">
-														<small class="text-gray-400"> - Author</small>
+													<div class="middle">
+														<h2 class="news-title">
+															Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, hic?
+														</h2>
+													</div>
+													<div class="bottom">
+														<p class="news-content">
+															Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum facilis qui alias
+															optio sunt sequi, modi ratione laboriosam, sit nam harum. Obcaecati dolorum voluptas
+															itaque excepturi modi sit facilis.
+														</p>
 													</div>
 												</div>
-												<div class="middle">
-													<h2 class="news-title">
-														Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, hic?
-													</h2>
-												</div>
-												<div class="bottom">
-													<p class="news-content">
-														Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum facilis qui alias optio
-														sunt sequi, modi ratione laboriosam, sit nam harum. Obcaecati dolorum voluptas itaque
-														excepturi modi sit facilis.
-													</p>
-												</div>
-											</div>
+											</a>
 										</div>
 										<!-- main news end -->
 										<!-- sub news -->
 										<div class="sub-news col-span-12 md:col-span-4">
 											<div class="sub-news-inner">
-												<div>
+												<a href="">
 													<div class="image-wrapper">
 														<img src="./src/images/woman.jpg" alt="" class="img-fluid" />
 													</div>
@@ -382,8 +385,8 @@
 															</p>
 														</div>
 													</div>
-												</div>
-												<div>
+												</a>
+												<a href="">
 													<div class="image-wrapper">
 														<img src="./src/images/woman.jpg" alt="" class="img-fluid" />
 													</div>
@@ -409,7 +412,7 @@
 															</p>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
 										</div>
 										<!-- sub news ends -->
@@ -421,43 +424,52 @@
 									</div>
 									<div class="articles">
 										<ul class="articles-wrapper">
-											<li class="article-item">
-												<a href="" class="article-link">
-													<div class="article-image-wrapper">
-														<img
-															src="https://media.cnn.com/api/v1/images/stellar/prod/221122121147-07-saudi-arabia-argentina-112222.jpg?c=16x9&q=h_720,w_1280,c_fill"
-															alt=""
-															class="img-fluid" />
-													</div>
-													<div class="article-content-wrapper">
-														<div class="top">
-															<small class="article-author"> - By Author </small>
+											<template id="sectionTwoTemplate">
+												<li class="article-item">
+													<a href="" class="article-link">
+														<div class="article-image-wrapper">
+															<img
+																src="https://media.cnn.com/api/v1/images/stellar/prod/221122121147-07-saudi-arabia-argentina-112222.jpg?c=16x9&q=h_720,w_1280,c_fill"
+																alt=""
+																class="img-fluid" />
 														</div>
-														<div class="middle">
-															<h3 class="article-title">
-																Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quam mollitia quasi optio
-																cum perspiciatis.
-															</h3>
-														</div>
-														<div class="bottom">
-															<small class="article-writeup"
-																>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, beatae! Aspernatur
-																saepe suscipit atque eligendi. Laboriosam beatae laborum nisi facilis, reiciendis
-																ipsam excepturi reprehenderit omnis fugiat maiores illo quas quos.</small
-															>
-															<div class="date mt-4">
-																<small class="text-sm text-gray-400"> - Feb 11</small>
+														<div class="article-content-wrapper">
+															<div class="top flex items-center gap-x-8 justify-between md:justify-start">
+																<div>
+																	<small class="article-author"> - By Author </small>
+																</div>
+																<div>
+																	<small class="date text-xs text-gray-400"> - Feb 11</small>
+																</div>
+															</div>
+															<div class="middle">
+																<h3 class="article-title">
+																	Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quam mollitia quasi
+																	optio cum perspiciatis.
+																</h3>
+															</div>
+															<div class="bottom">
+																<small class="article-writeup"
+																	>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, beatae!
+																	Aspernatur saepe suscipit atque eligendi. Laboriosam beatae laborum nisi facilis,
+																	reiciendis ipsam excepturi reprehenderit omnis fugiat maiores illo quas
+																	quos.</small
+																>
+																<div class="source mt-4">
+																	<small class="text-sm text-gray-400"> Source - Daily News</small>
+																</div>
 															</div>
 														</div>
-													</div>
-												</a>
-											</li>
+													</a>
+												</li>
+											</template>
 										</ul>
 									</div>
 								</section>
 							</div>
 						</div>
 					</main>
+					<!-- main ends -->
 				</div>
 			</div>
 		</div>
