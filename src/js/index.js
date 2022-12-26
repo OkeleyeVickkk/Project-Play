@@ -108,86 +108,143 @@ for (let i = 0; i < 6; i++) {
 // }
 
 // search result to fetch api data
+// const searchBar = document.querySelector(".search-bar-control");
+// searchBar.addEventListener("submit", function (e) {
+// 	e.preventDefault();
+// 	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
+
+// 	const options = {
+// 		method: "GET",
+// 		headers: {
+// 			// "X-RapidAPI-Key": `${API_KEY}`,
+// 			"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
+// 		},
+// 	};
+// 	fetch(`https://genius-song-lyrics1.p.rapidapi.com/search?q=${inputValue}`, options)
+// 		.then((response) => response.json())
+// 		.then((response) => {
+// 			const trackTemplate = document.getElementById("track-template");
+// 			const resultBoard = document.getElementById("search-result");
+// 			const otherContent = document.getElementById("sub-content");
+// 			let clonedTrackTemplate;
+// 			otherContent.innerHTML = "";
+// 			resultBoard.innerHTML = "";
+// 			const results = response.response.hits;
+// 			results.forEach((result) => {
+// 				clonedTrackTemplate = trackTemplate.content.cloneNode(true);
+// 				const {
+// 					artist_names,
+// 					full_title,
+// 					id,
+// 					lyrics_owner_id,
+// 					path,
+// 					title,
+// 					stats: { pageviews },
+// 				} = result.result;
+
+// 				clonedTrackTemplate.querySelector("h2.searched-data").textContent = full_title;
+// 				const trackItemLyricsButton = clonedTrackTemplate.querySelector("button.track-element");
+// 				// !test drive
+// 				const result = fetchLyrics(id)
+// 					.then((response) => response) //* something missing here
+// 					.then((data) => {
+// 						const trackItemLyrics = data;
+// 						trackItemLyricsButton.setAttribute("lyrics", trackItemLyrics);
+// 					})
+// 					.catch((error) => console.log(error));
+// 				resultBoard.appendChild(clonedTrackTemplate);
+
+// 				// ! original
+// 				fetchLyrics(id)
+// 					.then((response) => response) //* something missing here
+// 					.then((data) => {
+// 						const trackItemLyrics = data;
+// 						trackItemLyricsButton.setAttribute("lyrics", trackItemLyrics);
+// 					})
+// 					.catch((error) => console.log(error));
+// 				resultBoard.appendChild(clonedTrackTemplate);
+// 			});
+// const listItems = resultBoard.querySelectorAll(".searched-track");
+// listItems.forEach((listItem) => {
+// 	const listItembutton = listItem.querySelector("button.track-element");
+// 	listItembutton.addEventListener("click", function (e) {
+// 		const modal = document.querySelector(".lyrics-modal");
+// 		const modalContent = modal.querySelector(".lyrics-content p");
+// 		const lyricContent = this.getAttribute("lyrics");
+// 		modalContent.innerHTML = lyricContent;
+// 	});
+// });
+// 		})
+// 		.catch((err) => console.error(err));
+// });
+
+// function fetchLyrics(id) {
+// 	const options = {
+// 		method: "GET",
+// 		headers: {
+// 			"X-RapidAPI-Key": `${API_KEY}`,
+// 			"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
+// 		},
+// 	};
+
+// 	return fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/${id}/lyrics`, options)
+// 		.then((response) => response.json())
+// 		.then((response) => response.response.lyrics.lyrics.body.html);
+// }
+
+// power lyrics
+
 const searchBar = document.querySelector(".search-bar-control");
 searchBar.addEventListener("submit", function (e) {
 	e.preventDefault();
 	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
 
+	const searchSplit = inputValue.split("by");
+	const song_name = searchSplit[0];
+	const artist_name = searchSplit[1];
+
 	const options = {
 		method: "GET",
 		headers: {
 			"X-RapidAPI-Key": `${API_KEY}`,
-			"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
+			"X-RapidAPI-Host": "powerlyrics.p.rapidapi.com",
 		},
 	};
-	fetch(`https://genius-song-lyrics1.p.rapidapi.com/search?q=${inputValue}`, options)
-		.then((response) => response.json())
+	const trackTemplate = document.getElementById("track-template");
+	const resultBoard = document.getElementById("search-result");
+	const otherContent = document.getElementById("sub-content");
+
+	fetch(`https://powerlyrics.p.rapidapi.com/getlyricsfromtitleandartist?title=${song_name}&artist=${artist_name}`, options)
 		.then((response) => {
-			const trackTemplate = document.getElementById("track-template");
-			const resultBoard = document.getElementById("search-result");
-			const otherContent = document.getElementById("sub-content");
-			let clonedTrackTemplate;
+			if (!response.ok) {
+				throw "Victor's API Limit has been reached for today";
+			}
+			return response.json();
+		})
+		.then((response) => {
 			otherContent.innerHTML = "";
 			resultBoard.innerHTML = "";
-			const results = response.response.hits;
-			results.forEach((result) => {
-				clonedTrackTemplate = trackTemplate.content.cloneNode(true);
-				const {
-					artist_names,
-					full_title,
-					id,
-					lyrics_owner_id,
-					path,
-					title,
-					stats: { pageviews },
-				} = result.result;
+			const lyrics = response.lyrics;
 
-				clonedTrackTemplate.querySelector("h2.searched-data").textContent = full_title;
-				const trackItemLyricsButton = clonedTrackTemplate.querySelector("button.track-element");
-				// !test drive
-				const result = fetchLyrics(id)
-					.then((response) => response) //* something missing here
-					.then((data) => {
-						const trackItemLyrics = data;
-						trackItemLyricsButton.setAttribute("lyrics", trackItemLyrics);
-					})
-					.catch((error) => console.log(error));
-				resultBoard.appendChild(clonedTrackTemplate);
-
-				// ! original
-				fetchLyrics(id)
-					.then((response) => response) //* something missing here
-					.then((data) => {
-						const trackItemLyrics = data;
-						trackItemLyricsButton.setAttribute("lyrics", trackItemLyrics);
-					})
-					.catch((error) => console.log(error));
-				resultBoard.appendChild(clonedTrackTemplate);
-			});
-			// const listItems = resultBoard.querySelectorAll(".searched-track");
-			// listItems.forEach((listItem) => {
-			// 	const listItembutton = listItem.querySelector("button.track-element");
-			// 	listItembutton.addEventListener("click", function (e) {
-			// 		const modal = document.querySelector(".lyrics-modal");
-			// 		const modalContent = modal.querySelector(".lyrics-content p");
-			// 		const lyricContent = this.getAttribute("lyrics");
-			// 		modalContent.innerHTML = lyricContent;
-			// 	});
-			// });
+			console.log(lyrics);
+			resultBoard.textContent = lyrics;
 		})
-		.catch((err) => console.error(err));
+		.catch((err) => {
+			otherContent.innerHTML = "";
+			resultBoard.innerHTML = "";
+			const errorImage = `<img src="${image[0].src}" class="w-1/2 mx-auto"/>`;
+			const h2 = document.createElement("h2");
+			h2.className = "text-white text-lg text-center font-bold";
+			h2.innerText = err;
+			resultBoard.innerHTML = errorImage;
+			resultBoard.append(h2);
+		});
 });
 
-function fetchLyrics(id) {
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": `${API_KEY}`,
-			"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
-		},
-	};
+const image = [
+	{
+		src: "src/images/logo-lg-variant-2.png",
+	},
+];
 
-	return fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/${id}/lyrics`, options)
-		.then((response) => response.json())
-		.then((response) => response.response.lyrics.lyrics.body.html);
-}
+console.log(image[0].src);
