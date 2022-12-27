@@ -1,4 +1,4 @@
-const API = "67e2b768ef734181b918ca0d862461d3";
+// const API = "67e2b768ef734181b918ca0d862461d3";
 const URL = `https://newsapi.org/v2/everything?q=music%entertainment&from=2022-12-25&sortBy=popularity&apiKey=${API}`;
 
 const options = {
@@ -20,9 +20,9 @@ fetch(URL, options)
 		const results = response.articles;
 		const randomizedResult = randomize(results);
 
-		const sectionOne = document.querySelector("section.first");
 		const sectionOneResults = randomizedResult.slice(0, 3);
 		const sectionTwoResults = randomizedResult.slice(3);
+		pasteSectionOneResults(sectionOneResults);
 		pasteSectionTwoResults(sectionTwoResults);
 	})
 	.catch((err) => console.log(err));
@@ -30,6 +30,12 @@ fetch(URL, options)
 function randomize(results) {
 	const randomStart = Math.floor(Math.random() * 40) + 1;
 	return results.slice(randomStart, randomStart + 15);
+}
+
+function pasteSectionOneResults(sectionOneResults) {
+	const sectionOne = document.querySelector("section.first");
+	const sectionOneMain = sectionOne.querySelector(".main-news");
+	const sectionOneSub = sectionOne.querySelector(".sub-news");
 }
 
 function pasteSectionTwoResults(sectionTwoResults) {
@@ -44,15 +50,16 @@ function pasteSectionTwoResults(sectionTwoResults) {
 			urlToImage,
 			description,
 			author,
-			publishedAt = filterDate(publishedAt),
+			publishedAt,
 			source: { name },
 		} = result;
+		const date = filterDate(publishedAt);
 		const clonedTemplate = sectionTwoTemplate.content.cloneNode(true);
 
 		clonedTemplate.querySelector(".article-item .article-link").href = url;
 		clonedTemplate.querySelector(".article-image-wrapper img.img-fluid").src = urlToImage;
 		clonedTemplate.querySelector("small.article-author").innerHTML = `- ${author ?? "Unknown"}`;
-		clonedTemplate.querySelector("small.date").innerHTML = publishedAt;
+		clonedTemplate.querySelector("small.date").innerHTML = date;
 		clonedTemplate.querySelector(".source small").innerHTML = `Source - ${name}`;
 		clonedTemplate.querySelector("h3.article-title").innerHTML = title;
 		clonedTemplate.querySelector("small.article-writeup").innerHTML = description;
