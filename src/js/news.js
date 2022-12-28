@@ -36,6 +36,21 @@ function pasteSectionOneResults(sectionOneResults) {
 	const sectionOne = document.querySelector("section.first");
 	const sectionOneMain = sectionOne.querySelector(".main-news");
 	const sectionOneSub = sectionOne.querySelector(".sub-news");
+
+	sectionOneResults.forEach((result) => {
+		const {
+			title,
+			url,
+			urlToImage,
+			description,
+			author,
+			publishedAt,
+			source: { name },
+		} = result;
+
+		const date = filterDate(publishedAt);
+		const clonedTemplateForSub = document.getElementById("sub-news-template");
+	});
 }
 
 function pasteSectionTwoResults(sectionTwoResults) {

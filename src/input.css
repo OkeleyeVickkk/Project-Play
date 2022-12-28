@@ -191,7 +191,7 @@
 
 /* searched results on lyrics page */
 .searched-track {
-	@apply flex flex-col gap-x-4 border-b border-gray-300 pb-4;
+	@apply flex flex-col gap-x-4 border-b border-gray-300 pb-4 mb-9;
 }
 .searched-tracked:last-child {
 	@apply border-b-0;
