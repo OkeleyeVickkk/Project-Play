@@ -3773,6 +3773,7 @@ input:checked + .toggle-bg {
 .img-fluid {
   height: auto;
   max-width: 100%;
+  border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }

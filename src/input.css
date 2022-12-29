@@ -118,7 +118,7 @@
 }
 
 .img-fluid {
-	@apply max-w-full h-auto object-cover;
+	@apply max-w-full h-auto object-cover rounded-lg;
 }
 
 .main-news-content {

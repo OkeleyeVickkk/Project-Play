@@ -1,5 +1,6 @@
-const API = "67e2b768ef734181b918ca0d862461d3";
+// const API = "67e2b768ef734181b918ca0d862461d3";
 const URL = `https://newsapi.org/v2/everything?q=music%entertainment&from=2022-12-25&sortBy=popularity&apiKey=${API}`;
+const defaultNewsImage = `https://mir-s3-cdn-cf.behance.net/project_modules/1400/6fe6f228202371.5637141eb4d67.jpg`;
 
 const options = {
 	method: "GET",
@@ -38,16 +39,35 @@ function pasteSectionOneResults(sectionOneResults) {
 	const subNewsTemplate = document.getElementById("sub-template");
 	const sectionOneSub = document.querySelector(".sub-news-inner");
 
-	sectionOneResults.forEach((result) => {
+	const main = sectionOneResults.slice(0, 1)[0];
+	// ! TO BE COMPLETED
+	const { title, url, urlToImage, description, author, publishedAt } = result;
+	const date = filterDate(publishedAt);
+	const newAuthor = filterAuthor(author);
+
+	const subTemplate = subNewsTemplate.content.cloneNode(true);
+
+	subTemplate.querySelector("a.news-link").href = url;
+	subTemplate.querySelector(".image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
+	subTemplate.querySelector(".date small").textContent = date;
+	subTemplate.querySelector(".author small").textContent = `- ${newAuthor ?? "Unknown"}`;
+	subTemplate.querySelector(".middle .news-title").textContent = title;
+	subTemplate.querySelector(".bottom .news-content").textContent = description;
+
+	sectionOneSub.appendChild(subTemplate); //add to screen
+	// ! END OF WHAT IS TO BE COMPLETED
+
+	sectionOneResults.slice(1).forEach((result) => {
 		const { title, url, urlToImage, description, author, publishedAt } = result;
 		const date = filterDate(publishedAt);
+		const newAuthor = filterAuthor(author);
 
 		const subTemplate = subNewsTemplate.content.cloneNode(true);
 
 		subTemplate.querySelector("a.news-link").href = url;
-		subTemplate.querySelector(".image-wrapper img.img-fluid").src = urlToImage;
+		subTemplate.querySelector(".image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
 		subTemplate.querySelector(".date small").textContent = date;
-		subTemplate.querySelector(".author small").textContent = `- ${author ?? "Unknown"}`;
+		subTemplate.querySelector(".author small").textContent = `- ${newAuthor ?? "Unknown"}`;
 		subTemplate.querySelector(".middle .news-title").textContent = title;
 		subTemplate.querySelector(".bottom .news-content").textContent = description;
 
@@ -76,7 +96,7 @@ function pasteSectionTwoResults(sectionTwoResults) {
 		const clonedTemplate = sectionTwoTemplate.content.cloneNode(true);
 
 		clonedTemplate.querySelector(".article-item .article-link").href = url;
-		clonedTemplate.querySelector(".article-image-wrapper img.img-fluid").src = urlToImage;
+		clonedTemplate.querySelector(".article-image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
 		clonedTemplate.querySelector("small.article-author").innerHTML = `- ${newAuthor ?? "Unknown"}`;
 		clonedTemplate.querySelector("small.date").innerHTML = date;
 		clonedTemplate.querySelector(".source small").innerHTML = `Source - ${name}`;
