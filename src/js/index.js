@@ -97,8 +97,7 @@ fetch("https://current-news.p.rapidapi.com/news/entertainment", options)
 	.catch((err) => console.error(err));
 
 function filterDate(date) {
-	const removeZAlphabet = date.slice(0, -1).split("T");
-	return removeZAlphabet;
+	return date.slice(0, -1).split("T");
 }
 
 // search result to fetch api data
@@ -199,7 +198,7 @@ async function fetchLyrics(id) {
 
 	return fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/${id}/lyrics`, options)
 		.then((response) => response.json())
-		.then((response) => response.response.lyrics.lyrics.body.html ?? "No lyrics available");
+		.then((response) => response?.response?.lyrics?.lyrics?.body?.html ?? "No lyrics available");
 }
 
 // ? OPTION THREE OF FETCHING LYRICS (IT WORKS)
