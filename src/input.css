@@ -96,9 +96,6 @@
 }
 
 /* artist */
-.artist-content-inner {
-	@apply flex items-center;
-}
 
 /* news page */
 .page-title {

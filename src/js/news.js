@@ -1,4 +1,4 @@
-// const API = "67e2b768ef734181b918ca0d862461d3";
+const API = "67e2b768ef734181b918ca0d862461d3";
 const URL = `https://newsapi.org/v2/everything?q=music%entertainment&from=2022-12-25&sortBy=popularity&apiKey=${API}`;
 const defaultNewsImage = `https://mir-s3-cdn-cf.behance.net/project_modules/1400/6fe6f228202371.5637141eb4d67.jpg`;
 
@@ -35,27 +35,26 @@ function randomize(results) {
 
 function pasteSectionOneResults(sectionOneResults) {
 	const sectionOne = document.querySelector("section.first");
+	const sectionOneMainTemplate = document.getElementById("main-news-template");
 	const sectionOneMain = sectionOne.querySelector(".main-news");
 	const subNewsTemplate = document.getElementById("sub-template");
 	const sectionOneSub = document.querySelector(".sub-news-inner");
 
 	const main = sectionOneResults.slice(0, 1)[0];
-	// ! TO BE COMPLETED
-	const { title, url, urlToImage, description, author, publishedAt } = result;
+	const { title, url, urlToImage, description, author, publishedAt } = main;
 	const date = filterDate(publishedAt);
 	const newAuthor = filterAuthor(author);
 
-	const subTemplate = subNewsTemplate.content.cloneNode(true);
+	const MainTemplate = sectionOneMainTemplate.content.cloneNode(true);
 
-	subTemplate.querySelector("a.news-link").href = url;
-	subTemplate.querySelector(".image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
-	subTemplate.querySelector(".date small").textContent = date;
-	subTemplate.querySelector(".author small").textContent = `- ${newAuthor ?? "Unknown"}`;
-	subTemplate.querySelector(".middle .news-title").textContent = title;
-	subTemplate.querySelector(".bottom .news-content").textContent = description;
+	MainTemplate.querySelector("a.news-link").href = url;
+	MainTemplate.querySelector(".image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
+	MainTemplate.querySelector(".date small").textContent = date;
+	MainTemplate.querySelector(".author small").textContent = `- ${newAuthor ?? "Unknown"}`;
+	MainTemplate.querySelector(".middle .news-title").textContent = title;
+	MainTemplate.querySelector(".bottom .news-content").textContent = description;
 
-	sectionOneSub.appendChild(subTemplate); //add to screen
-	// ! END OF WHAT IS TO BE COMPLETED
+	sectionOneMain.appendChild(MainTemplate);
 
 	sectionOneResults.slice(1).forEach((result) => {
 		const { title, url, urlToImage, description, author, publishedAt } = result;
