@@ -1,4 +1,4 @@
-// const API = "67e2b768ef734181b918ca0d862461d3";
+const API = "67e2b768ef734181b918ca0d862461d3";
 const URL = `https://newsapi.org/v2/everything?q=music%entertainment&from=2022-12-25&sortBy=popularity&apiKey=${API}`;
 const defaultNewsImage = `https://mir-s3-cdn-cf.behance.net/project_modules/1400/6fe6f228202371.5637141eb4d67.jpg`;
 
