@@ -1,4 +1,4 @@
-const API = "67e2b768ef734181b918ca0d862461d3";
+// const API = "67e2b768ef734181b918ca0d862461d3";
 const URL = `https://newsapi.org/v2/everything?q=music%entertainment&from=2022-12-25&sortBy=popularity&apiKey=${API}`;
 const defaultNewsImage = `https://mir-s3-cdn-cf.behance.net/project_modules/1400/6fe6f228202371.5637141eb4d67.jpg`;
 
@@ -34,6 +34,7 @@ function randomize(results) {
 }
 
 function pasteSectionOneResults(sectionOneResults) {
+	//main function one
 	const sectionOne = document.querySelector("section.first");
 	const sectionOneMainTemplate = document.getElementById("main-news-template");
 	const sectionOneMain = sectionOne.querySelector(".main-news");
@@ -54,7 +55,7 @@ function pasteSectionOneResults(sectionOneResults) {
 	MainTemplate.querySelector(".middle .news-title").textContent = title;
 	MainTemplate.querySelector(".bottom .news-content").textContent = description;
 
-	sectionOneMain.appendChild(MainTemplate);
+	sectionOneMain.appendChild(MainTemplate); //add to the largest section
 
 	sectionOneResults.slice(1).forEach((result) => {
 		const { title, url, urlToImage, description, author, publishedAt } = result;
@@ -75,6 +76,7 @@ function pasteSectionOneResults(sectionOneResults) {
 }
 
 function pasteSectionTwoResults(sectionTwoResults) {
+	//main function two
 	const sectionTwo = document.querySelector("section.second");
 	const sectionTwoArticlesWrapper = sectionTwo.querySelector("ul.articles-wrapper");
 	const sectionTwoTemplate = document.getElementById("sectionTwoTemplate");
@@ -106,6 +108,7 @@ function pasteSectionTwoResults(sectionTwoResults) {
 	});
 }
 
+// secondary functions
 function filterDate(publishedAt) {
 	const oddDate = publishedAt.split("T")[0].split("-");
 	const year = oddDate[0],
@@ -117,3 +120,5 @@ function filterDate(publishedAt) {
 function filterAuthor(author) {
 	return author.split("https://")[0];
 }
+
+function getTodaysDate() {} //get today's date and add it to the api url to get the latests news

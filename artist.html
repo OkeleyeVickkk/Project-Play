@@ -236,27 +236,6 @@
 							<img src="./src/images/logo-lg-variant-icon-white.png" class="h-auto w-10" alt="" />
 						</a>
 						<div class="right md:hidden items-center flex">
-							<!-- Modal toggle -->
-							<button
-								class="block text-white rounded-full hover:bg-opacity-5 hover:bg-gray-300 focus:ring-4 focus:outline-none font-medium text-sm p-3 text-center transition duration-100 ease-linear"
-								type="button"
-								data-modal-toggle="staticModal">
-								<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
-									<path
-										fill="none"
-										stroke="currentColor"
-										stroke-miterlimit="10"
-										stroke-width="32"
-										d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
-									<path
-										fill="none"
-										stroke="currentColor"
-										stroke-linecap="round"
-										stroke-miterlimit="10"
-										stroke-width="32"
-										d="M338.29 338.29L448 448" />
-								</svg>
-							</button>
 							<a href="" class="text-white hover:bg-opacity-5 p-2 hover:bg-gray-300 rounded-full">
 								<svg xmlns="http://www.w3.org/2000/svg" class="w-7" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
 									<path
@@ -265,7 +244,7 @@
 								</svg>
 							</a>
 							<button
-								class="text-white"
+								class="text-white ml-1"
 								type="button"
 								data-drawer-target="drawer-navigation"
 								data-drawer-show="drawer-navigation"
@@ -290,7 +269,7 @@
 								<ol class="inline-flex items-center space-x-1 md:space-x-3">
 									<li class="inline-flex items-center">
 										<a
-											href="./home.html"
+											href="./index.html"
 											class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-gray-50 dark:text-gray-400 dark:hover:text-white">
 											<svg
 												class="w-5 mr-2"
@@ -325,27 +304,6 @@
 							</nav>
 						</div>
 						<div class="right md:flex items-center hidden">
-							<!-- Modal toggle -->
-							<button
-								class="block text-white rounded-full hover:bg-opacity-5 hover:bg-gray-300 focus:ring-4 focus:outline-none font-medium text-sm p-3 text-center transition duration-100 ease-linear"
-								type="button"
-								data-modal-toggle="staticModal">
-								<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
-									<path
-										fill="none"
-										stroke="currentColor"
-										stroke-miterlimit="10"
-										stroke-width="32"
-										d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
-									<path
-										fill="none"
-										stroke="currentColor"
-										stroke-linecap="round"
-										stroke-miterlimit="10"
-										stroke-width="32"
-										d="M338.29 338.29L448 448" />
-								</svg>
-							</button>
 							<a href="" class="text-white hover:bg-opacity-5 p-2 hover:bg-gray-300 rounded-full">
 								<svg xmlns="http://www.w3.org/2000/svg" class="w-7" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
 									<path
@@ -355,87 +313,67 @@
 							</a>
 						</div>
 					</header>
-					<!-- Main modal -->
-					<div
-						id="staticModal"
-						data-modal-backdrop="static"
-						tabindex="-1"
-						aria-hidden="true"
-						class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 p-4 w-full md:w-3/4 mx-auto md:inset-0 h-modal md:h-full transition duration-1000 ease-in">
-						<div class="relative w-full max-w-2xl h-full md:h-auto flex items-center md:block">
-							<!-- Modal content -->
-							<div class="relative w-full bg-white rounded-lg shadow dark:bg-gray-700">
-								<!-- Modal header -->
-								<div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-									<h3 class="text-lg text-gray-900 dark:text-white">Search Artist</h3>
-									<button
-										type="button"
-										class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-full transition ease-linear duration-200 text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-										data-modal-toggle="staticModal">
-										<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-											<path
-												fill-rule="evenodd"
-												d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-												clip-rule="evenodd"></path>
-										</svg>
-									</button>
-								</div>
-								<!-- Modal body -->
-								<div class="p-6 space-y-6">
-									<form class="flex items-center">
-										<label for="simple-search" class="sr-only">Search</label>
-										<div class="relative w-full">
-											<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-												<svg
-													class="w-5 h-5 text-gray-500 dark:text-gray-400"
-													fill="none"
-													stroke="currentColor"
-													viewBox="0 0 24 24"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														stroke-width="2"
-														d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-												</svg>
-											</div>
-											<input
-												type="text"
-												id="simple-search"
-												class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-												placeholder="Search"
-												required />
-										</div>
-										<button
-											type="submit"
-											class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 transition ease-linear duration-200 dark:focus:ring-blue-800">
-											<svg
-												class="w-5 h-5"
-												fill="none"
-												stroke="currentColor"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg">
-												<path
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													stroke-width="2"
-													d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-											</svg>
-											<span class="sr-only">Search</span>
-										</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+
 					<div class="artist-content mt-6">
 						<div class="artist-content-inner grid grid-cols-5 gap-8">
 							<div class="artist-image col-span-full md:col-span-2 overflow-hidden">
-								<img src="./src/images/woman.jpg" alt="" class="rounded-sm img-fluid aspect-square" />
+								<img src="./src/images/woman.jpg" alt="" class="rounded-md aspect-square object-cover" />
 							</div>
 							<div class="artist-detail col-span-full md:col-span-3">
 								<div class="artist-name">
 									<span class="text-gray-300 text-lg md:text-xl">Okeleye Victor Olamide</span>
+								</div>
+								<div class="artist-details my-8">
+									<p class="text-sm text-gray-200 leading-6">
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero mollitia hic qui tempore laboriosam, similique
+										quia veniam illo? Nostrum molestiae ex corrupti praesentium velit ducimus a, ad nobis doloremque magni
+										facilis. Dolorum tempore, officia eum enim dolore, quibusdam veritatis iste recusandae nisi placeat aut
+										cupiditate minima illo similique deserunt? Ipsam neque quidem, non fugit animi a architecto aut sed minus.
+										Labore, vero aspernatur. Possimus sed voluptas dolore odit, omnis ipsum sunt repellendus repellat beatae
+										consectetur fuga soluta, perspiciatis sapiente. Placeat, beatae commodi architecto quidem fuga aperiam, saepe
+										sit nisi, et cupiditate quibusdam quos! Iusto dignissimos asperiores nemo ipsam, exercitationem sit!
+									</p>
+								</div>
+								<div class="social-handles mt-3">
+									<small class="text-gray-400 text-xs tracking-widest">// SOCIAL MEDIA HANDLES</small>
+									<div class="social-handles-inner flex items-center gap-x-4 mt-3">
+										<a href="" class="text-white" id="facebook">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-7"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 256 256">
+												<path
+													fill="currentColor"
+													d="M230 128a102 102 0 1 0-102 102a102.1 102.1 0 0 0 102-102Zm-96 89.8V150h26a6 6 0 0 0 0-12h-26v-26a18.1 18.1 0 0 1 18-18h16a6 6 0 0 0 0-12h-16a30.1 30.1 0 0 0-30 30v26H96a6 6 0 0 0 0 12h26v67.8a90 90 0 1 1 12 0Z" />
+											</svg>
+										</a>
+										<a href="" class="text-white" id="twitter">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-7"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 256 256">
+												<path
+													fill="currentColor"
+													d="M245.5 69.7A6 6 0 0 0 240 66h-31.6a46 46 0 0 0-39.8-24A46.4 46.4 0 0 0 122 88v8.7C79.6 86.6 44.6 52.1 44.2 51.8a6 6 0 0 0-10.1 3.1c-8.7 47.6 5.6 79.4 19.1 97.7a105.6 105.6 0 0 0 26 25.1c-15.5 18.8-41 28.6-41.3 28.7a5.9 5.9 0 0 0-3.6 3.8a5.8 5.8 0 0 0 .7 5.1c1 1.5 10.8 14.7 45 14.7c69.7 0 128-53.9 133.6-123.1l30.6-30.7a5.7 5.7 0 0 0 1.3-6.5Zm-42 30.3a5.8 5.8 0 0 0-1.7 3.9C197.7 167.9 144.2 218 80 218c-13.9 0-22.8-2.4-28.1-4.8c11.3-5.7 29.8-16.9 41.1-33.9a6.2 6.2 0 0 0 .8-4.8a6.1 6.1 0 0 0-3.1-3.9c-.2 0-15.2-7.8-28.2-25.6C47 123.8 40.9 97.9 44.3 68c14.6 12.4 46.1 35.8 82.7 41.9a5.9 5.9 0 0 0 7-5.9V88a34.3 34.3 0 0 1 34.4-34a34.2 34.2 0 0 1 30.8 20.4a5.9 5.9 0 0 0 5.5 3.6h20.8Z" />
+											</svg>
+										</a>
+										<a href="" class="text-white" id="instagram">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-7"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 256 256">
+												<path
+													fill="currentColor"
+													d="M128 82a46 46 0 1 0 46 46a46 46 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34.1 34.1 0 0 1-34 34Zm44-132H84a54 54 0 0 0-54 54v88a54 54 0 0 0 54 54h88a54 54 0 0 0 54-54V84a54 54 0 0 0-54-54Zm42 142a42 42 0 0 1-42 42H84a42 42 0 0 1-42-42V84a42 42 0 0 1 42-42h88a42 42 0 0 1 42 42Zm-24-96a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
+											</svg>
+										</a>
+									</div>
+								</div>
+								<div class="recent-albums my-4">
+									<div class="title text-2xl text-gray-200 tracking-wider"><span>RECENT ALBUMS</span></div>
 								</div>
 							</div>
 						</div>
