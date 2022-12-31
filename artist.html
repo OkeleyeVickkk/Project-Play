@@ -16,19 +16,20 @@
 		<div class="body-inner min-h-screen">
 			<div class="wrapper md:grid md:grid-cols-12">
 				<!-- navigation starts -->
-				<header class="navigation hidden md:block col-span-2 min-h-screen bg-primarySkin">
+				<header class="navigation col-span-full lg:col-span-2 lg:min-h-screen lg:bg-primarySkin">
 					<!-- lg nav starts -->
-					<div class="hidden md:flex p-4 fixed flex-col gap-6 bg-primarySkin h-full">
-						<div class="logo text-center">
+					<div class="p-4 lg:fixed flex-col gap-6 bg-secondarySkin lg:bg-primarySkin h-full">
+						<div class="logo text-center hidden md:inline-block">
 							<a href="./index.html" class="flex items-center">
 								<img class="max-w-full w-36" src="./src/images/logo-lg-variant-3.png" alt="" />
 							</a>
 						</div>
-						<div class="home flex flex-col mt-5">
+						<div class="home lg:flex flex-col mt-5 hidden">
 							<div class="title p-2 px-4">
 								<small><h6 class="font-bold text-white text-xs">// Menu</h6></small>
 							</div>
-							<ul class="nav-links-wrapper">
+							<!-- lg screen menu -->
+							<ul class="nav-links-wrapper hidden lg:inline-flex">
 								<li>
 									<a href="./index.html" class="nav-link">
 										<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
@@ -58,7 +59,7 @@
 												stroke-width="32"
 												d="M338.29 338.29L448 448" />
 										</svg>
-										Search
+										Search Lyrics
 									</a>
 								</li>
 								<li>
@@ -115,155 +116,179 @@
 									</a>
 								</li>
 							</ul>
+							<!-- lg screen menu ends -->
 						</div>
+						<!-- sm screen menu -->
+						<nav class="flex items-center justify-between lg:hidden">
+							<a href="">
+								<img src="./src/images/logo-lg-variant-2.png" class="h-auto w-32" alt="" />
+							</a>
+							<div class="text-center">
+								<button
+									class="text-white"
+									type="button"
+									data-drawer-target="drawer-navigation"
+									data-drawer-show="drawer-navigation"
+									aria-controls="drawer-navigation">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+										<g transform="translate(24 0) scale(-1 1)">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2"
+												d="M4 6h16M4 12h8m-8 6h16" />
+										</g>
+									</svg>
+								</button>
+							</div>
+						</nav>
+						<!-- sm screen menu ends -->
+						<!-- offcanvas starts -->
+						<div
+							id="drawer-navigation"
+							class="top-0 left-0 fixed h-full z-40 min-h-screen p-4 overflow-y-auto bg-primarySkin w-80 lg:hidden"
+							tabindex="-1"
+							aria-labelledby="drawer-navigation-label">
+							<h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase">Menu</h5>
+							<button
+								type="button"
+								data-drawer-dismiss="drawer-navigation"
+								aria-controls="drawer-navigation"
+								class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center">
+								<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+									<path
+										fill-rule="evenodd"
+										d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+										clip-rule="evenodd"></path>
+								</svg>
+								<span class="sr-only">Close menu</span>
+							</button>
+							<div class="py-4 overflow-y-auto">
+								<ul class="nav-links-wrapper">
+									<li>
+										<a href="./index.html" class="nav-link">
+											<svg
+												class="w-5"
+												xmlns="http://www.w3.org/2000/svg"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 16 16">
+												<path
+													fill="currentColor"
+													fill-rule="evenodd"
+													d="m8.36 1.37l6.36 5.8l-.71.71L13 6.964v6.526l-.5.5h-3l-.5-.5v-3.5H7v3.5l-.5.5h-3l-.5-.5V6.972L2 7.88l-.71-.71l6.35-5.8h.72zM4 6.063v6.927h2v-3.5l.5-.5h3l.5.5v3.5h2V6.057L8 2.43L4 6.063z"
+													clip-rule="evenodd" />
+											</svg>
+											Home
+										</a>
+									</li>
+									<li>
+										<a href="./lyrics-search.html" class="nav-link">
+											<svg
+												class="w-5"
+												xmlns="http://www.w3.org/2000/svg"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 512 512">
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-miterlimit="10"
+													stroke-width="32"
+													d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-miterlimit="10"
+													stroke-width="32"
+													d="M338.29 338.29L448 448" />
+											</svg>
+											Search Lyrics
+										</a>
+									</li>
+									<li>
+										<a href="./blog-news.html" class="nav-link">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-5"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 28 28">
+												<path
+													fill="currentColor"
+													d="M22.75 24H5.25a3.25 3.25 0 0 1-3.245-3.066L2 20.75V6.25a2.25 2.25 0 0 1 2.096-2.245L4.25 4h15.5a2.25 2.25 0 0 1 2.245 2.096L22 6.25V7h1.75a2.25 2.25 0 0 1 2.245 2.096L26 9.25v11.5a3.25 3.25 0 0 1-3.066 3.245L22.75 24H5.25h17.5Zm-17.5-1.5h17.5a1.75 1.75 0 0 0 1.744-1.607l.006-.143V9.25a.75.75 0 0 0-.648-.743L23.75 8.5H22v10.75a.75.75 0 0 1-.648.743L21.25 20a.75.75 0 0 1-.743-.648l-.007-.102v-13a.75.75 0 0 0-.648-.743L19.75 5.5H4.25a.75.75 0 0 0-.743.648L3.5 6.25v14.5a1.75 1.75 0 0 0 1.606 1.744l.144.006h17.5h-17.5Zm4.996-9.496c.69 0 1.25.56 1.25 1.25v3.496c0 .69-.56 1.25-1.25 1.25H6.75c-.69 0-1.25-.56-1.25-1.25v-3.496c0-.69.56-1.25 1.25-1.25h3.496ZM14.25 17.5h3.496a.75.75 0 0 1 .102 1.493l-.102.007H14.25a.75.75 0 0 1-.102-1.493l.102-.007h3.496h-3.496Zm-4.253-2.996H7V17.5h2.997v-2.996Zm4.253-1.5h3.496a.75.75 0 0 1 .102 1.493l-.102.007H14.25a.75.75 0 0 1-.102-1.494l.102-.006h3.496h-3.496ZM6.246 8.497h11.5a.75.75 0 0 1 .102 1.493l-.102.007h-11.5a.75.75 0 0 1-.101-1.493l.101-.007h11.5h-11.5Z" />
+											</svg>
+											News
+										</a>
+									</li>
+									<li>
+										<a href="./playMusic.html" class="nav-link">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-5"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 20 20">
+												<path
+													fill="currentColor"
+													d="M14.702 2.226A1 1 0 0 1 16 3.18v6.027a5.479 5.479 0 0 0-1-.184V6.18L8 8.368V15.5a2.5 2.5 0 1 1-1-2V5.368a1 1 0 0 1 .702-.955l7-2.187ZM8 7.32l7-2.187V3.18L8 5.368V7.32ZM5.5 14a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm13.5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.265-.436l-2.994-1.65a.5.5 0 0 0-.741.438v3.3a.5.5 0 0 0 .741.438l2.994-1.65a.5.5 0 0 0 0-.876Z" />
+											</svg>
+											Play Music
+										</a>
+									</li>
+									<li>
+										<a href="./artist.html" class="nav-link">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-6"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 21 21">
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+											</svg>
+											Artist
+										</a>
+									</li>
+									<li>
+										<a href="./albums.html" class="nav-link">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-5"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 24 24">
+												<path
+													fill="currentColor"
+													d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
+											</svg>
+											Albums
+										</a>
+									</li>
+									<li>
+										<a href="./top-tracks.html" class="nav-link">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-5"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 256 256">
+												<path
+													fill="currentColor"
+													d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.7l50.3-50.4a8.1 8.1 0 0 1 11.4 0l26.3 26.4L188.7 72H168a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V83.3l-66.3 66.4a8.1 8.1 0 0 1-11.4 0L96 123.3l-56 56V200h184a8 8 0 0 1 8 8Z" />
+											</svg>
+											Top Tracks
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- offcanvas ends -->
 					</div>
 					<!-- lg nav ends -->
 				</header>
-				<!-- offcanvas starts -->
-				<div
-					id="drawer-navigation"
-					class="fixed h-full z-40 min-h-screen p-4 overflow-y-auto bg-primarySkin w-80 dark:bg-gray-800"
-					tabindex="-1"
-					aria-labelledby="drawer-navigation-label">
-					<h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-					<button
-						type="button"
-						data-drawer-dismiss="drawer-navigation"
-						aria-controls="drawer-navigation"
-						class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
-						<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-							<path
-								fill-rule="evenodd"
-								d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-								clip-rule="evenodd"></path>
-						</svg>
-						<span class="sr-only">Close menu</span>
-					</button>
-					<div class="py-4 overflow-y-auto">
-						<ul class="nav-links-wrapper">
-							<li>
-								<a href="./index.html" class="nav-link">
-									<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
-										<path
-											fill="currentColor"
-											fill-rule="evenodd"
-											d="m8.36 1.37l6.36 5.8l-.71.71L13 6.964v6.526l-.5.5h-3l-.5-.5v-3.5H7v3.5l-.5.5h-3l-.5-.5V6.972L2 7.88l-.71-.71l6.35-5.8h.72zM4 6.063v6.927h2v-3.5l.5-.5h3l.5.5v3.5h2V6.057L8 2.43L4 6.063z"
-											clip-rule="evenodd" />
-									</svg>
-									Home
-								</a>
-							</li>
-							<li>
-								<a href="./lyrics-search.html" class="nav-link">
-									<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-miterlimit="10"
-											stroke-width="32"
-											d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-linecap="round"
-											stroke-miterlimit="10"
-											stroke-width="32"
-											d="M338.29 338.29L448 448" />
-									</svg>
-									Search
-								</a>
-							</li>
-							<li>
-								<a href="./blog-news.html" class="nav-link">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 28 28">
-										<path
-											fill="currentColor"
-											d="M22.75 24H5.25a3.25 3.25 0 0 1-3.245-3.066L2 20.75V6.25a2.25 2.25 0 0 1 2.096-2.245L4.25 4h15.5a2.25 2.25 0 0 1 2.245 2.096L22 6.25V7h1.75a2.25 2.25 0 0 1 2.245 2.096L26 9.25v11.5a3.25 3.25 0 0 1-3.066 3.245L22.75 24H5.25h17.5Zm-17.5-1.5h17.5a1.75 1.75 0 0 0 1.744-1.607l.006-.143V9.25a.75.75 0 0 0-.648-.743L23.75 8.5H22v10.75a.75.75 0 0 1-.648.743L21.25 20a.75.75 0 0 1-.743-.648l-.007-.102v-13a.75.75 0 0 0-.648-.743L19.75 5.5H4.25a.75.75 0 0 0-.743.648L3.5 6.25v14.5a1.75 1.75 0 0 0 1.606 1.744l.144.006h17.5h-17.5Zm4.996-9.496c.69 0 1.25.56 1.25 1.25v3.496c0 .69-.56 1.25-1.25 1.25H6.75c-.69 0-1.25-.56-1.25-1.25v-3.496c0-.69.56-1.25 1.25-1.25h3.496ZM14.25 17.5h3.496a.75.75 0 0 1 .102 1.493l-.102.007H14.25a.75.75 0 0 1-.102-1.493l.102-.007h3.496h-3.496Zm-4.253-2.996H7V17.5h2.997v-2.996Zm4.253-1.5h3.496a.75.75 0 0 1 .102 1.493l-.102.007H14.25a.75.75 0 0 1-.102-1.494l.102-.006h3.496h-3.496ZM6.246 8.497h11.5a.75.75 0 0 1 .102 1.493l-.102.007h-11.5a.75.75 0 0 1-.101-1.493l.101-.007h11.5h-11.5Z" />
-									</svg>
-									News
-								</a>
-							</li>
-							<li>
-								<a href="./playMusic.html" class="nav-link">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
-										<path
-											fill="currentColor"
-											d="M14.702 2.226A1 1 0 0 1 16 3.18v6.027a5.479 5.479 0 0 0-1-.184V6.18L8 8.368V15.5a2.5 2.5 0 1 1-1-2V5.368a1 1 0 0 1 .702-.955l7-2.187ZM8 7.32l7-2.187V3.18L8 5.368V7.32ZM5.5 14a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm13.5.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.265-.436l-2.994-1.65a.5.5 0 0 0-.741.438v3.3a.5.5 0 0 0 .741.438l2.994-1.65a.5.5 0 0 0 0-.876Z" />
-									</svg>
-									Play Music
-								</a>
-							</li>
-							<li>
-								<a href="./artist.html" class="nav-link">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-									</svg>
-									Artist
-								</a>
-							</li>
-							<li>
-								<a href="./albums.html" class="nav-link">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-										<path
-											fill="currentColor"
-											d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
-									</svg>
-									Albums
-								</a>
-							</li>
-							<li>
-								<a href="./top-tracks.html" class="nav-link">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-										<path
-											fill="currentColor"
-											d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.7l50.3-50.4a8.1 8.1 0 0 1 11.4 0l26.3 26.4L188.7 72H168a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V83.3l-66.3 66.4a8.1 8.1 0 0 1-11.4 0L96 123.3l-56 56V200h184a8 8 0 0 1 8 8Z" />
-									</svg>
-									Top Tracks
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- offcanvas ends -->
 				<!-- navigation ends -->
 				<div class="col-span-full md:col-span-10 min-h-screen bg-secondarySkin p-3">
-					<nav class="flex items-center justify-between md:hidden">
-						<a href="">
-							<img src="./src/images/logo-lg-variant-icon-white.png" class="h-auto w-10" alt="" />
-						</a>
-						<div class="right md:hidden items-center flex">
-							<a href="" class="text-white hover:bg-opacity-5 p-2 hover:bg-gray-300 rounded-full">
-								<svg xmlns="http://www.w3.org/2000/svg" class="w-7" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
-									<path
-										fill="currentColor"
-										d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 0 0 3.8.4c8.3 0 11.5-6.1 11.5-11.4c0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 0 1-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5c-10.2-26.5-24.9-33.6-24.9-33.6c-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8c11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0 0 25.6-6c2-14.8 7.8-24.9 14.2-30.7c-49.7-5.8-102-25.5-102-113.5c0-25.1 8.7-45.6 23-61.6c-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 0 1 5-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 0 1 112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 0 1 5 .5c12.2 31.6 4.5 55 2.2 60.8c14.3 16.1 23 36.6 23 61.6c0 88.2-52.4 107.6-102.3 113.3c8 7.1 15.2 21.1 15.2 42.5c0 30.7-.3 55.5-.3 63c0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 0 0 4-.4C415.9 449.2 480 363.1 480 261.7C480 134.9 379.7 32 256 32Z" />
-								</svg>
-							</a>
-							<button
-								class="text-white ml-1"
-								type="button"
-								data-drawer-target="drawer-navigation"
-								data-drawer-show="drawer-navigation"
-								aria-controls="drawer-navigation">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-									<g transform="translate(24 0) scale(-1 1)">
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M4 6h16M4 12h8m-8 6h16" />
-									</g>
-								</svg>
-							</button>
-						</div>
-					</nav>
 					<header class="flex items-center justify-between mt-6 md:mt-0">
 						<div class="breadcrumb-nav">
 							<nav class="flex" aria-label="Breadcrumb">

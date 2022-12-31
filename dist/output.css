@@ -1315,6 +1315,10 @@ input:checked + .toggle-bg {
   margin-top: 0.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
