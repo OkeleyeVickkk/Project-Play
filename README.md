@@ -2,7 +2,8 @@
 Project Play is a mini music/news/entertaiment website that displays the lastest news, albums, songs and a lot more from the world of entertaiment
 <br>
 Here I learnt how to build skeleton placeholders for pending data still under fetch process. <br>
-I also learnt how to send data between pages of a website. Thanks to research and questions asked
+I also learnt how to send data between pages of a website. Thanks to research and questions asked <br>
+I also used free API sources like <a href="https://newscatcherapi.com/">https://newscatcherapi.com/</a>, also the famous RAPIDAPI free for public use, to achieve my goals for this project. 
 
 
 <h3 align="left">Languages and Tools used:</h3>
