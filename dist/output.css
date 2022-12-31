@@ -4315,6 +4315,10 @@ input:checked + .toggle-bg {
     display: block;
   }
 
+  .md\:inline {
+    display: inline;
+  }
+
   .md\:flex {
     display: flex;
   }
