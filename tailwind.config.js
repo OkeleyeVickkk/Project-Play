@@ -4,7 +4,6 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundColor: {
-				// primaryBlue: "#1c64f2",
 				primarySkin: "#23263D",
 				secondarySkin: "#161728",
 				tertiarySkin: "#111827",
