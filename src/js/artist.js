@@ -28,7 +28,7 @@ function Boy() {
 		.catch((err) => console.error(err));
 
 	// fetch about artist albums
-	fetch(`https://genius-song-lyrics1.p.rapidapi.com/artists/456537/albums`, options)
+	fetch(`https://genius-song-lyrics1.p.rapidapi.com/artists/${artist_id}/albums`, options)
 		.then((response) => response.json())
 		.then((response) => console.log(response))
 		.catch((err) => console.error(err));
