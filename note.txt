@@ -6,6 +6,12 @@
 // 4. Genius lyrics
 // 5. Billboard
 
+// External apis used
+FOR NEWS PAGE
+1. WORLD NEWS API
+2. THE NEWS API
+3. gnews API
+4. newsdata API
 
 // Must have a player session
 // Skeleton loader

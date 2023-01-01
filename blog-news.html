@@ -347,7 +347,7 @@
 							</div>
 							<div class="news-sections">
 								<section class="first">
-									<div class="grid grid-cols-12 gap-y-8 gap-x-4">
+									<div class="grid grid-cols-12 gap-y-8 gap-x-4 overfow">
 										<!-- main news -->
 										<div class="main-news col-span-12 md:col-span-8 sectionOneNews">
 											<template id="main-news-template">
@@ -459,7 +459,10 @@
 																	quos.</small
 																>
 																<div class="source mt-4">
-																	<small class="text-sm text-gray-400"> Source - Daily News</small>
+																	<small
+																		class="text-xs whitespace-nowrap text-ellipsis overflow-hidden text-gray-400">
+																		Source - Daily News</small
+																	>
 																</div>
 															</div>
 														</div>
@@ -476,8 +479,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- <script src="./src/js/news.js"></script> -->
-		<script src="./src/js/news1.js"></script>
+		<script src="./src/js/news.js"></script>
 		<script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
 		<script src="./node_modules/flowbite/dist/flowbite.js"></script>
 	</body>

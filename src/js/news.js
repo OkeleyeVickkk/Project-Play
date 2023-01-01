@@ -1,37 +1,24 @@
-const API = "67e2b768ef734181b918ca0d862461d3";
-const URL = `https://newsapi.org/v2/everything?q=music%entertainment&from=2022-12-25&sortBy=popularity&apiKey=${API}`;
 const defaultNewsImage = `https://mir-s3-cdn-cf.behance.net/project_modules/1400/6fe6f228202371.5637141eb4d67.jpg`;
 
-const options = {
+const API_ONE = `6qunVqSv4fjZdS2vf5BTIiVrP5ksWAUvte0jJ6VC`;
+const URL_ONE = `https://api.thenewsapi.com/v1/news/top?locale=us,ca&language=en&api_token=${API_ONE}`;
+
+const OPTIONS_ONE = {
 	method: "GET",
 	header: {
-		"X-Api-Key": `${API}`,
-		Authorization: `${API}`,
+		"Content-Type": "application/json",
 	},
 };
-fetch(URL, options)
-	.then((response) => {
-		if (!response.ok) {
-			throw response.status;
-		}
-		return response.json();
-	})
-	.then((response) => {
-		const results = response.articles;
-		const randomizedResult = randomize(results);
-		const sectionOneResults = randomizedResult.slice(0, 3);
-		const sectionTwoResults = randomizedResult.slice(3);
-		pasteSectionOneResults(sectionOneResults);
-		pasteSectionTwoResults(sectionTwoResults);
-	})
-	.catch((err) => console.log(err));
 
-function randomize(results) {
-	const randomStart = Math.floor(Math.random() * 40) + 1;
-	return results.slice(randomStart, randomStart + 15);
-}
+fetch(URL_ONE, OPTIONS_ONE)
+	.then((response) => response.json())
+	.then((results) => {
+		console.log(results);
+		pasteSectionOneResults(results.data);
+	})
+	.catch((error) => console.log(error));
 
-function pasteSectionOneResults(sectionOneResults) {
+function pasteSectionOneResults(results) {
 	//main function one
 	const sectionOne = document.querySelector("section.first");
 	const sectionOneMainTemplate = document.getElementById("main-news-template");
@@ -39,33 +26,31 @@ function pasteSectionOneResults(sectionOneResults) {
 	const subNewsTemplate = document.getElementById("sub-template");
 	const sectionOneSub = document.querySelector(".sub-news-inner");
 
-	const main = sectionOneResults.slice(0, 1)[0];
-	const { title, url, urlToImage, description, author, publishedAt } = main;
-	const date = filterDate(publishedAt);
-	const newAuthor = filterAuthor(author);
+	const main = results.slice(0, 3);
+	const { title, url, image_url, description, source, published_at } = main[0];
+	const date = filterDate(published_at);
 
 	const MainTemplate = sectionOneMainTemplate.content.cloneNode(true);
 
 	MainTemplate.querySelector("a.news-link").href = url;
-	MainTemplate.querySelector(".image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
+	MainTemplate.querySelector(".image-wrapper img.img-fluid").src = image_url ?? defaultNewsImage;
 	MainTemplate.querySelector(".date small").textContent = date;
-	MainTemplate.querySelector(".author small").textContent = `- ${newAuthor ?? "Unknown"}`;
+	MainTemplate.querySelector(".author small").textContent = `Source - ${source ?? "Unknown"}`;
 	MainTemplate.querySelector(".middle .news-title").textContent = title;
 	MainTemplate.querySelector(".bottom .news-content").textContent = description;
 
 	sectionOneMain.appendChild(MainTemplate); //add to the largest section
 
-	sectionOneResults.slice(1).forEach((result) => {
-		const { title, url, urlToImage, description, author, publishedAt } = result;
-		const date = filterDate(publishedAt);
-		const newAuthor = filterAuthor(author);
+	results.slice(1, 3).forEach((result) => {
+		const { title, url, image_url, description, source, published_at } = result;
+		const date = filterDate(published_at);
 
 		const subTemplate = subNewsTemplate.content.cloneNode(true);
 
 		subTemplate.querySelector("a.news-link").href = url;
-		subTemplate.querySelector(".image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
+		subTemplate.querySelector(".image-wrapper img.img-fluid").src = image_url ?? defaultNewsImage;
 		subTemplate.querySelector(".date small").textContent = date;
-		subTemplate.querySelector(".author small").textContent = `- ${newAuthor ?? "Unknown"}`;
+		subTemplate.querySelector(".author small").textContent = `Source - ${source ?? "Unknown"}`;
 		subTemplate.querySelector(".middle .news-title").textContent = title;
 		subTemplate.querySelector(".bottom .news-content").innerHTML = description;
 
@@ -73,34 +58,42 @@ function pasteSectionOneResults(sectionOneResults) {
 	});
 }
 
-function pasteSectionTwoResults(sectionTwoResults) {
+const API_TWO = `40fff40b72b4dae0fc8cc694ef057ab4`;
+const URL_TWO = `https://gnews.io/api/v4/top-headlines?token=${API_TWO}&topic=breaking-news&lang=en`;
+
+const options = {
+	method: "GET",
+	header: {
+		"Content-Type": "application/json",
+	},
+};
+
+fetch(URL_TWO, options)
+	.then((response) => response.json())
+	.then((results) => {
+		pasteSectionTwoResults(results.articles);
+	})
+	.catch((error) => console.log(error));
+
+function pasteSectionTwoResults(results) {
 	//main function two
 	const sectionTwo = document.querySelector("section.second");
 	const sectionTwoArticlesWrapper = sectionTwo.querySelector("ul.articles-wrapper");
 	const sectionTwoTemplate = document.getElementById("sectionTwoTemplate");
 
-	sectionTwoResults.forEach((result) => {
-		const {
-			title,
-			url,
-			urlToImage,
-			description,
-			author,
-			publishedAt,
-			source: { name },
-		} = result;
+	results.forEach((result) => {
+		const { title, url, image, content, publishedAt, source = { name, url } } = result;
 		const date = filterDate(publishedAt);
-		const newAuthor = filterAuthor(author);
 
 		const clonedTemplate = sectionTwoTemplate.content.cloneNode(true);
 
 		clonedTemplate.querySelector(".article-item .article-link").href = url;
-		clonedTemplate.querySelector(".article-image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
-		clonedTemplate.querySelector("small.article-author").innerHTML = `- ${newAuthor ?? "Unknown"}`;
+		clonedTemplate.querySelector(".article-image-wrapper img.img-fluid").src = image ?? defaultNewsImage;
+		clonedTemplate.querySelector("small.article-author").innerHTML = `- ${source.name ?? "Unknown"}`;
 		clonedTemplate.querySelector("small.date").innerHTML = date;
-		clonedTemplate.querySelector(".source small").innerHTML = `Source - ${name}`;
 		clonedTemplate.querySelector("h3.article-title").innerHTML = title;
-		clonedTemplate.querySelector("small.article-writeup").innerHTML = description;
+		clonedTemplate.querySelector(".source small").innerHTML = `Source - ${source.url}`;
+		clonedTemplate.querySelector("small.article-writeup").innerHTML = content;
 
 		sectionTwoArticlesWrapper.appendChild(clonedTemplate); // add to screen
 	});
@@ -118,5 +111,3 @@ function filterDate(publishedAt) {
 function filterAuthor(author) {
 	return author.split("https://")[0];
 }
-
-function getTodaysDate() {} //get today's date and add it to the api url to get the latests news
