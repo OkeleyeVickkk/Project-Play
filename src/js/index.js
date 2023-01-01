@@ -63,7 +63,7 @@ for (let i = 0; i < 6; i++) {
 const options = {
 	method: "GET",
 	headers: {
-		// "X-RapidAPI-Key": `${API_KEY}`,
+		"X-RapidAPI-Key": `${API_KEY}`,
 		"X-RapidAPI-Host": "current-news.p.rapidapi.com",
 	},
 };

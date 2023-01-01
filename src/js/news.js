@@ -9,7 +9,6 @@ const options = {
 		Authorization: `${API}`,
 	},
 };
-
 fetch(URL, options)
 	.then((response) => {
 		if (!response.ok) {
@@ -20,7 +19,6 @@ fetch(URL, options)
 	.then((response) => {
 		const results = response.articles;
 		const randomizedResult = randomize(results);
-
 		const sectionOneResults = randomizedResult.slice(0, 3);
 		const sectionTwoResults = randomizedResult.slice(3);
 		pasteSectionOneResults(sectionOneResults);
@@ -69,7 +67,7 @@ function pasteSectionOneResults(sectionOneResults) {
 		subTemplate.querySelector(".date small").textContent = date;
 		subTemplate.querySelector(".author small").textContent = `- ${newAuthor ?? "Unknown"}`;
 		subTemplate.querySelector(".middle .news-title").textContent = title;
-		subTemplate.querySelector(".bottom .news-content").textContent = description;
+		subTemplate.querySelector(".bottom .news-content").innerHTML = description;
 
 		sectionOneSub.appendChild(subTemplate); //add to screen
 	});
