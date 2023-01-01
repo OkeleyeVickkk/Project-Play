@@ -5,6 +5,7 @@ const defaultNewsImage = `https://mir-s3-cdn-cf.behance.net/project_modules/1400
 // 	.then((response) => console.log(response))
 // 	.catch((err) => console.error(err));
 
+// ? <========= OUT OF USE ===========>
 // ?! world news api -> image, 10 results and so on other important details 50 req/day {brings in last year's news}
 // const api = `00a4ef6511074637847bfec1441ecb03`;
 // const URL_2 = `https://api.worldnewsapi.com/search-news?api-key=${api}&text=entertainment`;
@@ -23,10 +24,31 @@ const defaultNewsImage = `https://mir-s3-cdn-cf.behance.net/project_modules/1400
 // 		pasteSectionTwoResults(results.news);
 // 	})
 // 	.catch((error) => console.log(error));
+// ? <========= OUT OF USE ===========>
 
 // ?! the news api 150 req / day
-const api = `6qunVqSv4fjZdS2vf5BTIiVrP5ksWAUvte0jJ6VC`;
-const URL_2 = `https://api.thenewsapi.com/v1/news/top?locale=us&language=en&api_token=${api}`;
+// todo this is for section one
+// const api = `6qunVqSv4fjZdS2vf5BTIiVrP5ksWAUvte0jJ6VC`;
+// const URL_2 = `https://api.thenewsapi.com/v1/news/top?locale=us,ca&language=en&api_token=${api}`;
+
+// const options = {
+// 	method: "GET",
+// 	header: {
+// 		"Content-Type": "application/json",
+// 	},
+// };
+
+// fetch(URL_2, options)
+// 	.then((response) => response.json())
+// 	.then((results) => {
+// 		console.log(results);
+// 		pasteSectionOneResults(results.data);
+// 	})
+// 	.catch((error) => console.log(error));
+
+// ?! gnews api 100 req / day
+const api = `40fff40b72b4dae0fc8cc694ef057ab4`;
+const URL_2 = `https://gnews.io/api/v4/top-headlines?token=${api}&topic=breaking-news&lang=en`;
 
 const options = {
 	method: "GET",
@@ -38,26 +60,11 @@ const options = {
 fetch(URL_2, options)
 	.then((response) => response.json())
 	.then((results) => {
-		pasteSectionOneResults(results.data);
+		pasteSectionTwoResults(results.articles);
 	})
 	.catch((error) => console.log(error));
 
-// ?! gnews api 100 req / day
-// const api = `40fff40b72b4dae0fc8cc694ef057ab4`;
-// const URL_2 = `https://gnews.io/api/v4/{endpoint}?token=${api}`;
-
-// const options = {
-// 	method: "GET",
-// 	header: {
-// 		"Content-Type": "application/json",
-// 	},
-// };
-
-// fetch(URL_2, options)
-// 	.then((response) => response.json())
-// 	.then((result) => console.log(result))
-// 	.catch((error) => console.log(error));
-
+// ? <========= OUT OF USE ===========>
 // ?! newsdata -> here no image url, 200 request per day
 // const api_3 = `pub_15170d15cdc49c8e7fabb520854386f8621f1`;
 // const URL_3 = `https://newsdata.io/api/1/news?apikey=${api_3}&country=us`;
@@ -66,6 +73,7 @@ fetch(URL_2, options)
 // 	.then((response) => response.json())
 // 	.then((result) => console.log(result))
 // 	.catch((error) => console.log(error));
+// ? <========= OUT OF USE ===========>
 
 function pasteSectionOneResults(results) {
 	//main function one
@@ -76,10 +84,8 @@ function pasteSectionOneResults(results) {
 	const sectionOneSub = document.querySelector(".sub-news-inner");
 
 	const main = results.slice(0, 3);
-	console.log(main);
 	const { title, url, image_url, description, source, published_at } = main[0];
 	const date = filterDate(published_at);
-	// const newAuthor = filterAuthor(author);
 
 	const MainTemplate = sectionOneMainTemplate.content.cloneNode(true);
 
@@ -93,14 +99,13 @@ function pasteSectionOneResults(results) {
 	sectionOneMain.appendChild(MainTemplate); //add to the largest section
 
 	results.slice(1, 3).forEach((result) => {
-		const { title, url, urlToImage, description, source, published_at } = result;
+		const { title, url, image_url, description, source, published_at } = result;
 		const date = filterDate(published_at);
-		// const newAuthor = filterAuthor(author);
 
 		const subTemplate = subNewsTemplate.content.cloneNode(true);
 
 		subTemplate.querySelector("a.news-link").href = url;
-		subTemplate.querySelector(".image-wrapper img.img-fluid").src = urlToImage ?? defaultNewsImage;
+		subTemplate.querySelector(".image-wrapper img.img-fluid").src = image_url ?? defaultNewsImage;
 		subTemplate.querySelector(".date small").textContent = date;
 		subTemplate.querySelector(".author small").textContent = `Source - ${source ?? "Unknown"}`;
 		subTemplate.querySelector(".middle .news-title").textContent = title;
@@ -110,28 +115,29 @@ function pasteSectionOneResults(results) {
 	});
 }
 
-// function pasteSectionTwoResults(results) {
-// 	//main function two
-// 	const sectionTwo = document.querySelector("section.second");
-// 	const sectionTwoArticlesWrapper = sectionTwo.querySelector("ul.articles-wrapper");
-// 	const sectionTwoTemplate = document.getElementById("sectionTwoTemplate");
+function pasteSectionTwoResults(results) {
+	//main function two
+	const sectionTwo = document.querySelector("section.second");
+	const sectionTwoArticlesWrapper = sectionTwo.querySelector("ul.articles-wrapper");
+	const sectionTwoTemplate = document.getElementById("sectionTwoTemplate");
 
-// 	results.forEach((result) => {
-// 		const { title, url, image, text, author, publish_date } = result;
-// 		const date = filterDate(publish_date);
+	results.forEach((result) => {
+		const { title, url, image, content, description, publishedAt, source = { name, url } } = result;
+		const date = filterDate(publishedAt);
 
-// 		const clonedTemplate = sectionTwoTemplate.content.cloneNode(true);
+		const clonedTemplate = sectionTwoTemplate.content.cloneNode(true);
 
-// 		clonedTemplate.querySelector(".article-item .article-link").href = url;
-// 		clonedTemplate.querySelector(".article-image-wrapper img.img-fluid").src = image ?? defaultNewsImage;
-// 		clonedTemplate.querySelector("small.article-author").innerHTML = `- ${author ?? "Unknown"}`;
-// 		clonedTemplate.querySelector("small.date").innerHTML = date;
-// 		clonedTemplate.querySelector("h3.article-title").innerHTML = title;
-// 		clonedTemplate.querySelector("small.article-writeup").innerHTML = text;
+		clonedTemplate.querySelector(".article-item .article-link").href = url;
+		clonedTemplate.querySelector(".article-image-wrapper img.img-fluid").src = image ?? defaultNewsImage;
+		clonedTemplate.querySelector("small.article-author").innerHTML = `- ${source.name ?? "Unknown"}`;
+		clonedTemplate.querySelector("small.date").innerHTML = date;
+		clonedTemplate.querySelector("h3.article-title").innerHTML = title;
+		clonedTemplate.querySelector(".source small").innerHTML = `Source - ${source.url}`;
+		clonedTemplate.querySelector("small.article-writeup").innerHTML = content;
 
-// 		sectionTwoArticlesWrapper.appendChild(clonedTemplate); // add to screen
-// 	});
-// }
+		sectionTwoArticlesWrapper.appendChild(clonedTemplate); // add to screen
+	});
+}
 
 // secondary functions
 function filterDate(publishedAt) {
