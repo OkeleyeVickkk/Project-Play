@@ -1,7 +1,20 @@
+// const options = {
+// 	method: "GET",
+// 	headers: {
+// 		"X-RapidAPI-Key": "6473c3ce7dmsh28c8afd093343dep1d0f1fjsn02e8bc02b53a",
+// 		"X-RapidAPI-Host": "spotify81.p.rapidapi.com",
+// 	},
+// };
+
+// fetch("https://spotify81.p.rapidapi.com/top_200_tracks", options)
+// 	.then((response) => response.json())
+// 	.then((response) => console.log(response))
+// 	.catch((err) => console.error(err));
+
 const defaultNewsImage = `https://mir-s3-cdn-cf.behance.net/project_modules/1400/6fe6f228202371.5637141eb4d67.jpg`;
 
-const API_ONE = `6qunVqSv4fjZdS2vf5BTIiVrP5ksWAUvte0jJ6VC`;
-const URL_ONE = `https://api.thenewsapi.com/v1/news/top?locale=us,ca&language=en&api_token=${API_ONE}`;
+// const API_ONE = `6qunVqSv4fjZdS2vf5BTIiVrP5ksWAUvte0jJ6VC`;
+// const URL_ONE = `https://api.thenewsapi.com/v1/news/top?locale=us,ca&language=en&api_token=${API_ONE}`;
 
 const OPTIONS_ONE = {
 	method: "GET",
@@ -58,15 +71,15 @@ function pasteSectionOneResults(results) {
 	});
 }
 
-const API_TWO = `40fff40b72b4dae0fc8cc694ef057ab4`;
+// const API_TWO = `40fff40b72b4dae0fc8cc694ef057ab4`;
 const URL_TWO = `https://gnews.io/api/v4/top-headlines?token=${API_TWO}&topic=breaking-news&lang=en`;
 
-const options = {
-	method: "GET",
-	header: {
-		"Content-Type": "application/json",
-	},
-};
+// const options = {
+// 	method: "GET",
+// 	header: {
+// 		"Content-Type": "application/json",
+// 	},
+// };
 
 fetch(URL_TWO, options)
 	.then((response) => response.json())

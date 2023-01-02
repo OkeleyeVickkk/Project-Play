@@ -1,8 +1,3 @@
-// fetch("https://spotify81.p.rapidapi.com/top_200_tracks", options)
-// 	.then((response) => response.json())
-// 	.then((response) => console.log(response))
-// 	.catch((err) => console.error(err));
-
 // ? <========= OUT OF USE ===========>
 // ?! world news api -> image, 10 results and so on other important details 50 req/day {brings in last year's news}
 // const api = `00a4ef6511074637847bfec1441ecb03`;

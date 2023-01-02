@@ -8,18 +8,14 @@
 
 // External apis used
 FOR NEWS PAGE
-1. WORLD NEWS API
-2. THE NEWS API
-3. gnews API
+1. WORLD NEWS API -50 req/day
+2. THE NEWS API -150 req / day
+3. gnews API - 100 req / day
 4. newsdata API
 
 // Must have a player session
 // Skeleton loader
 // responsiveness
-
-//top 50 songs
-//latest songs
-//songs on chart boards
 
 
 //font
