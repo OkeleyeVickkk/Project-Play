@@ -1,22 +1,5 @@
 // ? <========= OUT OF USE ===========>
 // ?! world news api -> image, 10 results and so on other important details 50 req/day {brings in last year's news}
-// const api = `00a4ef6511074637847bfec1441ecb03`;
-// const URL_2 = `https://api.worldnewsapi.com/search-news?api-key=${api}&text=entertainment`;
-
-// const options = {
-// 	method: "GET",
-// 	header: {
-// 		"x-api-key": `${api}`,
-// 		"Content-Type": "application/json",
-// 	},
-// };
-
-// fetch(URL_2, options)
-// 	.then((response) => response.json())
-// 	.then((results) => {
-// 		pasteSectionTwoResults(results.news);
-// 	})
-// 	.catch((error) => console.log(error));
 // ? <========= OUT OF USE ===========>
 
 // ? <========= OUT OF USE ===========>
