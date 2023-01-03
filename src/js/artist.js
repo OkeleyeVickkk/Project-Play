@@ -33,3 +33,5 @@ function Boy() {
 		.then((response) => console.log(response))
 		.catch((err) => console.error(err));
 }
+
+// spotify api 2 for search of artiste

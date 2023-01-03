@@ -42,7 +42,6 @@ searchBar.addEventListener("submit", function (e) {
 
 				clonedTrackTemplate.querySelector("h2.searched-data").textContent = full_title;
 				clonedTrackTemplate.querySelector("a.track-element").href = `./artist.html?artist_id=${artist_id}`;
-
 				const trackItemLyricsButton = clonedTrackTemplate.querySelector("button.track-element");
 				fetchLyrics(id)
 					.then((response) => {
@@ -53,30 +52,6 @@ searchBar.addEventListener("submit", function (e) {
 
 				ul.appendChild(clonedTrackTemplate);
 			});
-			// ? OPTION ONE OF FETCHING LYRICS (MODAL - DOESN'T WORK)
-			// const listItems = resultBoard.querySelectorAll(".searched-track");
-			// const modal = document.querySelector(".lyrics-modal");
-			// const modalContent = modal.querySelector(".lyrics-content p");
-			// modal.setAttribute("id", `staticModal large-modal track-${id}`);
-			// listItems.forEach((listItem) => {
-			// 	const listItembutton = listItem.querySelector("button.track-element");
-			// 	listItembutton.addEventListener("click", function (e) {
-			// 		e.stopPropagation();
-			// 		let lyricContent = e.target.getAttribute("lyrics");
-			// 		modalContent.innerText = `${lyricContent ?? "No lyrics found"}`;
-			// 	});
-			// });
-
-			// ? OPTION TWO OF FETCHING LYRICS (MODAL - DOESN'T WORK)
-			// const listItemsButtons = resultBoard.querySelectorAll(".searched-track button.track-element");
-			// modal.setAttribute("id", `staticModal large-modal track-${id}`);
-			// listItemsButtons.forEach((button) => {
-			// 	button.addEventListener("click", function (e) {
-			// 		e.stopPropagation();
-			// 		let lyricContent = e.target.getAttribute("lyrics");
-			// 		modalContent.textContent = `${lyricContent ?? "No lyrics found"}`;
-			// 	});
-			// });
 		})
 		.catch((err) => console.error(err));
 });
@@ -90,13 +65,18 @@ async function fetchLyrics(id) {
 		},
 	};
 
-	return fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/${id}/lyrics`, options)
-		.then((response) => response.json() ?? "No lyrics available")
-		.then((response) => response?.response?.lyrics?.lyrics?.body?.html);
+	const response = await fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/${id}/lyrics`, options);
+	const data = (await response.json()) ?? "No lyrics available for this song";
+	return data?.response?.lyrics?.lyrics?.body?.html;
 }
 
 function getArtistId(api_path) {
 	return api_path.split("/artists/")[1];
+}
+
+function showLyrics() {
+	// get the buttons for each displayed output
+	// onclick, display the lyrics in the modal that gets triggered
 }
 
 // ? OPTION THREE OF FETCHING LYRICS (IT WORKS)
