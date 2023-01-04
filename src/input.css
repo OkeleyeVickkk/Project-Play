@@ -107,7 +107,9 @@
 .albums-wrapper > li:hover .image-wrap img {
 	scale: 1.15;
 }
-
+.speed-dail-tooltip {
+	@apply whitespace-nowrap text-xs bg-blue-600;
+}
 /* news page */
 .page-title {
 	@apply text-gray-100 text-2xl;
