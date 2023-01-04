@@ -1,3 +1,5 @@
+const API_KEY = "6473c3ce7dmsh28c8afd0l93343dep1d0f1fjsn02e8bc02b53a";
+
 // <============ search result to fetch api data ===========>
 const searchBar = document.querySelector(".search-bar-control");
 searchBar.addEventListener("submit", function (e) {
@@ -5,12 +7,11 @@ searchBar.addEventListener("submit", function (e) {
 	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
 	const originalInput = document.querySelector(".search-bar-control .form-control").value;
 	const resultBoard = document.getElementById("search-result");
-	const ul = document.querySelector("#search-result ul.ul");
+	const ul = document.querySelector("#search-result > ul");
 	const h1 = document.createElement("h1");
 	h1.className = "text-lg text-gray-300 mb-8";
 	const text = `Results for "<i>${originalInput}</i>"</h1>`;
 	h1.innerHTML = text;
-	resultBoard.insertBefore(h1, ul);
 
 	const options = {
 		method: "GET",
@@ -23,9 +24,8 @@ searchBar.addEventListener("submit", function (e) {
 		.then((response) => response.json())
 		.then((response) => {
 			const trackTemplate = document.getElementById("track-template");
-			const otherContent = document.getElementById("sub-content");
-			otherContent.innerHTML = "";
 			ul.innerHTML = "";
+			resultBoard.insertBefore(h1, ul);
 			const results = response.response.hits;
 			results.forEach((result) => {
 				const clonedTrackTemplate = trackTemplate.content.cloneNode(true);
@@ -40,7 +40,7 @@ searchBar.addEventListener("submit", function (e) {
 
 				const artist_id = getArtistId(api_path);
 
-				clonedTrackTemplate.querySelector("h2.searched-data").textContent = full_title;
+				clonedTrackTemplate.querySelector(".track-name span").textContent = full_title;
 				clonedTrackTemplate.querySelector("a.track-element").href = `./artist.html?artist_id=${artist_id}`;
 				const trackItemLyricsButton = clonedTrackTemplate.querySelector("button.track-element");
 				fetchLyrics(id)
