@@ -97,7 +97,16 @@
 	@apply h-2 rounded-lg;
 }
 
-/* artist */
+/* artist page*/
+.albums-wrapper > li .image-wrap {
+	@apply overflow-hidden rounded-md;
+}
+.albums-wrapper > li .image-wrap img {
+	@apply transition-all ease-in-out duration-300;
+}
+.albums-wrapper > li:hover .image-wrap img {
+	scale: 1.15;
+}
 
 /* news page */
 .page-title {
@@ -117,7 +126,7 @@
 }
 
 .img-fluid {
-	@apply max-w-full h-auto object-cover rounded-lg;
+	@apply min-w-full h-auto object-cover rounded-lg;
 }
 
 .main-news-content {
