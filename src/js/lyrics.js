@@ -67,7 +67,7 @@ async function fetchLyrics(id) {
 
 	const response = await fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/${id}/lyrics`, options);
 	const data = (await response.json()) ?? "No lyrics available for this song";
-	return data?.response?.lyrics?.lyrics?.body?.html;
+	return data?.response?.lyrics?.lyrics?.body?.html; //return either result or error
 }
 
 function getArtistId(api_path) {

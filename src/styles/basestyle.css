@@ -42,7 +42,3 @@
 		background-color: hsl(0, 9%, 100%);
 	}
 }
-
-[modal-backdrop] {
-	backdrop-filter: blur(1px);
-}
