@@ -1,7 +1,7 @@
 const container = document.querySelectorAll(".tracks-wrapper")[1];
 const cardTemplate = document.querySelector(".card-template");
 
-const API_KEY = "6473c3ce7dmsh28c8afd093343dep1d0f1fjsn02e8bc02b53a";
+const API_KEY = "6473c3ce7dmsh28c8afd093343dep1d0f1fjsn02e8bc02b53a"; //rapidapi key
 
 const URL = "https://shazam-song-recognizer.p.rapidapi.com/top_country_tracks?country_code=NG&limit=10&start_from=0";
 const options_one = {
@@ -44,7 +44,7 @@ for (let i = 0; i < 6; i++) {
 	blogsWrapper.append(clonedTemplate);
 }
 
-// const api = `00a4ef6511074637847bfec1441ecb03`;
+// const api = `00a4ef6511074637847bfec1441ecb03`; //worldnews api key
 const URL_2 = `https://api.worldnewsapi.com/search-news?api-key=${api}&text=entertainment`;
 
 const options_two = {

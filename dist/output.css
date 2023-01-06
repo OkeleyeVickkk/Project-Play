@@ -1226,6 +1226,11 @@ input:checked + .toggle-bg {
   margin-bottom: 1.25rem;
 }
 
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -3112,6 +3117,11 @@ input:checked + .toggle-bg {
   color: rgb(63 131 248 / var(--tw-text-opacity));
 }
 
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -4396,6 +4406,10 @@ input:checked + .toggle-bg {
     margin-top: 8rem;
   }
 
+  .md\:mr-1 {
+    margin-right: 0.25rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -4494,8 +4508,16 @@ input:checked + .toggle-bg {
     display: none;
   }
 
+  .lg\:h-5 {
+    height: 1.25rem;
+  }
+
   .lg\:min-h-screen {
     min-height: 100vh;
+  }
+
+  .lg\:w-5 {
+    width: 1.25rem;
   }
 
   .lg\:grid-cols-12 {

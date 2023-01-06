@@ -190,166 +190,107 @@
 
 					<div class="artist-content mt-6">
 						<div class="artist-content-inner grid grid-cols-5 gap-8">
-							<div class="artist-image col-span-full md:col-span-2 overflow-hidden">
-								<img src="./src/images/woman.jpg" alt="" class="rounded-md aspect-square object-cover" />
-							</div>
-							<div class="artist-detail col-span-full md:col-span-3">
-								<div class="artist-name">
-									<span class="text-gray-300 text-lg md:text-xl">Okeleye Victor Olamide</span>
+							<template id="artist-template">
+								<div class="artist-image col-span-full md:col-span-2 overflow-hidden">
+									<img src="./src/images/woman.jpg" alt="" class="rounded-md aspect-square object-cover" />
 								</div>
-								<div class="artist-details my-8">
-									<p class="text-sm text-gray-200 leading-6">
-										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero mollitia hic qui tempore laboriosam, similique
-										quia veniam illo? Nostrum molestiae ex corrupti praesentium velit ducimus a, ad nobis doloremque magni
-										facilis. Dolorum tempore, officia eum enim dolore, quibusdam veritatis iste recusandae nisi placeat aut
-										cupiditate minima illo similique deserunt? Ipsam neque quidem, non fugit animi a architecto aut sed minus.
-										Labore, vero aspernatur. Possimus sed voluptas dolore odit, omnis ipsum sunt repellendus repellat beatae
-										consectetur fuga soluta, perspiciatis sapiente. Placeat, beatae commodi architecto quidem fuga aperiam, saepe
-										sit nisi, et cupiditate quibusdam quos! Iusto dignissimos asperiores nemo ipsam, exercitationem sit!
-									</p>
-								</div>
-								<div class="social-handles mt-3">
-									<small class="text-gray-400 text-xs tracking-widest">// SOCIAL MEDIA HANDLES</small>
-									<div class="social-handles-inner flex items-center gap-x-4 mt-3">
-										<a href="" class="text-white" id="facebook">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												class="w-7"
-												preserveAspectRatio="xMidYMid meet"
-												viewBox="0 0 256 256">
-												<path
-													fill="currentColor"
-													d="M230 128a102 102 0 1 0-102 102a102.1 102.1 0 0 0 102-102Zm-96 89.8V150h26a6 6 0 0 0 0-12h-26v-26a18.1 18.1 0 0 1 18-18h16a6 6 0 0 0 0-12h-16a30.1 30.1 0 0 0-30 30v26H96a6 6 0 0 0 0 12h26v67.8a90 90 0 1 1 12 0Z" />
-											</svg>
-										</a>
-										<a href="" class="text-white" id="twitter">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												class="w-7"
-												preserveAspectRatio="xMidYMid meet"
-												viewBox="0 0 256 256">
-												<path
-													fill="currentColor"
-													d="M245.5 69.7A6 6 0 0 0 240 66h-31.6a46 46 0 0 0-39.8-24A46.4 46.4 0 0 0 122 88v8.7C79.6 86.6 44.6 52.1 44.2 51.8a6 6 0 0 0-10.1 3.1c-8.7 47.6 5.6 79.4 19.1 97.7a105.6 105.6 0 0 0 26 25.1c-15.5 18.8-41 28.6-41.3 28.7a5.9 5.9 0 0 0-3.6 3.8a5.8 5.8 0 0 0 .7 5.1c1 1.5 10.8 14.7 45 14.7c69.7 0 128-53.9 133.6-123.1l30.6-30.7a5.7 5.7 0 0 0 1.3-6.5Zm-42 30.3a5.8 5.8 0 0 0-1.7 3.9C197.7 167.9 144.2 218 80 218c-13.9 0-22.8-2.4-28.1-4.8c11.3-5.7 29.8-16.9 41.1-33.9a6.2 6.2 0 0 0 .8-4.8a6.1 6.1 0 0 0-3.1-3.9c-.2 0-15.2-7.8-28.2-25.6C47 123.8 40.9 97.9 44.3 68c14.6 12.4 46.1 35.8 82.7 41.9a5.9 5.9 0 0 0 7-5.9V88a34.3 34.3 0 0 1 34.4-34a34.2 34.2 0 0 1 30.8 20.4a5.9 5.9 0 0 0 5.5 3.6h20.8Z" />
-											</svg>
-										</a>
-										<a href="" class="text-white" id="instagram">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												class="w-7"
-												preserveAspectRatio="xMidYMid meet"
-												viewBox="0 0 256 256">
-												<path
-													fill="currentColor"
-													d="M128 82a46 46 0 1 0 46 46a46 46 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34.1 34.1 0 0 1-34 34Zm44-132H84a54 54 0 0 0-54 54v88a54 54 0 0 0 54 54h88a54 54 0 0 0 54-54V84a54 54 0 0 0-54-54Zm42 142a42 42 0 0 1-42 42H84a42 42 0 0 1-42-42V84a42 42 0 0 1 42-42h88a42 42 0 0 1 42 42Zm-24-96a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
-											</svg>
-										</a>
+								<div class="artist-detail col-span-full md:col-span-3">
+									<div class="artist-name">
+										<span class="text-gray-300 text-lg md:text-xl">Okeleye Victor Olamide</span>
+									</div>
+									<div class="artist-details my-8">
+										<span class="text-sm text-gray-200 leading-6">
+											Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero mollitia hic qui tempore laboriosam,
+											similique quia veniam illo? Nostrum molestiae ex corrupti praesentium velit ducimus a, ad nobis doloremque
+											magni facilis. Dolorum tempore, officia eum enim dolore, quibusdam veritatis iste recusandae nisi placeat
+											aut cupiditate minima illo similique deserunt? Ipsam neque quidem, non fugit animi a architecto aut sed
+											minus. Labore, vero aspernatur. Possimus sed voluptas dolore odit, omnis ipsum sunt repellendus repellat
+											beatae consectetur fuga soluta, perspiciatis sapiente. Placeat, beatae commodi architecto quidem fuga
+											aperiam, saepe sit nisi, et cupiditate quibusdam quos! Iusto dignissimos asperiores nemo ipsam,
+											exercitationem sit!
+										</span>
+									</div>
+									<div class="social-handles mt-3">
+										<small class="text-gray-400 text-xs tracking-widest">// SOCIAL MEDIA HANDLES</small>
+										<div class="social-handles-inner flex items-center gap-x-4 mt-3">
+											<a href="" class="text-white" id="facebook">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													class="w-7"
+													preserveAspectRatio="xMidYMid meet"
+													viewBox="0 0 256 256">
+													<path
+														fill="currentColor"
+														d="M230 128a102 102 0 1 0-102 102a102.1 102.1 0 0 0 102-102Zm-96 89.8V150h26a6 6 0 0 0 0-12h-26v-26a18.1 18.1 0 0 1 18-18h16a6 6 0 0 0 0-12h-16a30.1 30.1 0 0 0-30 30v26H96a6 6 0 0 0 0 12h26v67.8a90 90 0 1 1 12 0Z" />
+												</svg>
+											</a>
+											<a href="" class="text-white" id="twitter">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													class="w-7"
+													preserveAspectRatio="xMidYMid meet"
+													viewBox="0 0 256 256">
+													<path
+														fill="currentColor"
+														d="M245.5 69.7A6 6 0 0 0 240 66h-31.6a46 46 0 0 0-39.8-24A46.4 46.4 0 0 0 122 88v8.7C79.6 86.6 44.6 52.1 44.2 51.8a6 6 0 0 0-10.1 3.1c-8.7 47.6 5.6 79.4 19.1 97.7a105.6 105.6 0 0 0 26 25.1c-15.5 18.8-41 28.6-41.3 28.7a5.9 5.9 0 0 0-3.6 3.8a5.8 5.8 0 0 0 .7 5.1c1 1.5 10.8 14.7 45 14.7c69.7 0 128-53.9 133.6-123.1l30.6-30.7a5.7 5.7 0 0 0 1.3-6.5Zm-42 30.3a5.8 5.8 0 0 0-1.7 3.9C197.7 167.9 144.2 218 80 218c-13.9 0-22.8-2.4-28.1-4.8c11.3-5.7 29.8-16.9 41.1-33.9a6.2 6.2 0 0 0 .8-4.8a6.1 6.1 0 0 0-3.1-3.9c-.2 0-15.2-7.8-28.2-25.6C47 123.8 40.9 97.9 44.3 68c14.6 12.4 46.1 35.8 82.7 41.9a5.9 5.9 0 0 0 7-5.9V88a34.3 34.3 0 0 1 34.4-34a34.2 34.2 0 0 1 30.8 20.4a5.9 5.9 0 0 0 5.5 3.6h20.8Z" />
+												</svg>
+											</a>
+											<a href="" class="text-white" id="instagram">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													class="w-7"
+													preserveAspectRatio="xMidYMid meet"
+													viewBox="0 0 256 256">
+													<path
+														fill="currentColor"
+														d="M128 82a46 46 0 1 0 46 46a46 46 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34.1 34.1 0 0 1-34 34Zm44-132H84a54 54 0 0 0-54 54v88a54 54 0 0 0 54 54h88a54 54 0 0 0 54-54V84a54 54 0 0 0-54-54Zm42 142a42 42 0 0 1-42 42H84a42 42 0 0 1-42-42V84a42 42 0 0 1 42-42h88a42 42 0 0 1 42 42Zm-24-96a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
+												</svg>
+											</a>
+										</div>
+									</div>
+									<div class="recent-albums mb-4 mt-10">
+										<div class="title text-2xl text-gray-200 tracking-wider"><span>RECENT ALBUMS</span></div>
+										<ul class="albums-wrapper grid grid-cols-12 gap-3 mt-5 flex-wrap">
+											<!-- each track -->
+											<template id="album-item">
+												<li class="col-span-6 md:col-span-4 lg:col-span-3 rounded-md overflow-hidden p-1">
+													<a href="">
+														<div class="wrap flex items-start flex-col gap-y-4">
+															<div class="image-wrap">
+																<img
+																	src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eM7ig70kRrW1faBeRp2LZgAAAA%26pid%3DApi&f=1&ipt=f3f578006ed8ae675d20d087335f2f4e18e540109a6efefdd2cb67c646a580f6&ipo=images"
+																	alt=""
+																	class="aspect-square rounded-md" />
+															</div>
+															<div class="album-title">
+																<small class="text-white">Loving is Harder</small>
+															</div>
+														</div>
+													</a>
+												</li>
+											</template>
+											<!-- each track end -->
+										</ul>
+									</div>
+									<div class="recent-tracks mb-4 mt-10">
+										<div class="title text-2xl text-gray-200 tracking-wider"><span>RECENT TRACKS</span></div>
+										<ul class="tracks-item-wrapper flex flex-col gap-y-3 mt-7">
+											<!-- each track -->
+											<template id="track-item-template">
+												<li
+													class="flex flex-col gap-y-1 leading-tight bg-slate-400 bg-opacity-5 p-3 rounded-tr-md rounded-br-md rounded-tl-sm rounded-bl-sm pl-4 track border-l-4 border-blue-600">
+													<span
+														class="track-title text-gray-200 font-semibold text-sm overflow-hidden whitespace-nowrap text-ellipsis"
+														>Home</span
+													>
+													<small class="track-artistes text-gray-400 text-xs">Johnny Drille Ft Cavemen</small>
+												</li>
+											</template>
+											<!-- each track end -->
+										</ul>
 									</div>
 								</div>
-								<div class="recent-albums mb-4 mt-10">
-									<div class="title text-2xl text-gray-200 tracking-wider"><span>RECENT ALBUMS</span></div>
-									<ul class="albums-wrapper grid grid-cols-12 gap-3 mt-5 flex-wrap">
-										<!-- each track -->
-										<li class="col-span-6 md:col-span-4 lg:col-span-3 rounded-md overflow-hidden p-1">
-											<a href="" class="">
-												<div class="wrap flex items-start flex-col gap-y-4">
-													<div class="image-wrap">
-														<img
-															src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.bellanaija.com%2Fwp-content%2Fuploads%2F2022%2F10%2F312687776_513572390618679_4060564377084018469_n-768x768.jpg&f=1&nofb=1&ipt=65c64fa93e0726f0abcd8d11920acac64f36d35cfe955f4eb6bb9a1e2d634b36&ipo=images"
-															alt=""
-															class="aspect-square rounded-md" />
-													</div>
-													<div class="album-title">
-														<small class="text-white">Home</small>
-													</div>
-												</div>
-											</a>
-										</li>
-										<!-- each track end -->
-										<!-- each track -->
-										<template id="album-item">
-											<li class="col-span-6 md:col-span-4 lg:col-span-3 rounded-md overflow-hidden p-1">
-												<a href="">
-													<div class="wrap flex items-start flex-col gap-y-4">
-														<div class="image-wrap">
-															<img
-																src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eM7ig70kRrW1faBeRp2LZgAAAA%26pid%3DApi&f=1&ipt=f3f578006ed8ae675d20d087335f2f4e18e540109a6efefdd2cb67c646a580f6&ipo=images"
-																alt=""
-																class="aspect-square rounded-md" />
-														</div>
-														<div class="album-title">
-															<small class="text-white">Loving is Harder</small>
-														</div>
-													</div>
-												</a>
-											</li>
-										</template>
-										<!-- each track end -->
-										<!-- each track -->
-										<li class="col-span-6 md:col-span-4 lg:col-span-3 rounded-md overflow-hidden p-1">
-											<a href="">
-												<div class="wrap flex items-start flex-col gap-y-4">
-													<div class="image-wrap">
-														<img
-															src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.YFszCsu7GpyfiP6W5cxgTgHaHa%26pid%3DApi&f=1&ipt=ec86b60f338c2c38f0decae07699ee8c7ac1e21a28ac9b8eb27b56dd43b2c801&ipo=images"
-															alt=""
-															class="aspect-square rounded-md" />
-													</div>
-													<div class="album-title">
-														<small class="text-white">Love</small>
-													</div>
-												</div>
-											</a>
-										</li>
-										<!-- each track end -->
-										<!-- each track -->
-										<li class="col-span-6 md:col-span-4 lg:col-span-3 rounded-md overflow-hidden p-1">
-											<a href="">
-												<div class="wrap flex items-start flex-col gap-y-4">
-													<div class="image-wrap">
-														<img
-															src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.4pUOy0f0Socq1awqcvW3vwHaHa%26pid%3DApi&f=1&ipt=7df9d40145819f860ad08f100946e1d18b47b59aecefad74781ed30e8f1de7a1&ipo=images"
-															alt=""
-															class="aspect-square rounded-md" />
-													</div>
-													<div class="album-title">
-														<small class="text-white">Before We Fell Asleep</small>
-													</div>
-												</div>
-											</a>
-										</li>
-										<!-- each track end -->
-									</ul>
-								</div>
-								<div class="recent-tracks mb-4 mt-10">
-									<div class="title text-2xl text-gray-200 tracking-wider"><span>RECENT TRACKS</span></div>
-									<ul class="tracks-item-wrapper flex flex-col gap-y-3 mt-7">
-										<!-- each track -->
-										<template id="track-item-template">
-											<li
-												class="flex flex-col gap-y-1 leading-tight bg-slate-400 bg-opacity-5 p-3 rounded-tr-md rounded-br-md rounded-tl-sm rounded-bl-sm pl-4 track border-l-4 border-blue-600 overflow-hidden whitespace-nowrap text-ellipsis">
-												<span class="track-title text-gray-200 font-semibold text-sm">Home</span>
-												<small class="track-artistes text-gray-400 text-xs">Johnny Drille Ft Cavemen</small>
-											</li>
-										</template>
-										<!-- each track end -->
-										<!-- each track -->
-										<li
-											class="flex flex-col gap-y-1 leading-tight bg-slate-400 bg-opacity-5 p-3 rounded-tr-md rounded-br-md rounded-tl-sm rounded-bl-sm pl-4 track border-l-4 border-blue-600">
-											<span class="track-title text-gray-200 font-semibold text-sm">Home</span>
-											<small class="track-artistes text-gray-400 text-xs">Johnny Drille Ft Cavemen</small>
-										</li>
-										<!-- each track end -->
-										<!-- each track -->
-										<li
-											class="flex flex-col gap-y-1 leading-tight bg-slate-400 bg-opacity-5 p-3 rounded-tr-md rounded-br-md rounded-tl-sm rounded-bl-sm pl-4 track border-l-4 border-blue-600">
-											<span class="track-title text-gray-200 font-semibold text-sm">Home</span>
-											<small class="track-artistes text-gray-400 text-xs">Johnny Drille Ft Cavemen</small>
-										</li>
-										<!-- each track end -->
-									</ul>
-								</div>
-							</div>
+							</template>
 						</div>
 					</div>
 				</div>
