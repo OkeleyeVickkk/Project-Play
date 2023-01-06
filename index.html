@@ -23,7 +23,7 @@
 								<img class="max-w-full w-32" src="./src/images/logo-lg-variant-3.png" alt="" />
 							</a>
 						</div>
-						<div class="home lg:flex flex-col mt-5 hidden">
+						<div class="home lg:flex flex-col mt-16 hidden">
 							<div class="title p-2 px-4">
 								<small><h6 class="font-bold text-white text-xs">// Menu</h6></small>
 							</div>
@@ -81,39 +81,6 @@
 										Play Music
 									</a>
 								</li>
-								<li>
-									<a href="./artist.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
-											<path
-												fill="none"
-												stroke="currentColor"
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-										</svg>
-										Artist
-									</a>
-								</li>
-								<li>
-									<a href="./albums.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-											<path
-												fill="currentColor"
-												d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
-										</svg>
-										Albums
-									</a>
-								</li>
-								<li>
-									<a href="./top-tracks.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-											<path
-												fill="currentColor"
-												d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.7l50.3-50.4a8.1 8.1 0 0 1 11.4 0l26.3 26.4L188.7 72H168a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V83.3l-66.3 66.4a8.1 8.1 0 0 1-11.4 0L96 123.3l-56 56V200h184a8 8 0 0 1 8 8Z" />
-										</svg>
-										Top Tracks
-									</a>
-								</li>
 							</ul>
 							<!-- lg screen menu ends -->
 						</div>
@@ -135,64 +102,12 @@
 					<!-- lg nav ends -->
 				</header>
 				<!-- navigation ends -->
-				<div class="col-span-full lg:col-span-10 min-h-screen bg-secondarySkin py-3">
-					<div class="md:flex-col items-center gap-y-3 mt-4 hidden md:flex">
-						<img src="./src/images/logo-lg-variant-icon-white.png" alt="" class="w-1/12" />
-						<p class="text-white text-sm">Find lyrics for any song - search by track or track and artist</p>
+				<div class="col-span-full lg:col-span-10 min-h-screen bg-secondarySkin pt-3 flex flex-col justify-between">
+					<div class="text-center mt-4 p-1">
+						<p class="text-white text-sm md:mt-10">Thank you for checking this out🤭, means a lot to me</p>
 					</div>
 					<div class="p-4">
-						<div class="flex flex-col gap-y-1 w-full md:w-3/4 mx-auto mt-12">
-							<form class="flex items-center">
-								<label for="voice-search" class="sr-only">Search</label>
-								<div class="relative w-full">
-									<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-										<svg
-											class="w-5 text-gray-500 dark:text-gray-400"
-											xmlns="http://www.w3.org/2000/svg"
-											preserveAspectRatio="xMidYMid meet"
-											viewBox="0 0 512 512">
-											<path
-												fill="none"
-												stroke="currentColor"
-												stroke-miterlimit="10"
-												stroke-width="32"
-												d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" />
-											<path
-												fill="none"
-												stroke="currentColor"
-												stroke-linecap="round"
-												stroke-miterlimit="10"
-												stroke-width="32"
-												d="M338.29 338.29L448 448" />
-										</svg>
-									</div>
-									<input type="text" id="voice-search" class="form-control" placeholder="Enter song, artists..." required />
-								</div>
-								<button type="submit" class="submit-btn">
-									<svg
-										aria-hidden="true"
-										class="w-5 h-5 md:mr-2 -ml-1"
-										fill="none"
-										stroke="currentColor"
-										viewBox="0 0 24 24"
-										xmlns="http://www.w3.org/2000/svg">
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-									</svg>
-									<span class="text hidden md:inline">Search</span>
-								</button>
-							</form>
-							<div class="text-start text-white">
-								<small class="text-xs md:text-sm"
-									>Hint - <span class="text-gray-500 text-xs">Song title by Artist e.g Beat It by Michael Jackson</span>
-								</small>
-							</div>
-						</div>
-						<!-- display content starts -->
-						<div class="mt-16 md:mt-32 flex flex-col gap-y-8 md:grid md:grid-cols-12 gap-x-4">
+						<div class="mt-10 flex flex-col gap-y-8 md:grid md:grid-cols-12 gap-x-4">
 							<section class="col-span-6 p-4 bg-primarySkin rounded-lg flex flex-col gap-y-4">
 								<div class="flex items-center justify-between">
 									<h3 class="section-title text-white text-base font-bold text-ellipsis whitespace-nowrap overflow-hidden">
@@ -206,7 +121,7 @@
 											<div class="flex items-center gap-x-5 h-20">
 												<div class="blog-image skeleton skeleton-image"></div>
 												<div class="flex-grow blog-details">
-													<div class="top grid grid-flow-col w-full">
+													<div class="top grid grid-flow-col w-full justify-between">
 														<div class="source text-xs text-white w-full">
 															<div class="skeleton skeleton-xs-comp"></div>
 														</div>
@@ -253,6 +168,11 @@
 						</div>
 						<!-- display content ends -->
 					</div>
+					<footer class="bg-primarySkin">
+						<div class="footer-inner py-4 text-center text-white">
+							<span class="text-sm"> Made by Vickkk - 2022 ❤ </span>
+						</div>
+					</footer>
 				</div>
 			</div>
 		</div>
@@ -264,7 +184,7 @@
 					onclick="window.location.href='./index.html'"
 					data-tooltip-target="tooltip-home"
 					data-tooltip-placement="left"
-					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm">
+					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-400 hover:text-gray-50 bg-slate-800 bg-opacity-90 hover:border-gray-50 rounded-full border border-slate-400 transition-all duration-300 ease-in-out shadow-sm">
 					<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
 						<path
 							fill="currentColor"
@@ -277,7 +197,7 @@
 				<div
 					id="tooltip-home"
 					role="tooltip"
-					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
+					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity ease-in-out duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
 					Home
 					<div class="tooltip-arrow" data-popper-arrow></div>
 				</div>
@@ -286,7 +206,7 @@
 					type="button"
 					data-tooltip-target="tooltip-seacrch-lyrics"
 					data-tooltip-placement="left"
-					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm">
+					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-400 hover:text-gray-50 bg-slate-800 bg-opacity-90 hover:border-gray-50 rounded-full border border-slate-400 transition-all duration-300 ease-in-out shadow-sm">
 					<svg class="w-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
 						<path
 							fill="none"
@@ -307,7 +227,7 @@
 				<div
 					id="tooltip-seacrch-lyrics"
 					role="tooltip"
-					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
+					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity ease-in-out duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
 					Search lyrics
 					<div class="tooltip-arrow" data-popper-arrow></div>
 				</div>
@@ -316,7 +236,7 @@
 					onclick="window.location.href='./blog-news.html'"
 					data-tooltip-target="tooltip-news"
 					data-tooltip-placement="left"
-					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 shadow-sm">
+					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-400 hover:text-gray-50 bg-slate-800 bg-opacity-90 hover:border-gray-50 rounded-full border border-slate-400 transition-all duration-300 ease-in-out shadow-sm">
 					<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 28 28">
 						<path
 							fill="currentColor"
@@ -327,7 +247,7 @@
 				<div
 					id="tooltip-news"
 					role="tooltip"
-					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
+					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity ease-in-out duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
 					News
 					<div class="tooltip-arrow" data-popper-arrow></div>
 				</div>
@@ -336,7 +256,7 @@
 					onclick="window.location.href='./playMusic.html'"
 					data-tooltip-target="tooltip-copy"
 					data-tooltip-placement="left"
-					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 shadow-sm">
+					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-400 hover:text-gray-50 bg-slate-800 bg-opacity-90 hover:border-gray-50 rounded-full border border-slate-400 transition-all duration-300 ease-in-out shadow-sm">
 					<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
 						<path
 							fill="currentColor"
@@ -347,31 +267,8 @@
 				<div
 					id="tooltip-copy"
 					role="tooltip"
-					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
+					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity ease-in-out duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
 					Play music
-					<div class="tooltip-arrow" data-popper-arrow></div>
-				</div>
-				<button
-					type="button"
-					onclick="window.location.href='./artist.html'"
-					data-tooltip-target="tooltip-top-tracks"
-					data-tooltip-placement="left"
-					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 shadow-sm transition duration-300 ease-in-out">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
-						<path
-							fill="none"
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-					</svg>
-					<span class="sr-only">Artist</span>
-				</button>
-				<div
-					id="tooltip-top-tracks"
-					role="tooltip"
-					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
-					Artist
 					<div class="tooltip-arrow" data-popper-arrow></div>
 				</div>
 			</div>
@@ -381,7 +278,7 @@
 				data-dial-trigger="click"
 				aria-controls="speed-dial-menu-click"
 				aria-expanded="false"
-				class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-80 focus:ring-4 focus:outline-none transition duration-300 ease-in-out">
+				class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-80 focus:ring-4 focus:outline-none transition-all duration-300 ease-in-out">
 				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
 					<path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z" />
 				</svg>

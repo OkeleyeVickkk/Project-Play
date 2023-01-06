@@ -38,7 +38,7 @@ async function fetchArtistDetails() {
 	$artistContentInner.innerHTML = "";
 	$clone.querySelector(".artist-image img").src = image_url;
 	$clone.querySelector(".artist-name span").innerHTML = name;
-	$clone.querySelector(".artist-details span").innerHTML = description.html;
+	$clone.querySelector(".artist-details span").innerHTML = description_preview;
 	$clone.querySelector(".social-handles #facebook").href = `https://www.facebook.com/${facebook_name ?? artistName}`;
 	$clone.querySelector(".social-handles #twitter").href = `https://www.twitter.com/${twitter_name ?? artistName}`;
 	$clone.querySelector(".social-handles #instagram").href = `https://www.instagram.com/${instagram_name ?? artistName}`;

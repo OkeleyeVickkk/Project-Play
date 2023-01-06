@@ -24,7 +24,7 @@
 								<img class="max-w-full w-32" src="./src/images/logo-lg-variant-3.png" alt="" />
 							</a>
 						</div>
-						<div class="home lg:flex flex-col mt-5 hidden">
+						<div class="home lg:flex flex-col mt-16 hidden">
 							<div class="title p-2 px-4">
 								<small><h6 class="font-bold text-white text-xs">// Menu</h6></small>
 							</div>
@@ -82,39 +82,6 @@
 										Play Music
 									</a>
 								</li>
-								<li>
-									<a href="./artist.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
-											<path
-												fill="none"
-												stroke="currentColor"
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-										</svg>
-										Artist
-									</a>
-								</li>
-								<li>
-									<a href="./albums.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-											<path
-												fill="currentColor"
-												d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
-										</svg>
-										Albums
-									</a>
-								</li>
-								<li>
-									<a href="./top-tracks.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-											<path
-												fill="currentColor"
-												d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.7l50.3-50.4a8.1 8.1 0 0 1 11.4 0l26.3 26.4L188.7 72H168a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V83.3l-66.3 66.4a8.1 8.1 0 0 1-11.4 0L96 123.3l-56 56V200h184a8 8 0 0 1 8 8Z" />
-										</svg>
-										Top Tracks
-									</a>
-								</li>
 							</ul>
 							<!-- lg screen menu ends -->
 						</div>
@@ -136,7 +103,7 @@
 					<!-- lg nav ends -->
 				</header>
 				<!-- navigation ends -->
-				<div class="col-span-full md:col-span-10 min-h-screen bg-secondarySkin p-3">
+				<div class="col-span-full lg:col-span-10 min-h-screen bg-secondarySkin p-3">
 					<header class="flex items-center justify-between mt-6 md:mt-0">
 						<div class="breadcrumb-nav">
 							<nav class="flex" aria-label="Breadcrumb">
@@ -177,7 +144,7 @@
 								</ol>
 							</nav>
 						</div>
-						<div class="right md:flex items-center hidden">
+						<div class="right lg:flex items-center hidden">
 							<a href="" class="text-white hover:bg-opacity-5 p-2 hover:bg-gray-300 rounded-full">
 								<svg xmlns="http://www.w3.org/2000/svg" class="w-7" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
 									<path
@@ -391,29 +358,6 @@
 					Play music
 					<div class="tooltip-arrow" data-popper-arrow></div>
 				</div>
-				<button
-					type="button"
-					onclick="window.location.href='./artist.html'"
-					data-tooltip-target="tooltip-top-tracks"
-					data-tooltip-placement="left"
-					class="flex justify-center items-center mx-auto w-[45px] h-[45px] text-gray-400 hover:text-gray-50 bg-slate-800 bg-opacity-90 hover:border-gray-50 rounded-full border border-slate-400 transition-all duration-300 ease-in-out shadow-sm">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
-						<path
-							fill="none"
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-					</svg>
-					<span class="sr-only">Artist</span>
-				</button>
-				<div
-					id="tooltip-top-tracks"
-					role="tooltip"
-					class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity ease-in-out duration-300 rounded-md shadow-sm opacity-0 tooltip speed-dail-tooltip">
-					Artist
-					<div class="tooltip-arrow" data-popper-arrow></div>
-				</div>
 			</div>
 			<button
 				role="button"
@@ -428,6 +372,11 @@
 				<span class="sr-only">Open actions menu</span>
 			</button>
 		</div>
+		<footer class="bg-primarySkin">
+			<div class="footer-inner py-4 text-center text-white">
+				<span class="text-sm"> Made by Vickkk - 2022 ❤ </span>
+			</div>
+		</footer>
 		<script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
 		<script src="./src/js/artist.js"></script>
 	</body>

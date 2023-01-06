@@ -7,7 +7,7 @@
 }
 
 .nav-links-wrapper {
-	@apply flex flex-col mt-2;
+	@apply flex flex-col mt-2 gap-y-3;
 }
 
 .recent-tracks .tracks-wrapper {
@@ -110,6 +110,10 @@
 .speed-dail-tooltip {
 	@apply whitespace-nowrap text-xs bg-blue-600;
 }
+.artist-details span * p {
+	@apply text-sm;
+}
+
 /* news page */
 .page-title {
 	@apply text-gray-100 text-2xl;
