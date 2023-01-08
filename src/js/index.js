@@ -39,7 +39,7 @@ const blogsWrapper = document.querySelector(".blogs-wrapper");
 const newsTemplate = document.querySelector("#news-template");
 let clonedTemplate;
 
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 10; i++) {
 	clonedTemplate = newsTemplate.content.cloneNode(true);
 	blogsWrapper.append(clonedTemplate);
 }
@@ -73,8 +73,8 @@ fetch(URL_2, options_two)
 			blogItem.querySelector(".blog-image").innerHTML = `<img src="${image ?? defaultNewsImage}"/>`;
 			blogItem.querySelector("[blog-title]").textContent = title;
 			blogItem.querySelector(".blog-news").href = url;
-			blogItem.querySelector(".blog-details .source").textContent = `Source: ${author}`;
-			blogItem.querySelector(".blog-details .date").textContent = `Date: ${date}`;
+			blogItem.querySelector(".blog-details .source").textContent = author;
+			blogItem.querySelector(".blog-details .date").textContent = date;
 			blogsWrapper.append(blogItem);
 		});
 	})
