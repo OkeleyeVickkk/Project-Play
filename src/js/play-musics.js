@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", function () {
 			song_path: "/src/folder/Rag n Bone Man - Human (Official Video).mp3",
 			artist: "Rag n Bone Man",
 			title: "Human",
+			coverPhoto: "https://static.billboard.com/files/media/Rag-n-Bone-Man-Human-vid-still-2017-billboard-1548-compressed.jpg",
 		},
 		{
 			song_path: "/src/folder/MichaelJackson-BillieJean.mp3",
@@ -58,6 +59,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 		artists.innerHTML = song.artist;
 		song_title.innerHTML = song.title;
+		cover_photo.src = song.coverPhoto;
 		audio_element.src = song.song_path;
 	}
 
