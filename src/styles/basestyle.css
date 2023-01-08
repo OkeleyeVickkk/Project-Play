@@ -1,9 +1,9 @@
 @font-face {
-	font-family: Comfortaa;
-	src: url("../font/Comfortaa-VariableFont_wght.ttf");
+	font-family: Mulish;
+	src: url("../font/Mulish-Regular.ttf");
 }
 :root {
-	--font-family: Comfortaa;
+	--font-family: Mulish;
 	--theme-clr: #161728;
 	--white: #fff;
 	--shade-of-dark: #111827;
