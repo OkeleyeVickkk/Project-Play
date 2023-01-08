@@ -4258,10 +4258,6 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 768px) {
-  .md\:col-span-10 {
-    grid-column: span 10 / span 10;
-  }
-
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -4306,10 +4302,6 @@ input:checked + .toggle-bg {
     display: grid;
   }
 
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:w-3\/4 {
     width: 75%;
   }
@@ -4348,12 +4340,12 @@ input:checked + .toggle-bg {
     grid-column: span 2 / span 2;
   }
 
-  .lg\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
   .lg\:col-span-10 {
     grid-column: span 10 / span 10;
+  }
+
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
   }
 
   .lg\:inline-block {

@@ -23,7 +23,7 @@
 								<img class="max-w-full w-32" src="./src/images/logo-lg-variant-3.png" alt="" />
 							</a>
 						</div>
-						<div class="home lg:flex flex-col mt-5 hidden">
+						<div class="home lg:flex flex-col mt-16 hidden">
 							<div class="title p-2 px-4">
 								<small><h6 class="font-bold text-white text-xs">// Menu</h6></small>
 							</div>
@@ -81,39 +81,6 @@
 										Play Music
 									</a>
 								</li>
-								<li>
-									<a href="./artist.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-6" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
-											<path
-												fill="none"
-												stroke="currentColor"
-												stroke-linecap="round"
-												stroke-linejoin="round"
-												d="M10.5 2.5a3 3 0 0 1 3 3v2a3 3 0 1 1-6 0v-2a3 3 0 0 1 3-3zm7 14v-.728c0-3.187-3.686-5.272-7-5.272s-7 2.085-7 5.272v.728a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-										</svg>
-										Artist
-									</a>
-								</li>
-								<li>
-									<a href="./albums.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-											<path
-												fill="currentColor"
-												d="M4 2a2 2 0 0 0-2 2v10h2V4h10V2H4m4 4a2 2 0 0 0-2 2v10h2V8h10V6H8m12 6v8h-8v-8h8m0-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2m-6 3v6l4-3l-4-3Z" />
-										</svg>
-										Albums
-									</a>
-								</li>
-								<li>
-									<a href="./top-tracks.html" class="nav-link">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
-											<path
-												fill="currentColor"
-												d="M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.7l50.3-50.4a8.1 8.1 0 0 1 11.4 0l26.3 26.4L188.7 72H168a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V83.3l-66.3 66.4a8.1 8.1 0 0 1-11.4 0L96 123.3l-56 56V200h184a8 8 0 0 1 8 8Z" />
-										</svg>
-										Top Tracks
-									</a>
-								</li>
 							</ul>
 							<!-- lg screen menu ends -->
 						</div>
@@ -152,6 +119,7 @@
 											<h5 class="text-sm text-gray-400">Imagine Dragon</h5>
 										</div>
 									</div>
+									<audio id="audio" crossorigin="anonymous"></audio>
 									<div class="track-controls flex items-center justify-center gap-x-4">
 										<button
 											id="prev"
