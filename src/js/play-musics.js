@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
 			song_path: "/src/folder/Peace Be Unto You (PBUY).mp3",
 			artist: "Asake",
 			title: "PBUY",
-			// coverPhoto: "https://trendybeatz.com/images/Asake-Peace-Be-Unto-You-PBUY-Artwork.jpeg",
+			coverPhoto: "https://trendybeatz.com/images/Asake-Peace-Be-Unto-You-PBUY-Artwork.jpeg",
 		},
 		{
 			song_path: "/src/folder/Passenger Coins In A Fountain (Official Album Audio).mp3",
