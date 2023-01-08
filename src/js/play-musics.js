@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	const cover_photo = document.querySelector(".song-cover-photo img");
 
 	let current_song_index;
+	const defaultCoverPhoto = "/src/images/logo-norm-1.png";
 
 	const songs = [
 		{
@@ -66,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 		artists.innerHTML = song.artist;
 		song_title.innerHTML = song.title;
-		cover_photo.src = song.coverPhoto;
+		cover_photo.src = song.coverPhoto ?? defaultCoverPhoto;
 		audio_element.src = song.song_path;
 	}
 
