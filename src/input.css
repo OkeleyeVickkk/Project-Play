@@ -74,7 +74,7 @@
 }
 
 .blog-details {
-	@apply flex flex-col items-start gap-y-3;
+	@apply flex flex-col items-start gap-y-3 w-full;
 }
 
 .blog-news .skeleton {
@@ -82,7 +82,7 @@
 }
 
 .blog-news .skeleton-image {
-	@apply h-20 w-32 relative;
+	@apply min-h-[90px] relative;
 }
 
 .blog-news .skeleton-image img {
