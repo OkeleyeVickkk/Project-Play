@@ -27,11 +27,11 @@
 }
 
 .form-control {
-	@apply bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 py-2.5 pr-8 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-12 text-xs sm:text-sm;
+	@apply bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 py-2.5 pr-8  h-12 text-xs sm:text-sm;
 }
 
 .submit-btn {
-	@apply transition duration-200 ease-linear inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-12;
+	@apply transition duration-200 ease-linear inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 h-12;
 }
 
 .search-btn {
@@ -82,7 +82,7 @@
 }
 
 .blog-news .skeleton-image {
-	@apply min-h-[90px] relative;
+	@apply min-h-[200px] relative;
 }
 
 .blog-news .skeleton-image img {
@@ -168,14 +168,14 @@
 }
 
 .sub-news-inner {
-	@apply flex flex-col gap-y-8;
+	@apply flex flex-col  gap-y-4 md:gap-y-0;
 }
 
 .articles-wrapper {
 	@apply flex flex-col gap-y-8 my-8;
 }
 
-.article-item:not(:last-child) {
+.article-item:not(:last-child) > .article-link {
 	@apply pb-4 border-b border-gray-300;
 }
 
@@ -216,4 +216,25 @@
 }
 .track-element svg {
 	@apply mr-2;
+}
+
+/* playMusic page*/
+.track-controls button#shuffle.shuffle_effect {
+	@apply bg-white bg-opacity-30;
+}
+
+/* index main */
+.index-main:has(section) section::-webkit-scrollbar {
+	width: 7px;
+	border-radius: 10px;
+}
+.index-main:has(section) section::-webkit-scrollbar-thumb {
+	border-radius: 12px;
+	@apply bg-white bg-opacity-20;
+}
+.index-main:has(section) section::-webkit-scrollbar-track {
+	@apply bg-slate-500 bg-opacity-20;
+}
+.index-main:has(section) section > div {
+	@apply rounded-md;
 }

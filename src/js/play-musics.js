@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	const prev_button = document.getElementById("prev");
 	const stop_button = document.getElementById("stop");
 	const audio_element = document.getElementById("audio");
+	const shuffle_button = document.getElementById("shuffle");
 
 	// song doms
 	const artists = document.querySelector(".song-artist h5");
@@ -45,6 +46,37 @@ window.addEventListener("DOMContentLoaded", function () {
 			title: "Billie Jean",
 			coverPhoto: "https://i.ytimg.com/vi/OuGUJrfdpdM/maxresdefault.jpg",
 		},
+		{
+			song_path: "/src/folder/ArrDee – Hello Mate ft. Kyla (Official Video).mp3",
+			artist: "ArrDee ft Kyla",
+			title: "Hello Mate",
+			coverPhoto: "https://i.ytimg.com/vi/EDlMdJDowuc/maxresdefault.jpg",
+		},
+		{
+			song_path: "/src/folder/NF - TRUST (Audio) ft. Tech N9ne.mp3",
+			artist: "NF ft Tech N9ne",
+			title: "TRUST",
+			coverPhoto: "https://images.genius.com/d3478392265e38542159b74020aab08d.1000x563x1.png",
+		},
+		{
+			song_path: "/src/folder/Reekado Banks - Rora (Official Video).mp3",
+			artist: "Reekado Banks",
+			title: "Rora",
+			coverPhoto: "https://i.ytimg.com/vi/OC93pNSrRP8/maxresdefault.jpg",
+		},
+		{
+			song_path: "/src/folder/Johnny Drille - sell my soul (Official Audio).mp3",
+			artist: "Johnny Drille",
+			title: "Sell my soul",
+			coverPhoto: "https://static.netnaija.com/i/9bVNrWDzKWv.png",
+		},
+		{
+			song_path: "/src/folder/James Bay - Peer Pressure ft. Julia Michaels.mp3",
+			artist: "James Bay ft Julia Michaels",
+			title: "Peer Pressure",
+			coverPhoto:
+				"https://static.billboard.com/files/media/James-Bay-Peer-Pressure-ft-Julia-Michaels-screenshot-2019-a-billboard-1548-compressed.jpg",
+		},
 	];
 
 	const playIcon = `<svg class="text-[#23263D]" xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"> <path 	fill="currentColor" d="M5 5.274c0-1.707 1.826-2.792 3.325-1.977l12.362 6.726c1.566.853 1.566 3.101 0 3.953L8.325 20.702C6.826 21.518 5 20.432 5 18.726V5.274Z" /></svg>`;
@@ -55,6 +87,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	stop_button.addEventListener("click", stopPlayer);
 	next_button.addEventListener("click", playNextSong);
 	prev_button.addEventListener("click", playPreviousSong);
+	shuffle_button.addEventListener("click", shuffleSongs);
 	initializePlayer(); //default when the page loads
 
 	function initializePlayer() {
@@ -91,9 +124,13 @@ window.addEventListener("DOMContentLoaded", function () {
 	}
 
 	function playNextSong() {
-		current_song_index++;
-		if (current_song_index > songs.length - 1) {
-			current_song_index = 0;
+		if (!shuffle_button.classList.contains("shuffle_effect")) {
+			current_song_index++;
+			if (current_song_index > songs.length - 1) {
+				current_song_index = 0;
+			}
+		} else {
+			current_song_index = Math.floor(Math.random() * songs.length - 1);
 		}
 		updatePlayer();
 		playPause();
@@ -105,5 +142,12 @@ window.addEventListener("DOMContentLoaded", function () {
 		playPause();
 	}
 
-	function repeatSong() {}
+	function shuffleSongs() {
+		if (!shuffle_button.classList.contains("shuffle_effect")) {
+			shuffle_button.classList.add("shuffle_effect");
+			current_song_index = Math.floor(Math.random() * (songs.length - 1));
+		} else {
+			shuffle_button.classList.remove("shuffle_effect");
+		}
+	}
 });

@@ -55,18 +55,17 @@ async function fetchArtistAlbums() {
 	const response = await fetch(`https://genius-song-lyrics1.p.rapidapi.com/artist/albums/?id=${artist_id}`, options);
 	const data = await response.json();
 	let albums = await data.albums;
+	let albumItem = document.querySelector("#album-item"); //get cloneable template
 	const $albumItemsWrapper = document.querySelector(".recent-albums .albums-wrapper");
-	const $albumItem = document.getElementById("album-item"); //get cloneable item
-	$albumItemsWrapper.innerHTML = "";
 	albums.slice(0, 10).forEach((album) => {
+		const $cloneAlbumItem = albumItem.content.cloneNode(true); //clone item
 		const { cover_art_thumbnail_url, name, url, cover_art_url } = album;
-		let $cloneAlbumItem = $albumItem.content.cloneNode(true); //clone item
 
 		$cloneAlbumItem.querySelector("li > a").href = url;
 		$cloneAlbumItem.querySelector(".image-wrap img").src = cover_art_thumbnail_url ?? cover_art_url;
 		$cloneAlbumItem.querySelector(".album-title small").innerHTML = name;
 
-		$albumItemsWrapper.appendChild($cloneAlbumItem ?? "No albums found"); //paste the details
+		$albumItemsWrapper.append($cloneAlbumItem ?? "No albums found"); //paste the details
 	});
 }
 
@@ -74,13 +73,12 @@ async function fetchArtistAlbums() {
 fetch(`https://genius-song-lyrics1.p.rapidapi.com/artist/songs/?id=${artist_id}`, options)
 	.then((response) => response.json())
 	.then((data) => {
+		const $clonedTrackTemplate = trackTemplate.content.cloneNode(true); //clone the node
 		const songs = data.songs.slice(0, 15);
 		songs.forEach((song) => {
 			const { title, artist_names } = song;
 			const $trackTemplatesWrapper = document.querySelector(".tracks-item-wrapper");
-			const $trackTemplate = document.getElementById("track-item-template");
-
-			const $clonedTrackTemplate = $trackTemplate.content.cloneNode(true); //clone the node
+			const trackTemplate = document.querySelector("#track-item-template");
 
 			$clonedTrackTemplate.querySelector("span.track-title").textContent = title;
 			$clonedTrackTemplate.querySelector("small.track-artistes").textContent = artist_names;
@@ -88,7 +86,7 @@ fetch(`https://genius-song-lyrics1.p.rapidapi.com/artist/songs/?id=${artist_id}`
 			$trackTemplatesWrapper.appendChild($clonedTrackTemplate); //paste to screen
 		});
 	})
-	.then((error) => console.log(error));
+	.then((error) => {});
 
 fetchArtistAlbums();
 fetchArtistDetails();

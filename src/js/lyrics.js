@@ -6,12 +6,10 @@ searchBar.addEventListener("submit", function (e) {
 	e.preventDefault();
 	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
 	const originalInput = document.querySelector(".search-bar-control .form-control").value;
-	const resultBoard = document.getElementById("search-result");
 	const ul = document.querySelector("#search-result > ul");
-	const h1 = document.createElement("h1");
+	const h1 = document.querySelector("#search-result > h1");
 	h1.className = "text-lg text-gray-300 mb-8";
 	const text = `Results for " <i>${originalInput}</i> &nbsp"</h1>`;
-	h1.innerHTML = text;
 
 	const options = {
 		method: "GET",
@@ -23,10 +21,9 @@ searchBar.addEventListener("submit", function (e) {
 	fetch(`https://genius-song-lyrics1.p.rapidapi.com/search/?q=${inputValue}`, options)
 		.then((response) => response.json())
 		.then((response) => {
-			console.log(response);
 			const trackTemplate = document.getElementById("track-template");
 			ul.innerHTML = "";
-			resultBoard.insertBefore(h1, ul);
+			h1.innerHTML = text;
 			const results = response?.hits;
 			results.forEach((result) => {
 				const clonedTrackTemplate = trackTemplate.content.cloneNode(true);
@@ -44,10 +41,11 @@ searchBar.addEventListener("submit", function (e) {
 				const trackItemLyricsButton = clonedTrackTemplate.querySelector("button.track-element");
 				fetchLyrics(id)
 					.then((lyrics) => {
-						trackItemLyricsButton.setAttribute("data-modal-toggle", `staticModal large-modal track-${id}`);
 						trackItemLyricsButton.setAttribute("lyrics", lyrics);
 					})
-					.catch((error) => {});
+					.catch((error) => {
+						console.log(error);
+					});
 
 				ul.appendChild(clonedTrackTemplate);
 			});
@@ -64,9 +62,10 @@ async function fetchLyrics(id) {
 		},
 	};
 
-	const response = await fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/lyrics/?id=${id}`, options);
-	const data = (await response.json()) ?? "No lyrics available for this song";
-	return data?.response?.lyrics?.lyrics?.body?.html; //return either result or error
+	const response = await fetch(`https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=${id}`, options);
+	const data = await response.json();
+	console.log(data);
+	return data?.lyrics?.lyrics?.body?.html; //return either result or error
 }
 
 function showLyrics() {
