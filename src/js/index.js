@@ -36,11 +36,6 @@ const options_one = {
 // 	})
 // 	.catch((err) => console.error(err));
 
-fetch("https://deezerdevs-deezer.p.rapidapi.com/infos", options)
-	.then((response) => response.json())
-	.then((response) => console.log(response))
-	.catch((err) => console.error(err));
-
 const blogsWrapper = document.querySelector(".blogs-wrapper");
 const newsTemplate = document.querySelector("#news-template");
 let clonedTemplate;
