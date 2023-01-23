@@ -13,26 +13,32 @@ const options_one = {
 };
 
 // fetch latest songs in nigeria
-fetch(URL, options_one)
+// fetch(URL, options_one)
+// 	.then((response) => response.json())
+// 	.then((response) => {
+// 		const responseResults = response.result.tracks;
+// 		console.log(responseResults);
+// 		const trackItemTemplate = document.getElementById("track-item-template");
+// 		const trackItemsWrapper = document.getElementById("by-country");
+// 		trackItemsWrapper.innerHTML = "";
+// 		responseResults.forEach((responseResult) => {
+// 			const image = responseResult?.images?.coverarthq ?? responseResult?.images?.coverart ?? responseResult?.images?.background;
+// 			const { subtitle, title } = responseResult;
+
+// 			const trackTemplate = trackItemTemplate.content.cloneNode(true);
+
+// 			trackTemplate.querySelector("._xTcRkP3L img").src = image;
+// 			trackTemplate.querySelector("._fOBsU46Lz h5.track-title").innerHTML = title;
+// 			trackTemplate.querySelector("._fOBsU46Lz h6.track-artistes").innerHTML = subtitle;
+
+// 			trackItemsWrapper.appendChild(trackTemplate); //paste to screen
+// 		});
+// 	})
+// 	.catch((err) => console.error(err));
+
+fetch("https://deezerdevs-deezer.p.rapidapi.com/infos", options)
 	.then((response) => response.json())
-	.then((response) => {
-		const responseResults = response.result.tracks;
-		const trackItemTemplate = document.getElementById("track-item-template");
-		const trackItemsWrapper = document.getElementById("by-country");
-		trackItemsWrapper.innerHTML = "";
-		responseResults.forEach((responseResult) => {
-			const image = responseResult?.images?.coverarthq ?? responseResult?.images?.coverart ?? responseResult?.images?.background;
-			const { subtitle, title } = responseResult;
-
-			const trackTemplate = trackItemTemplate.content.cloneNode(true);
-
-			trackTemplate.querySelector("._xTcRkP3L img").src = image;
-			trackTemplate.querySelector("._fOBsU46Lz h5.track-title").innerHTML = title;
-			trackTemplate.querySelector("._fOBsU46Lz h6.track-artistes").innerHTML = subtitle;
-
-			trackItemsWrapper.appendChild(trackTemplate); //paste to screen
-		});
-	})
+	.then((response) => console.log(response))
 	.catch((err) => console.error(err));
 
 const blogsWrapper = document.querySelector(".blogs-wrapper");
