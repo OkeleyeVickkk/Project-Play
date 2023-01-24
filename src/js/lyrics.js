@@ -56,7 +56,7 @@ searchBar.addEventListener("submit", function (e) {
 			const allLyricsButton = document.querySelectorAll(".searched-track .bottom button.track-element");
 			const modal = document.querySelector(".modal_container");
 			allLyricsButton.forEach(function (button) {
-				button.addEventListener("click", function (e) {
+				button.addEventListener("mouseover", function (e) {
 					e.stopPropagation();
 					modal.setAttribute("id", this.getAttribute("data-modal-toggle"));
 					const closeButtons = modal.querySelectorAll(".close_modal_button");
