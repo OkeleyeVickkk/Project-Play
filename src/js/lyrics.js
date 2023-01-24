@@ -2,6 +2,7 @@ const API_KEY = "6473c3ce7dmsh28c8afd093343dep1d0f1fjsn02e8bc02b53a";
 
 // <============ search result to fetch api data ===========>
 const searchBar = document.querySelector(".search-bar-control");
+
 searchBar.addEventListener("submit", function (e) {
 	e.preventDefault();
 	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
@@ -18,6 +19,7 @@ searchBar.addEventListener("submit", function (e) {
 			"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
 		},
 	};
+
 	fetch(`https://genius-song-lyrics1.p.rapidapi.com/search/?q=${inputValue}`, options)
 		.then((response) => response.json())
 		.then((response) => {
@@ -42,6 +44,8 @@ searchBar.addEventListener("submit", function (e) {
 				fetchLyrics(id)
 					.then((lyrics) => {
 						trackItemLyricsButton.setAttribute("lyrics", lyrics);
+						trackItemLyricsButton.setAttribute("lyrics_id", id);
+						trackItemLyricsButton.setAttribute("data-modal-toggle", id);
 					})
 					.catch((error) => {
 						console.log(error);
@@ -49,80 +53,32 @@ searchBar.addEventListener("submit", function (e) {
 
 				ul.appendChild(clonedTrackTemplate);
 			});
+			const allLyricsButton = document.querySelectorAll(".searched-track .bottom button.track-element");
+			const modal = document.querySelector(".modal_container");
+			allLyricsButton.forEach(function (button) {
+				button.addEventListener("click", function (e) {
+					e.stopPropagation();
+					modal.setAttribute("id", this.getAttribute("data-modal-toggle"));
+					const closeButtons = modal.querySelectorAll(".close_modal_button");
+					closeButtons.forEach((button) => {
+						button.setAttribute("data-modal-hide", this.getAttribute("data-modal-toggle"));
+					});
+				});
+			});
 		})
 		.catch((err) => console.error(err));
+
+	async function fetchLyrics(id) {
+		const options = {
+			method: "GET",
+			headers: {
+				"X-RapidAPI-Key": `${API_KEY}`,
+				"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
+			},
+		};
+
+		const response = await fetch(`https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=${id}`, options);
+		const data = await response.json();
+		return data?.lyrics?.lyrics?.body?.html; //return either result or error
+	}
 });
-
-async function fetchLyrics(id) {
-	const options = {
-		method: "GET",
-		headers: {
-			"X-RapidAPI-Key": `${API_KEY}`,
-			"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
-		},
-	};
-
-	const response = await fetch(`https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=${id}`, options);
-	const data = await response.json();
-	console.log(data);
-	return data?.lyrics?.lyrics?.body?.html; //return either result or error
-}
-
-function showLyrics() {
-	// get the buttons for each displayed output
-	// onclick, display the lyrics in the modal that gets triggered
-}
-
-// ? OPTION THREE OF FETCHING LYRICS (IT WORKS)
-// const searchBar = document.querySelector(".search-bar-control");
-// searchBar.addEventListener("submit", function (e) {
-// 	e.preventDefault();
-// 	let inputValue = document.querySelector(".search-bar-control .form-control").value.toLowerCase();
-// 	const originalInput = document.querySelector(".search-bar-control .form-control").value;
-// 	const ul = document.querySelector("#search-result > ul");
-// 	const h1 = document.createElement("h1");
-// 	h1.className = "text-lg text-gray-300 mb-8";
-// 	const text = `Results for " <i>${originalInput}</i> "</h1>`;
-
-// 	const searchSplit = inputValue.split("by");
-// 	const song_name = searchSplit[0];
-// 	const artist_name = searchSplit[1];
-
-// 	const options = {
-// 		method: "GET",
-// 		headers: {
-// 			"X-RapidAPI-Key": `${API_KEY}`,
-// 			"X-RapidAPI-Host": "powerlyrics.p.rapidapi.com",
-// 		},
-// 	};
-// 	const resultBoard = document.getElementById("search-result");
-
-// 	fetch(`https://powerlyrics.p.rapidapi.com/getlyricsfromtitleandartist?title=${song_name}&artist=${artist_name}`, options)
-// 		.then((response) => {
-// 			h1.textContent = text;
-// 			if (!response.ok) {
-// 				throw "Victor's API Limit has been reached for today";
-// 			}
-// 			return response.json();
-// 		})
-// 		.then((response) => {
-// 			resultBoard.innerHTML = "";
-// 			resultBoard.insertBefore(h1, ul);
-// 			const lyrics = response.lyrics;
-// 			ul.textContent = lyrics;
-// 		})
-// 		.catch((err) => {
-// 			const errorImage = `<img src="${image[0].src}" class="w-1/2 mx-auto"/>`;
-// 			const h2 = document.createElement("h2");
-// 			h2.className = "text-white text-lg text-center font-bold";
-// 			h2.innerText = err;
-// 			ul.innerHTML = errorImage;
-// 			ul.append(h2);
-// 		});
-// });
-
-// const image = [
-// 	{
-// 		src: "./../src/images/logo-lg-variant-2.png",
-// 	},
-// ];

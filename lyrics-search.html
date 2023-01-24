@@ -207,7 +207,7 @@
 										</div>
 									</li>
 								</template>
-								<li class="">
+								<li>
 									<div class="searched-track">
 										<div class="top">
 											<div class="track-name">
@@ -228,7 +228,7 @@
 												</svg>
 												<small>See artist</small>
 											</a>
-											<button class="track-element" data-modal-target="staticModal" data-modal-toggle="staticModal">
+											<button class="track-element" data-modal-target="staticModal" data-modal-toggle="lyrics">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													class="w-5"
@@ -261,11 +261,11 @@
 
 		<!-- <== ======================= MODAL ========================= ==> -->
 		<div
-			id="staticModal"
+			id="lyrics"
 			data-modal-backdrop="static"
 			tabindex="-1"
 			aria-hidden="true"
-			class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+			class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full modal_container">
 			<div class="relative w-full h-full max-w-2xl md:h-auto">
 				<!-- Modal content -->
 				<div class="relative bg-white rounded-lg shadow">
@@ -274,8 +274,8 @@
 						<h3 class="text-xl font-semibold text-gray-900">Song title</h3>
 						<button
 							type="button"
-							class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-							data-modal-hide="staticModal">
+							class="close_modal_button text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+							data-modal-hide="lyrics">
 							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 								<path
 									fill-rule="evenodd"
@@ -286,22 +286,16 @@
 					</div>
 					<!-- Modal body -->
 					<div class="p-6 space-y-6">
-						<p class="text-sm leading-relaxed text-gray-500">
-							With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around
-							the world are updating their terms of service agreements to comply.
-						</p>
-						<p class="text-sm leading-relaxed text-gray-500">
-							The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a
-							common set of data rights in the European Union. It requires organizations to notify users as soon as possible of
-							high-risk data breaches that could personally affect them.
-						</p>
+						<div class="modal_body">
+							<span class="text-sm"> </span>
+						</div>
 					</div>
 					<!-- Modal footer -->
 					<div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
 						<button
-							data-modal-hide="staticModal"
+							data-modal-hide="lyrics"
 							type="button"
-							class="text-white bg-secondarySkin hover:bg-primarySkin transition-all ease-in-out duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+							class="close_modal_button text-white bg-secondarySkin hover:bg-primarySkin transition-all ease-in-out duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
 							Close
 						</button>
 					</div>
