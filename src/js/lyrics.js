@@ -63,6 +63,8 @@ searchBar.addEventListener("submit", function (e) {
 					closeButtons.forEach((button) => {
 						button.setAttribute("data-modal-hide", this.getAttribute("data-modal-toggle"));
 					});
+
+					modal.querySelector(".modal_body > span").innerHTML = this.getAttribute("lyrics");
 				});
 			});
 		})
@@ -79,6 +81,6 @@ searchBar.addEventListener("submit", function (e) {
 
 		const response = await fetch(`https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=${id}`, options);
 		const data = await response.json();
-		return data?.lyrics?.lyrics?.body?.html; //return either result or error
+		return data?.lyrics?.lyrics?.body?.html ?? "No lyrics Found";
 	}
 });
