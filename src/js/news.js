@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	fetch(URL_ONE, OPTIONS_ONE)
 		.then((response) => response.json())
 		.then((results) => {
-			console.log(results);
 			pasteSectionOneResults(results.data);
 		})
 		.catch((error) => console.log(error));
