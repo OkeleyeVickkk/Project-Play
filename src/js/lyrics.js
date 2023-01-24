@@ -10,7 +10,7 @@ searchBar.addEventListener("submit", function (e) {
 	const ul = document.querySelector("#search-result > ul");
 	const h1 = document.querySelector("#search-result > h1");
 	h1.className = "text-lg text-gray-300 mb-8";
-	const text = `Results for " <i>${originalInput}</i> &nbsp"</h1>`;
+	const text = `Results for "<i>${originalInput}</i>&nbsp;"</h1>`;
 
 	const options = {
 		method: "GET",

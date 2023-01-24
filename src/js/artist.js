@@ -38,12 +38,12 @@ async function fetchArtistDetails() {
 	$artistContentInner.innerHTML = "";
 	$clone.querySelector(".artist-image img").src = image_url;
 	$clone.querySelector(".artist-name span").innerHTML = name;
-	$clone.querySelector(".artist-details span").innerHTML = description_preview;
+	$clone.querySelector(".artist-details span").innerHTML = description_preview ?? "Nothing to be read";
 	$clone.querySelector(".social-handles #facebook").href = `https://www.facebook.com/${facebook_name ?? artistName}`;
 	$clone.querySelector(".social-handles #twitter").href = `https://www.twitter.com/${twitter_name ?? artistName}`;
 	$clone.querySelector(".social-handles #instagram").href = `https://www.instagram.com/${instagram_name ?? artistName}`;
 
-	$artistContentInner.appendChild($clone);
+	$artistContentInner.append($clone);
 }
 
 function filterName(name) {
@@ -73,12 +73,12 @@ async function fetchArtistAlbums() {
 fetch(`https://genius-song-lyrics1.p.rapidapi.com/artist/songs/?id=${artist_id}`, options)
 	.then((response) => response.json())
 	.then((data) => {
-		const $clonedTrackTemplate = trackTemplate.content.cloneNode(true); //clone the node
+		const trackTemplate = document.querySelector("#track-item-template");
 		const songs = data.songs.slice(0, 15);
 		songs.forEach((song) => {
 			const { title, artist_names } = song;
+			const $clonedTrackTemplate = trackTemplate.content.cloneNode(true); //clone the node
 			const $trackTemplatesWrapper = document.querySelector(".tracks-item-wrapper");
-			const trackTemplate = document.querySelector("#track-item-template");
 
 			$clonedTrackTemplate.querySelector("span.track-title").textContent = title;
 			$clonedTrackTemplate.querySelector("small.track-artistes").textContent = artist_names;
